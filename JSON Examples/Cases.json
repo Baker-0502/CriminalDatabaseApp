@@ -1,7 +1,10 @@
 [
     {
         "closedCase": false,
-        ""
-
+        "caseName": "The Hash Slinging Slasher",
+        "updateCase": true,
+        "federalCase": false,
+        "misdemeanor": true,
+        "category": "Level 1 Crime"
     }
 ]
