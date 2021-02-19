@@ -1,0 +1,39 @@
+[
+    {
+        "userID": 1,
+        "firstNames": "Greg",
+        "lastName": "Heffley",
+        "username": "greg9920",
+        "password": "javaIsCool!",
+        "email": "greg9920@heffley.com",
+        "phoneNumber": "999-999-9999",
+        "department": "Surrey County Police"
+    },{
+        "userID": 2,
+        "firstNames": "Manny",
+        "lastName": "Heffley",
+        "username": "manny128499",
+        "password": "mannyAwesome449",
+        "email": "manny128499@heffley.com",
+        "phoneNumber": "279-983-1988",
+        "department": "Elementary County Police"
+    },{
+        "userID": 3,
+        "firstNames": "Rodrick",
+        "lastName": "Heffley",
+        "username": "LoadedDiperFan",
+        "password": "DiperRockin99",
+        "email": "LoadedDiper@heffley.com",
+        "phoneNumber": "463-782-3485",
+        "department": "Mettal County Police"
+    },{
+        "userID": 4,
+        "firstNames": "Rowley",
+        "lastName": "Jefferson",
+        "username": "ZooWeeMama",
+        "password": "TheCheeseTouch2007",
+        "email": "ZooWeeMama@jefferson.com",
+        "phoneNumber": "347-986-2305",
+        "department": "Annoi County Police"
+    }
+]
