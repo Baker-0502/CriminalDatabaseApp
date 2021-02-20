@@ -1,0 +1,39 @@
+[
+    {
+        "personID": 1,
+        "firstName": "Hash",
+        "lastName": "Slasher",
+        "gender": "Male",
+        "race": "White, Non-Hispanic",
+        "age": "19",
+        "height": "62",
+        "weight": "190.7",
+        "phoneNumber": "367-875-2854",
+        "address": "234 Bikini Bottom Road",
+        "occupation": "None"
+    },{
+        "personID": 2,
+        "firstName": "John",
+        "lastName": "Doe",
+        "gender": "Male",
+        "race": "Hispanic",
+        "age": "37",
+        "height": "72",
+        "weight": "240.3",
+        "phoneNumber": "897-215-2783",
+        "address": "234 Loopy Lane",
+        "occupation": "Mechanical Engineer"
+    },{
+        "personID": 3,
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "gender": "Female",
+        "race": "White, Non-Hispanic",
+        "age": "56",
+        "height": "64",
+        "weight": "180.0",
+        "phoneNumber": "875-920-4432",
+        "address": "1132 Graystone Lakes",
+        "occupation": "Nurse"
+    }
+]
