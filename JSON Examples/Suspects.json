@@ -1,0 +1,22 @@
+[
+    {
+        "personID": 1,
+        "firstName": "Delila",
+        "lastName": "Ankers",
+        "gender": "Female",
+        "race": "Asian",
+        "age": "21",
+        "height": "68",
+        "weight": "131.8",
+        "phoneNumber": "330-639-4818",
+        "address": "312 Little Street",
+        "occupation": "Biomedical Engineer",
+        "bloodType": "O+",
+        "fingerprint": "Right Loop",
+        "hairColor": "Black",
+        "clothing": ["Blue Blouse", "Light Blue Jeans", "Sun Hat"],
+        "footSize": "10F",
+        "eyeColor": "Brown",
+        "details": "Last seen shopping at Little Mart on Monday, August 22nd, at 6:28 PM"
+    }
+]
