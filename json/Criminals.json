@@ -18,7 +18,7 @@
         "footSize": "10M",
         "eyeColor": "Red/Black",
         "isAlive": true,
-        "tattoos": false
+        "tattoos": []
     },{
         "personID": 2,
         "firstName": "Baloney",
@@ -38,6 +38,6 @@
         "footSize": "12M",
         "eyeColor": "Blue",
         "isAlive": false,
-        "tattoos": true
+        "tattoos": ["left shoulder, heart tattoo"]
     }
 ]
