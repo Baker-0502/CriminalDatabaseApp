@@ -1,0 +1,23 @@
+[
+    {
+        "userID": 1,
+        "firstName": "Sherry",
+        "lastName": "Hogan",
+        "userName": "Hoganman!",
+        "password": "hogoman123!",
+        "email": "hogodude1@gmail.com",
+        "phoneNumber": "2345678900",
+        "department": "NC",
+        "associate": "Rodrick Heffley"
+    },{
+        "userID": 2,
+        "firstName": "Devin",
+        "lastName": "Foster",
+        "userName": "devintheman1",
+        "password": "devinisnotapassword",
+        "email": "devin15@hotmail.com",
+        "phoneNumber": "1234567890",
+        "department": "MI",
+        "associate": "Rowley Jefferson"
+    }
+]
