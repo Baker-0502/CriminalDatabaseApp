@@ -11,7 +11,7 @@
         "upateCase": true
 
     },{
-        "userID": "2",
+        "userID": 2,
         "firstName": "Toby",
         "lastName": "Conner",
         "userName": "tobyconner123",
@@ -21,7 +21,7 @@
         "department": "Nevada",
         "updateCase": true
     },{
-        "userID": "3",
+        "userID": 3,
         "firstName": "Dora",
         "lastName": "Collier",
         "userName": "Collier.Dora234",
