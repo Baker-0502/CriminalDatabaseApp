@@ -3,21 +3,17 @@
         "evidenceID": 1,
         "evidenceType": "Weapon",
         "locationFound": "The Krusty Krab",
-        "relationToPersonID": 1
     },{
         "evidenceID": 2,
         "evidenceType": "Misc.",
         "locationFound": "Westmore Middle School",
-        "relationToPersonID": 2
     },{
         "evidenceID": 3,
         "evidenceType": "Fingerprint",
         "locationFound": "The Krusty Krab",
-        "relationToPersonID": 1
     },{
         "evidenceID": 4,
         "evidenceType": "Blood",
         "locationFound": "The Krusty Krab",
-        "relationToPersonID": 1
     }
 ]
