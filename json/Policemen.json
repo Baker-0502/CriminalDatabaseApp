@@ -6,9 +6,9 @@
         "username": "greg9920",
         "password": "javaIsCool!",
         "email": "greg9920@heffley.com",
-        "phoneNumber": "999-999-9999",
+        "phoneNumber": "9999999999",
         "department": "Surrey County Police",
-        "badgeID": "99093289-28409289",
+        "badgeID": "9909328928409289",
         "caseCount": 2,
         "editAccess": false
     },{
@@ -18,7 +18,7 @@
         "username": "manny128499",
         "password": "mannyAwesome449",
         "email": "manny128499@heffley.com",
-        "phoneNumber": "279-983-1988",
+        "phoneNumber": "2799831988",
         "department": "Elementary County Police",
         "badgeID": "9765778-11223378",
         "caseCount": 1,
@@ -30,9 +30,9 @@
         "username": "LoadedDiperFan",
         "password": "DiperRockin99",
         "email": "LoadedDiper@heffley.com",
-        "phoneNumber": "463-782-3485",
+        "phoneNumber": "4637823485",
         "department": "Mettal County Police",
-        "badgeID": "89719378-11992278",
+        "badgeID": "8971937811992278",
         "caseCount": 1,
         "editAccess": false
     },{
@@ -42,9 +42,9 @@
         "username": "ZooWeeMama",
         "password": "TheCheeseTouch2007",
         "email": "ZooWeeMama@jefferson.com",
-        "phoneNumber": "347-986-2305",
+        "phoneNumber": "3479862305",
         "department": "Annoi County Police",
-        "badgeID": "27616234-09898928",
+        "badgeID": "2761623409898928",
         "caseCount": 2,
         "editAccess": false
     }
