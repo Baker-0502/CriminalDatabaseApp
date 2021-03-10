@@ -12,7 +12,7 @@
         "witnesses": [2,3],
         "evidenceList": [1,3,4]
     },{
-        "caseID": 2,
+        "caseID": "bdb1f052-2801-43d2-862a-ed96dba8d642",
         "closedCase": true,
         "caseName": "Dissapearence of John Doe",
         "updateCase": false,
