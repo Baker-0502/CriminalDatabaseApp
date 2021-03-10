@@ -1,14 +1,9 @@
 public class Administrator {
     private boolean updateCase;
-    private String criminalName;
-    private String policeName;
-    private String detectiveName;
-
-    public Administrator(boolean updateCase, String criminalName, String policeName, String detectiveName){
+    
+    public Administrator(boolean updateCase){
         this.updateCase = updateCase;
-        this.criminalName = criminalName;
-        this.policeName = policeName;
-        this.detectiveName = detectiveName;
+       
     }
 
     public void addCase(String caseName){

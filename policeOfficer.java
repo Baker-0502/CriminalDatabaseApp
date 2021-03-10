@@ -2,18 +2,13 @@ public class policeOfficer{
     private String badgeID;
     private int caseCount;
     private boolean editAccess;
-    private String witness;
-    private String associates;
-    
+   
 
-    public policeOfficer(String badgeID, int caseCount, boolean editAccess, String witness, String associates)
+    public policeOfficer(String badgeID, int caseCount, boolean editAccess)
     {
         this.badgeID = badgeID;
         this.caseCount = caseCount;
-        this.editAccess = editAccess;
-        this.associates = associates;
-        this.witness = witness;
-        
+        this.editAccess = editAccess;        
     }
 
     public void addWitness(String witness)
