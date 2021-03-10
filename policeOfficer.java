@@ -11,6 +11,8 @@ public class policeOfficer{
         this.badgeID = badgeID;
         this.caseCount = caseCount;
         this.editAccess = editAccess;
+        this.associates = associates;
+        this.witness = witness;
         
     }
 
@@ -42,6 +44,9 @@ public class policeOfficer{
     public void requestEdit(boolean editAccess)
     {
         editAccess = false;
+    }
+    public String toString(){
+        return badgeID + caseCount + witness + associates + editAccess;
     }
    
 }
