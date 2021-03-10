@@ -1,10 +1,12 @@
-public class policeOfficer {
+public class policeOfficer{
     private String badgeID;
     private int caseCount;
     private boolean editAccess;
+    private String witness;
+    private String associates;
     
 
-    public policeOfficer(String badgeID, int caseCount, boolean editAccess)
+    public policeOfficer(String badgeID, int caseCount, boolean editAccess, String witness, String associates)
     {
         this.badgeID = badgeID;
         this.caseCount = caseCount;
@@ -12,34 +14,34 @@ public class policeOfficer {
         
     }
 
-    public void String addWitness(String witness)
+    public void addWitness(String witness)
     {
-        
+       
     }
 
-    public void String addAssociate(String associate)
+    public void addAssociate(String associates)
     {
         
     }
-    public void String addSuspect(String suspect)
+    public void addSuspect(String suspect)
     {
         
     }
-    public void String addVictim(String victim)
+    public void addVictim(String victim)
     {
         
     }
-    public void String addEvidence(String evidence)
+    public void addEvidence(String evidence)
     {
         
     }
-    public void int addNumOfCases(int caseCount)
+    public void addNumOfCases(int caseCount)
     {
-        
+        caseCount = 0;
     }
-    public void boolean requestEdit(boolean editAccess)
+    public void requestEdit(boolean editAccess)
     {
-        
+        editAccess = false;
     }
    
 }
