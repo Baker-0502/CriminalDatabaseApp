@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class CriminalUI {
     private CriminalDatabaseApplication application;
 
@@ -19,5 +21,11 @@ public class CriminalUI {
 
     public void displayCases(){
         System.out.println("displaying cases");
+    }
+
+    public static void main(String[] args)
+    {
+        CriminalUI driver = new CriminalUI();
+        driver.run();
     }
 }
