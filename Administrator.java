@@ -1,7 +1,8 @@
+import java.util.UUID;
 public class Administrator extends User{
     private boolean updateCase;
     
-    public Administrator(int userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase){
+    public Administrator(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase){
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);
         this.updateCase = updateCase;
     }
