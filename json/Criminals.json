@@ -1,13 +1,13 @@
 [
     {
-        "personID": 1,
+        "personID": "b8132e6c-6edc-442a-bae2-284e53cb495f",
         "firstName": "Hash",
         "lastName": "Slasher",
         "gender": "Male",
         "race": "White, Non-Hispanic",
-        "age": "19",
-        "height": "62",
-        "weight": "190.7",
+        "age": 19,
+        "height": 62,
+        "weight": 190.7,
         "phoneNumber": "3678752854",
         "address": "234 Bikini Bottom Road",
         "occupation": "None",
@@ -18,16 +18,16 @@
         "footSize": "10M",
         "eyeColor": "Red",
         "isAlive": true,
-        "tattoos": false
+        "tattoos": []
     },{
-        "personID": 2,
+        "personID": "45880058-9b1b-4128-8986-8e2d304a4588",
         "firstName": "Baloney",
         "lastName": "Maloney",
         "gender": "Male",
         "race": "White, Non-Hispanic",
-        "age": "48",
-        "height": "71",
-        "weight": "225.8",
+        "age": 48,
+        "height": 71,
+        "weight": 225.8,
         "phoneNumber": "6358769921",
         "address": "290 Fakey Lane",
         "occupation": "Deli Manager at Baloney Farms",
@@ -38,6 +38,6 @@
         "footSize": "12M",
         "eyeColor": "Blue",
         "isAlive": false,
-        "tattoos": true
+        "tattoos": ["left shoulder, heart tattoo"]
     }
 ]

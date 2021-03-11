@@ -1,6 +1,6 @@
 [
     {
-        "userID": 1,
+        "userID": "5e2fbf77-8406-4ef7-a567-36daeb808430",
         "firstNames": "Greg",
         "lastName": "Heffley",
         "username": "greg9920",
@@ -12,7 +12,7 @@
         "caseCount": 2,
         "editAccess": false
     },{
-        "userID": 2,
+        "userID": "049d1490-5919-4652-b901-040086e41687",
         "firstNames": "Manny",
         "lastName": "Heffley",
         "username": "manny128499",
@@ -20,11 +20,11 @@
         "email": "manny128499@heffley.com",
         "phoneNumber": "2799831988",
         "department": "Elementary County Police",
-        "badgeID": "9765778-11223378",
+        "badgeID": "976577811223378",
         "caseCount": 1,
         "editAccess": false
     },{
-        "userID": 3,
+        "userID": "48d384bf-f11f-4062-99df-11583454571e",
         "firstNames": "Rodrick",
         "lastName": "Heffley",
         "username": "LoadedDiperFan",
@@ -36,7 +36,7 @@
         "caseCount": 1,
         "editAccess": false
     },{
-        "userID": 4,
+        "userID": "5fd7100c-4e3b-4721-a460-bc777ababaa3",
         "firstNames": "Rowley",
         "lastName": "Jefferson",
         "username": "ZooWeeMama",

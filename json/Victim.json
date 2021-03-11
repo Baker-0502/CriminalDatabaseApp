@@ -1,0 +1,31 @@
+[
+    {
+        "personID": "f77a4ff9-e9ad-48fb-b583-6150d59d4248",
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "gender": "Female",
+        "race": "White, Non-Hispanic",
+        "age": 56,
+        "height": 64,
+        "weight": 180.0,
+        "phoneNumber": "8759204432",
+        "address": "1132 Graystone Lakes",
+        "occupation": "Nurse",
+        "relationship": "Victim was robbed by suspect",
+        "statement": "I was held at gunpoint by a man in a ski mask, blue polo shirt, and jeans."
+    },{
+        "personID": "d1b9a4ce-a65b-43e3-bee6-e6e1ca772cf3",
+        "firstName": "Julio",
+        "lastName": "Jackson",
+        "gender": "Male",
+        "race": "Hispanic",
+        "age": 67,
+        "height": 68,
+        "weight": 178.9,
+        "phoneNumber": "6086339886",
+        "address": "188 Primrose Lane",
+        "occupation": "None",
+        "relationship": "Victim was murdered, Suspect is believed to have been lover",
+        "statement": "N/A"
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "personID": "b16f6fa3-8b51-4846-9579-29a6a4fa8339",
+        "firstName": "Eddie",
+        "lastName": "Silberman",
+        "gender": "Male",
+        "race": "White, Non-Hispanic",
+        "age": 38,
+        "height": 74,
+        "weight": 242.4,
+        "phoneNumber": "8608746477",
+        "address": "312 Little Street",
+        "occupation": "Dentist",
+        "hairColor": "Brown",
+        "eyeColor": "Blue",
+        "reasonOfInterest": "Seen at scene of crime day of the murder",
+        "availableDetails": "Last seen leaving his business, Happy Smiles LLC. Was seem carrying a medical bag."
+    },{
+        "personID": "2002449e-302f-4aa5-9fd4-0e8e6b08a8c8",
+        "firstName": "Rhea",
+        "lastName": "Fowler",
+        "gender": "Female",
+        "race": "Middle Eastern",
+        "age": 21,
+        "height": 67,
+        "weight": 242.4,
+        "phoneNumber": "4159546246",
+        "address": "4427 Locust View Drive",
+        "occupation": "Industrial Engineer",
+        "hairColor": "Brown",
+        "eyeColor": "Brown",
+        "reasonOfInterest": "Related to victim",
+        "availableDetails": "Cooperating with police and is undergoing questioning."
+    }
+]
