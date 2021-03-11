@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class CaseList extends Case {
-    private ArrayList<String> caseList;
+public class CaseList extends CriminalDatabaseApplication {
+    private ArrayList<Case> caseList;
 
     public CaseList(ArrayList<String> caseList){
-        super(UUID, boolean, String, boolean, boolean, boolean, Category, ArrayList, ArrayList, ArrayList, ArrayList)
         caseList = new ArrayList<String>();
     }
 
@@ -14,6 +13,6 @@ public class CaseList extends Case {
     }
 
     public Case searchByKeyword(String keyword){
-        return caseID;
+        return caseList.get(0);
     }
 }
