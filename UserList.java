@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class UserList extends User {
+public class UserList {
     private User User;
 
     private UserList(ArrayList<String> User){
-        super(UUID, String, String, String, String, String, String, String);
         User = new ArrayList<String>();
     }
 

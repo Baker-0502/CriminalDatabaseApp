@@ -6,9 +6,9 @@ public class policeOfficer extends User{
     private boolean editAccess;
    
 
-    public policeOfficer(String badgeID, int caseCount, boolean editAccess)
+    public policeOfficer(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String badgeID, int caseCount, boolean editAccess)
     {
-        super(UUID, String, String, String, String, String, String, String);
+        super(userID, firstName, lastName, username, password, email, phoneNumber, department);
         this.badgeID = badgeID;
         this.caseCount = caseCount;
         this.editAccess = editAccess;        
