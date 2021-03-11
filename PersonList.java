@@ -8,7 +8,7 @@ public class PersonList {
     private ArrayList<Integer> poiList;
 
 
-public PersonList(ArrayList<Integer> criminalList, ArrayList<Integer> witnessList, private ArrayList<Integer> suspectList, private ArrayList<Integer> victimList, ArrayList<Integer> poiList)
+public PersonList(ArrayList<Integer> criminalList, ArrayList<Integer> witnessList, ArrayList<Integer> suspectList, ArrayList<Integer> victimList, ArrayList<Integer> poiList)
 {
     this.criminalList = criminalList;
     this.witnessList = witnessList;

@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class CaseList extends CriminalDatabaseApplication {
+public class CaseList {
     private ArrayList<Case> caseList;
 
     public CaseList(ArrayList<String> caseList){
-        super(CaseList, UserList, PersonList, User);
         caseList = new ArrayList<String>();
     }
 
