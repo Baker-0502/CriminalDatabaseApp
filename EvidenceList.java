@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class EvidenceList extends Evidence{
+public class EvidenceList {
     private ArrayList<String> evidence = new ArrayList<String>();;
 
     public EvidenceList(ArrayList<String> evidence)
     {
-        super(UUID,String,String,UUID);
+        this.evidence = evidence;
     }
 
     public Evidence searchID(Evidence evidenceID)
