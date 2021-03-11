@@ -9,8 +9,8 @@ public class UserList extends User {
         User = new ArrayList<String>();
     }
 
-    public CriminalDatabaseApplication makeLogin(){
-        
+    public void makeLogin(){
+        System.out.println("making login");
     }
 
     public void addUser(String userName, String password, UUID ID){
