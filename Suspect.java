@@ -44,11 +44,7 @@ public String getDetails() {
     return details;
 }
 
-public String getEyeColor() {
-    return eyeColor;
-}
-
-public clothingList(ArrayList<String> clothing) {
+public ArrayList<String> getClothing(ArrayList<String> clothing) {
     return clothing;
 }
 }
