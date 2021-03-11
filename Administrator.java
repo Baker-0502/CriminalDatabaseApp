@@ -7,25 +7,25 @@ public class Administrator extends User{
     }
 
     public void addCase(String caseName){
-        System.out.print("Case Added!");
+        System.out.print("Case" + caseName + "Added!");
     }
     public void addCriminal(String criminalName){
-        System.out.print("Case Added!");
+        System.out.print("Criminal," + criminalName + "Added!");
     }
     public void addPolice(String policeName){
-        System.out.print("Case Added!");
+        System.out.print("Police Officer, " + policeName + " Added!");
     }
     public void addDetective(String detectiveName){
-        System.out.print("Case Added!");
+        System.out.print("Detective, " + detectiveName + " Added!");
     }
     public void caseName(String caseName){
-        caseName = "";
+        ;
     }
     public void updateCase(boolean updateCase){
         updateCase = true;
     }
     public String toString(){
-        return getFirstName() + " " + getLastName() + ;
+        return "Name: " + getFirstName() + " " + getLastName();
     }
 
     
