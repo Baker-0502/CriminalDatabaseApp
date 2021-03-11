@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Case {
-    private int caseID;
+    private UUID caseID;
     private boolean closedCase;
     private String caseName;
     private boolean updateCase;
@@ -13,7 +14,7 @@ public class Case {
     private ArrayList<Integer> witness;
     private ArrayList<Integer> evidenceList;
 
-    public Case(int caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
+    public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
     Category category, ArrayList<Integer> userWorking, ArrayList<Integer> suspects, ArrayList<Integer> witness, ArrayList<Integer> evidenceList)
     {
         this.caseID = caseID;
