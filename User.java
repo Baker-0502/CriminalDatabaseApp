@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.UUID;
 
 public abstract class User {
-    private int userID;
+    private UUID userID;
     private String firstName;
     private String lastName;
     private String username;
@@ -11,7 +11,7 @@ public abstract class User {
     private String phoneNumber;
     private String department;
 
-    public User(int userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department)
+    public User(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department)
     {
         this.userID = userID;
         this.firstName = firstName;

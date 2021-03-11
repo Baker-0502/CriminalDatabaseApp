@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class policeOfficer extends User{
     private String badgeID;
     private int caseCount;
@@ -7,7 +9,6 @@ public class policeOfficer extends User{
     public policeOfficer(String badgeID, int caseCount, boolean editAccess)
     {
         super(UUID, String, String, String, String, String, String, String);
-        
         this.badgeID = badgeID;
         this.caseCount = caseCount;
         this.editAccess = editAccess;        
