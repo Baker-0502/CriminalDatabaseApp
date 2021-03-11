@@ -2,26 +2,26 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class UserList extends User {
-    private ArrayList<String> User;
+    private User User;
 
     private UserList(ArrayList<String> User){
         super(UUID, String, String, String, String, String, String, String);
         User = new ArrayList<String>();
     }
 
-    public LoginDatabase makeLogin(){
+    public CriminalDatabaseApplication makeLogin(){
         
     }
 
-    public void addUser(String Username, String Password, UUID ID){
-
+    public void addUser(String userName, String password, UUID ID){
+        System.out.println("adding user!");
     }
 
-    public int findUser(String User){
-        return 1;
+    public UUID findUser(UUID User){
+        return User;
     }
 
-    public User loginSystem(String Username, String Password){
+    public User loginSystem(String userName, String password){
         return User;
     }
 

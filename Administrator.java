@@ -1,4 +1,4 @@
-public class Administrator {
+public class Administrator extends User{
     private boolean updateCase;
     
     public Administrator(boolean updateCase){
@@ -7,7 +7,7 @@ public class Administrator {
     }
 
     public void addCase(String caseName){
-
+        
     }
     public void addCriminal(String criminalName){
 

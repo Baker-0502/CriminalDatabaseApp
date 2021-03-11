@@ -24,7 +24,7 @@ public String getReasonofInterest() {
     return reasonofInterest;
 }
 
-public string getAvaliableDetails() {
+public String getAvaliableDetails() {
     return avaliableDetails;
 }
 }

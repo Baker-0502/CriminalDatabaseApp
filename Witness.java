@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Witness {
     private String relationship;
     private String statement;

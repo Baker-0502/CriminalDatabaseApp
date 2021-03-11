@@ -4,21 +4,21 @@ public class CriminalDatabaseApplication {
     private PersonList personList;
     private User user;
 
-    public CriminalDatabaseApplication()
+    public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        super.User();
-        super.PersonList();
-        super.UserList();
-        super.CaseList();
+        this.caseList = caseList;
+        this.userList = userList;
+        this.personList = personList;
+        this.user = user;
     }
 
-    public User createAccount(String firstName, String lastName, String userName, String password)
+    public User createAccount(String firstName, String lastName, String userName, String password, User user)
     {
-        return firstName+lastName+userName+password;
+        return user;
     }
 
-    public User login(String userName, String password)
+    public User login(String userName, String password, User user)
     {
-        return userName+password;
+        return user;
     }
 }
