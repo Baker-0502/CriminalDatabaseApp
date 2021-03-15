@@ -27,7 +27,7 @@ public class Detective extends User{
     }
 
     public void updateDepartment(String department){
-
+        this.department = department;
     }
 
     public String toString(){
