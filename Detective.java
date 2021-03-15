@@ -11,19 +11,19 @@ public class Detective extends User{
     }
 
     public void addWitnessStatement(String witnessStatement){
-
+        System.out.println("Witness Statement: " + witnessStatement + " added.");
     }
 
     public void addAssociate(String associate){
-
+        System.out.println("Associate: " + associate + " added.");
     }
 
     public void addReport(String report){
-
+        System.out.println("Report: " + report + " added.");
     }
 
     public void addEvidence(String evidence){
-
+        System.out.println("Evidence: " + evidence + " added.");
     }
 
     public void updateDepartment(String department){

@@ -26,7 +26,7 @@ public class UserList {
     }
 
     public User loginSystem(String userName, String password){
-        return User;
+        return user;
     }
 
     public boolean checkPasswords(User userLogin, String Passoword){
@@ -34,7 +34,7 @@ public class UserList {
     }
 
     public User searchID(UUID ID){
-        return User;
+        return user;
     }
     
 }
