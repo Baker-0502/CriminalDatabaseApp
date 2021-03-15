@@ -23,7 +23,7 @@
         "firstName": "Lupe",
         "lastName": "Roy",
         "gender": "Male",
-        "race": ["White", "Non-Hispanic"],
+        "race": "White",
         "age": 29,
         "height": 70.3,
         "weight": 194.2,

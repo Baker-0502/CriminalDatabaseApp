@@ -4,7 +4,7 @@
         "firstName": "Jane",
         "lastName": "Smith",
         "gender": "Female",
-        "race": "White, Non-Hispanic",
+        "race": "White",
         "age": 56,
         "height": 64,
         "weight": 180.0,

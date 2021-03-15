@@ -4,7 +4,7 @@
         "firstName": "Colin",
         "lastName": "Sandman",
         "gender": "Male",
-        "race": "White, Non-Hispanic",
+        "race": "White",
         "age": 19,
         "height": 70.0,
         "weight": 135.8,
@@ -14,13 +14,12 @@
         "relationship": "Friend",
         "statement": "A statement about the crime"
 
-    },
-    {
+    },{
         "personID": "6c12b3e6-8525-4562-abf5-0b335a5e7853",
         "firstName": "Carol",
         "lastName": "Baskins",
         "gender": "Female",
-        "race": "White, Non-Hispanic",
+        "race": "White",
         "age": 32,
         "height": 62.0,
         "weight": 118.3,
