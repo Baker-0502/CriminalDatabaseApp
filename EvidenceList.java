@@ -1,19 +1,18 @@
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.Scanner;
 
 public class EvidenceList {
     private ArrayList<Evidence> evidenceList;
-    static Scanner sc = new Scanner(System.in);
+    Evidence evidence;
 
-    public EvidenceList(ArrayList<String> evidence)
+    public EvidenceList(ArrayList<Evidence> evidence)
     {
-        evidence = new ArrayList<String>();
+        evidence = new ArrayList<Evidence>();
     }
 
-    public Evidence searchID(UUID evidenceID, Evidence evidence)
+    public Evidence searchID(UUID evidenceID)
     {
-        for(evidence : evidenceList)
+        for(Evidence evidence: evidenceList)
         {
             if(evidenceID.equals(evidence.getEvidenceID()))
             {

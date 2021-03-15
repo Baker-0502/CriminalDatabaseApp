@@ -15,7 +15,7 @@ public class Case {
     private ArrayList<EvidenceList> evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
-    Category category, ArrayList<Integer> userWorking, ArrayList<Integer> suspects, ArrayList<Integer> witness, ArrayList<Integer> evidenceList)
+    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<EvidenceList> evidenceList)
     {
         this.caseID = caseID;
         this.closedCase = closedCase;
@@ -32,8 +32,8 @@ public class Case {
 
     public boolean activeCase(boolean closedCase)
     {
-        if(closedCase){
-            closedCase = true;
+        if(!closedCase){
+            updateCase(updateCase);
         }
         else{
             closedCase = false;
@@ -47,6 +47,7 @@ public class Case {
 
         if(updateCase){
             updateCase = true;
+            
         }
         else{
             updateCase = false;
@@ -65,14 +66,39 @@ public class Case {
         return federalCase;
     }
 
+    public UUID getCaseID()
+    {
+        return caseID;
+    }
+
+    public String getCaseName()
+    {
+        return caseName;
+    }
+
+    public boolean getUpdateCase()
+    {
+        return updateCase;
+    }
+
+    public boolean getClosedCase()
+    {
+        return closedCase;
+    }
+
+    public boolean getFederalCase()
+    {
+        return federalCase;
+    }
+
+    public boolean getMisdimeanor()
+    {
+        return misdimeanor;
+    }
+
     public Category getCategory()
     {
         return category;
-    }
-
-    public void setCategory(Category category)
-    {
-        this.category = category;
     }
 
     public void createFile()
