@@ -2,9 +2,14 @@ import java.util.Scanner;
 
 public class CriminalUI {
     private CriminalDatabaseApplication application;
+    private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
+    private String[] mainMenuOptions = {"Create Account","Login","Exit"};
 
     public void run(){
-        System.out.println("running");
+        System.out.println(WELCOME_MESSAGE);
+        while(true){
+            displayMenu();
+        }
     }
 
     public void displayLogin(){
@@ -13,6 +18,11 @@ public class CriminalUI {
 
     public void displayMenu(){
         System.out.println("displaying menu");
+        for(int i=0; i<mainMenuOptions.length;i++)
+        {
+            System.out.println((i+1) + ". "+mainMenuOptions[i]);
+        }
+        System.out.println("\n");
     }
 
     public void displayAddCase(){
