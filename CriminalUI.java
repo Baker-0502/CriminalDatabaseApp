@@ -12,10 +12,6 @@ public class CriminalUI {
         }
     }
 
-    public void displayLogin(){
-        System.out.println("displaying login");
-    }
-
     public void displayMenu(){
         System.out.println("displaying menu");
         for(int i=0; i<mainMenuOptions.length;i++)
@@ -23,6 +19,10 @@ public class CriminalUI {
             System.out.println((i+1) + ". "+mainMenuOptions[i]);
         }
         System.out.println("\n");
+    }
+
+    public void displayLogin(){
+        System.out.println("displaying login");
     }
 
     public void displayAddCase(){
