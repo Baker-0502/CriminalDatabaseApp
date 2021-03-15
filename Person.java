@@ -66,6 +66,7 @@ public class Person {
 
     public String toString()
     {
-        return firstName+lastName+age+height+weight+phoneNumber+address+occupation;
+        return "First Name: "+firstName+"\nLast Name: "+lastName+"\nAge: "+age+"\nHeight: "+
+        height+"\nWeight: "+weight+"\nPhone Number: "+phoneNumber+"\nAddress: "+address+"\nOccupation: "+occupation;
     }
 }

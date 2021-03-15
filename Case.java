@@ -9,10 +9,10 @@ public class Case {
     private boolean federalCase;
     private boolean misdimeanor;
     private Category category;
-    private ArrayList<Integer> userWorking;
-    private ArrayList<Integer> suspects;
-    private ArrayList<Integer> witness;
-    private ArrayList<Integer> evidenceList;
+    private ArrayList<User> userWorking;
+    private ArrayList<Suspect> suspects;
+    private ArrayList<Witness> witness;
+    private ArrayList<EvidenceList> evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
     Category category, ArrayList<Integer> userWorking, ArrayList<Integer> suspects, ArrayList<Integer> witness, ArrayList<Integer> evidenceList)
@@ -30,19 +30,39 @@ public class Case {
         this.evidenceList = evidenceList;
     }
 
-    public void activeCase(boolean closedCase)
+    public boolean activeCase(boolean closedCase)
     {
-        closedCase = false;
+        if(closedCase){
+            closedCase = true;
+        }
+        else{
+            closedCase = false;
+        }
+        return closedCase;
+
     }
 
     public boolean updateCase(boolean updateCase)
     {
+
+        if(updateCase){
+            updateCase = true;
+        }
+        else{
+            updateCase = false;
+        }
         return updateCase;
     }
 
-    public void updateFederalStatus(boolean federalCase)
+    public boolean updateFederalStatus(boolean federalCase)
     {
-        federalCase = true;
+        if(federalCase){
+            federalCase = true;
+        }
+        else{
+            federalCase = false;
+        }
+        return federalCase;
     }
 
     public Category getCategory()

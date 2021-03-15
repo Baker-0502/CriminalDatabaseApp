@@ -1,22 +1,24 @@
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Scanner;
 
 public abstract class User {
     private UUID userID;
     private String firstName;
     private String lastName;
-    private String username;
+    private String userName;
     private String password;
     private String email;
     private String phoneNumber;
     private String department;
+    static Scanner sc = new Scanner(System.in);
 
-    public User(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department)
+    public User(UUID userID, String firstName, String lastName, String userName, String password, String email, String phoneNumber, String department)
     {
         this.userID = userID;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -24,31 +26,99 @@ public abstract class User {
     }
 
     public void changePassword(String password) {
-        System.out.println("changing password");
+        System.out.println("Enter new password: ");
+        password = sc.nextLine();
+        setPassword(password);
     }
 
     public void changeEmail(String email) {
-        System.out.println("changing email");
+        System.out.println("Enter new Email: ");
+        email = sc.nextLine();
+        setEmail(email);
     }
 
     public void changePhoneNumber(String phoneNumber) {
-        System.out.println("changing phone number");
+        System.out.println("Enter new Phone Number: ");
+        phoneNumber = sc.nextLine();
+        setPhoneNumber(phoneNumber);
     }
 
     public void changeDepartment(String department) {
-    System.out.println("chaging department");
+    System.out.println("Enter new Department: ");
+    department = sc.nextLine();
+    setDepartment(department);
+    }
+
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
     public String getLastName() {
         return lastName;
     }
 
+    public void setUserName(String userName)
+    {
+        this.userName = userName;
+    }
+
+    public String getUserName()
+    {
+        return userName;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setPhoneNumber(String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhoneNumber()
+    {
+        return phoneNumber;
+    }
+
+    public void setDepartment(String department)
+    {
+        this.department = department;
+    }
+
+    public String getDepartment()
+    {
+        return department;
+    }
+
     public String getLoginInfo() {
-        return username+password+email;
+        return "UserName: "+userName+"\nPassword: "+password+"\nUser ID: "+userID+"\nEmail: "+email+"\nPhone Number: "+phoneNumber+
+        "\nDepartment: "+department;
     }
 
 }
