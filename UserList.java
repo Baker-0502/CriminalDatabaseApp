@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class UserList {
-    private User User;
+    private User user;
 
     private UserList(ArrayList<String> User){
         User = new ArrayList<String>();
@@ -16,8 +16,13 @@ public class UserList {
         System.out.println("adding user!");
     }
 
-    public UUID findUser(UUID User){
-        return User;
+    public User findUser(UUID User){
+        return user;
+    }
+
+    public User findUserName(String userName)
+    {
+        return user;
     }
 
     public User loginSystem(String userName, String password){

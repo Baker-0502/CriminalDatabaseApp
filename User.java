@@ -26,27 +26,19 @@ public abstract class User {
     }
 
     public void changePassword(String password) {
-        System.out.println("Enter new password: ");
-        password = sc.nextLine();
         setPassword(password);
     }
 
     public void changeEmail(String email) {
-        System.out.println("Enter new Email: ");
-        email = sc.nextLine();
         setEmail(email);
     }
 
     public void changePhoneNumber(String phoneNumber) {
-        System.out.println("Enter new Phone Number: ");
-        phoneNumber = sc.nextLine();
         setPhoneNumber(phoneNumber);
     }
 
     public void changeDepartment(String department) {
-    System.out.println("Enter new Department: ");
-    department = sc.nextLine();
-    setDepartment(department);
+        setDepartment(department);
     }
 
     public void setFirstName(String firstName)

@@ -29,9 +29,14 @@ public class Evidence {
         return relationToPersonID;
     }
 
+    public UUID getEvidenceID()
+    {
+        return evidenceID;
+    }
+
     public String toString()
     {
-        return evidenceType+locationFound+relationToPersonID;
+        return "Evidence Type: "+evidenceType+"\nLocation Found: "+locationFound+"\nRelation to Person: "+relationToPersonID;
     }
 
     public void createFile()
