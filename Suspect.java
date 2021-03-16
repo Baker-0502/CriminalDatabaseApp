@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Suspect {
+public class Suspect extends Person{
     private String hairColor;
     private String eyeColor;
     private String footSize;
@@ -9,8 +9,9 @@ public class Suspect {
     private String details;
     private ArrayList<Integer> clothing;
 
-public Suspect(String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<Integer> clothing)
+public Suspect(String firstName, String lastName, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<Integer> clothing)
 {
+    super(firstName, lastName, age, height, weight, phoneNumber, address, occupation);
     this.hairColor = hairColor;
     this.eyeColor = eyeColor;
     this.footSize = footSize;

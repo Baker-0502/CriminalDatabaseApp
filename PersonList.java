@@ -26,6 +26,10 @@ public class PersonList {
         return criminalList;
     }
 
+    public ArrayList<Suspect> getSuspects() {
+        return suspectList;
+    }
+
     public ArrayList<Witness> getWitnesses() {
         return witnessList;
     }

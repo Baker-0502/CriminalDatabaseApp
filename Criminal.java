@@ -46,7 +46,7 @@ public String getEyeColor() {
     return eyeColor;
 }
 
-public boolean isAlive(boolean isAlive) {
+public boolean isAlive() {
     return isAlive;
 }
 
@@ -54,7 +54,7 @@ public String toString() {
     return bloodType+fingerPrint+hairColor+clothing+footSize+eyeColor+isAlive+tattoos;
 }
 
-private ArrayList<String> getTattoos(){
+public ArrayList<String> getTattoos(){
     return this.tattoos;
 }
 
