@@ -26,7 +26,7 @@ public abstract class DataConstants {
     protected static final String POLICEMEN_CASE_COUNT = "caseCount";
     protected static final String POLICEMEN_EDIT_ACCESS = "editAccess";
     //People vars are used by Witnesses, PersonsOfInterest, Suspects, Victims, Criminals
-    protected static final String PERSON_PERSON_ID = "personID";
+    protected static final String PERSON_ID = "personID";
     protected static final String PERSON_FIRST_NAME = "firstName";
     protected static final String PERSON_LAST_NAME = "lastName";
     protected static final String PERSON_GENDER = "gender";

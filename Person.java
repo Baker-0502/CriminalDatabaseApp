@@ -24,8 +24,11 @@ public class Person {
         this.occupation = occupation;
     }
 
-    public String getFirstName()
-    {
+    public UUID getUUID() {
+        return personID;
+    }
+
+    public String getFirstName() {
         return firstName;
     }
 
@@ -34,38 +37,39 @@ public class Person {
         return lastName;
     }
 
-    public int getAge()
-    {
+    public String getGender() {
+        return gender;
+    }
+
+    public String getRace() {
+        return race;
+    }
+
+    public int getAge() {
         return age;
     }
 
-    public double getHeight()
-    {
+    public double getHeight() {
         return height;
     }
 
-    public double getWeight()
-    {
+    public double getWeight() {
         return weight;
     }
 
-    public String getPhoneNumber()
-    {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public String getAddress()
-    {
+    public String getAddress() {
         return address;
     }
 
-    public String getOccupation()
-    {
+    public String getOccupation() {
         return occupation;
     }
 
-    public String toString()
-    {
+    public String toString() {
         return "First Name: "+firstName+"\nLast Name: "+lastName+"\nAge: "+age+"\nHeight: "+
         height+"\nWeight: "+weight+"\nPhone Number: "+phoneNumber+"\nAddress: "+address+"\nOccupation: "+occupation;
     }

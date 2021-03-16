@@ -1,19 +1,42 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class PersonList {
-    private ArrayList<Integer> criminalList; 
-    private ArrayList<Integer> witnessList;
-    private ArrayList<Integer> suspectList;
-    private ArrayList<Integer> victimList;
-    private ArrayList<Integer> poiList;
+    private ArrayList<Criminal> criminalList; 
+    private ArrayList<Witness> witnessList;
+    private ArrayList<Suspect> suspectList;
+    private ArrayList<Victim> victimList;
+    private ArrayList<PersonOfInterest> poiList;
+    private static PersonList personList = null;
 
 
-public PersonList(ArrayList<Integer> criminalList, ArrayList<Integer> witnessList, ArrayList<Integer> suspectList, ArrayList<Integer> victimList, ArrayList<Integer> poiList)
-{
-    this.criminalList = criminalList;
-    this.witnessList = witnessList;
-    this.suspectList = suspectList;
-    this.victimList = victimList;
-    this.poiList = poiList;
-}
+    public PersonList() {
+        
+    }
+
+    public static PersonList getInstance() {
+        if(personList == null) {
+            personList = new PersonList();
+        }
+
+        return personList;
+    }
+
+    public ArrayList<Criminal> getCriminals() {
+        return criminalList;
+    }
+
+    public ArrayList<Witness> getWitnesses() {
+        return witnessList;
+    }
+
+    public ArrayList<Victim> getVictims() {
+        return victimList;
+    }
+
+    public ArrayList<PersonOfInterest> getPersonsOfInterests() {
+        return poiList;
+    }
+
+
 }
