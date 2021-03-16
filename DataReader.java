@@ -58,7 +58,7 @@ public class DataReader extends DataConstants{
                 String email = (String)detectivesJSON.get(USER_EMAIL);
                 String phoneNumber = (String)detectivesJSON.get(USER_PHONE_NUMBER);
 
-                detective.add(new Detective(associate, department, userID1, firstName, lastName, username, password, email, phoneNumber))
+                detective.add(new Detective(associate, department, userID1, firstName, lastName, username, password, email, phoneNumber));
             }
             return detective;
         }catch(Exception e){
@@ -91,7 +91,7 @@ public class DataReader extends DataConstants{
                 String editAccess = (String)policesJSON.get(POLICEMEN_EDIT_ACCESS);
                 boolean editAccess1 = Boolean.parseBoolean(editAccess);
 
-                policeOfficer.add(new policeOfficer(userID1, firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount1, editAccess1))
+                policeOfficer.add(new policeOfficer(userID1, firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount1, editAccess1));
             }
             return policeOfficer;
         }catch(Exception e){
@@ -121,7 +121,7 @@ public class DataReader extends DataConstants{
                 ArrayList<Witness> witnesses = (ArrayList<Witness>)casesJSON.get(CASE_WITNESSES);
                 ArrayList<EvidenceList> evidenceList = (ArrayList<EvidenceList>)casesJSON.get(CASE_EVIDENCE_LIST);
 
-                Case.add(new Case(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witnesses, evidenceList))
+                Case.add(new Case(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witnesses, evidenceList));
             }
             return Case;
         }catch(Exception e){
@@ -188,5 +188,34 @@ public class DataReader extends DataConstants{
         return null;
     }
 
-    
+    public static ArrayList<PersonOfInterest> loadPOI(){
+        ArrayList<PersonOfInterest> poi = new ArrayList<PersonOfInterest>();
+        try{
+            FileReader reader = new FileReader(PERSONS_OF_INTEREST_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray poiJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for(int i=0;i<poiJSON.size();i++){
+                JSONObject poisJSON = (JSONObject)poiJSON.get(i);
+                String firstName = (String)poisJSON.get(PERSON_FIRST_NAME);
+                String lastName = (String)poisJSON.get(PERSON_LAST_NAME);
+                int age = (int)poisJSON.get(PERSON_AGE);
+                double height = (double)poisJSON.get(PERSON_HEIGHT);
+                double weight = (double)poisJSON.get(PERSON_WEIGHT);
+                String phoneNumber = (String)poisJSON.get(PERSON_PHONE_NUMBER);
+                String address = (String)poisJSON.get(PERSON_ADDRESS);
+                String occupation = (String)poisJSON.get(PERSON_OCCUPATION);
+                String hairColor = (String)poisJSON.get(PERSON_OF_INTEREST_HAIR_COLOR);
+                String eyeColor = (String)poisJSON.get(PERSON_OF_INTEREST_EYE_COLOR);
+                String reasonofInterest = (String)poisJSON.get(PERSON_OF_INTEREST_REASON_OF_INTEREST);
+                String avaliableDetails = (String)poisJSON.get(PERSON_OF_INTEREST_AVAILABLE_DETAILS);
+
+                poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, reasonofInterest, avaliableDetails));
+            }
+            return poi;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
