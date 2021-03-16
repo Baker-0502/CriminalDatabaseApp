@@ -5,12 +5,12 @@ public class Criminal extends Person{
     private String fingerPrint;
     private String hairColor;
     private ArrayList<String> clothing;
-    private double footSize;
+    private String footSize;
     private String eyeColor;
     private boolean isAlive;
     private ArrayList<String> tattoos;
 
-public Criminal(String firstName, String lastName, int age, double height, double weight, String phoneNumber, String address, String occupation, String bloodType, String fingerprint, String hairColor, ArrayList<String> clothing, double footSize, String eyeColor, boolean isAlive, ArrayList<String> tattoos)
+public Criminal(String firstName, String lastName, int age, double height, double weight, String phoneNumber, String address, String occupation, String bloodType, String fingerprint, String hairColor, ArrayList<String> clothing, String footSize, String eyeColor, boolean isAlive, ArrayList<String> tattoos)
 {
     super(firstName, lastName, age, height, weight, phoneNumber, address, occupation);
     this.bloodType = bloodType;
@@ -38,7 +38,7 @@ public ArrayList<String> getClothing() {
     return clothing;
 }
 
-public double getFootSize() {
+public String getFootSize() {
     return footSize;
 }
 

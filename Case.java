@@ -33,7 +33,7 @@ public class Case {
     public boolean activeCase(boolean closedCase)
     {
         if(!closedCase){
-            updateCase(updateCase);
+            closedCase = true;
         }
         else{
             closedCase = false;
@@ -47,7 +47,7 @@ public class Case {
 
         if(updateCase){
             updateCase = true;
-            
+
         }
         else{
             updateCase = false;

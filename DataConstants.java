@@ -65,6 +65,7 @@ public abstract class DataConstants {
     protected static final String EVIDENCE_EVIDENCE_ID = "evidenceID";
     protected static final String EVIDENCE_EVIDENCE_TYPE = "evidenceType";
     protected static final String EVIDENCE_LOCATION_FOUND = "locationFound";
+    protected static final String EVIDENCE_RELATION = "relationToPersonID";
     //Cases vars
     protected static final String CASE_ID = "caseID";
     protected static final String CASE_CLOSED_CASE = "closedCase";
