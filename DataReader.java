@@ -16,8 +16,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<adminJSON.size();i++){
                 JSONObject adminsJSON = (JSONObject)adminJSON.get(i);
-                String userID = (String)adminsJSON.get(USER_USER_ID);
-                UUID userID1=UUID.fromString(userID);
+                UUID userID = (UUID)adminsJSON.get(USER_USER_ID);
                 String firstName = (String)adminsJSON.get(USER_FIRST_NAME);
                 String lastName = (String)adminsJSON.get(USER_LAST_NAME);
                 String username = (String)adminsJSON.get(USER_USERNAME);
@@ -25,10 +24,9 @@ public class DataReader extends DataConstants{
                 String email = (String)adminsJSON.get(USER_EMAIL);
                 String phoneNumber = (String)adminsJSON.get(USER_PHONE_NUMBER);
                 String department = (String)adminsJSON.get(USER_DEPARTMENT);
-                String updateCase = (String)adminsJSON.get(ADMINISTRATOR_UPDATE_CASE);
-                boolean updateCase1 = Boolean.parseBoolean(updateCase);
+                boolean updateCase = (boolean)adminsJSON.get(ADMINISTRATOR_UPDATE_CASE);
 
-                admin.add(new Administrator(userID1, firstName, lastName, username, password, email, phoneNumber, department, updateCase1));
+                admin.add(new Administrator(userID, firstName, lastName, username, password, email, phoneNumber, department, updateCase));
             }
 
             return admin;
@@ -49,8 +47,7 @@ public class DataReader extends DataConstants{
                 JSONObject detectivesJSON = (JSONObject)detectiveJSON.get(i);
                 String associate = (String)detectivesJSON.get(DETECTIVE_ASSOCIATE);
                 String department = (String)detectivesJSON.get(USER_DEPARTMENT);
-                String userID = (String)detectivesJSON.get(USER_USER_ID);
-                UUID userID1 = UUID.fromString(userID);
+                UUID userID = (UUID)detectivesJSON.get(USER_USER_ID);
                 String firstName = (String)detectivesJSON.get(USER_FIRST_NAME);
                 String lastName = (String)detectivesJSON.get(USER_LAST_NAME);
                 String username = (String)detectivesJSON.get(USER_USERNAME);
@@ -58,7 +55,7 @@ public class DataReader extends DataConstants{
                 String email = (String)detectivesJSON.get(USER_EMAIL);
                 String phoneNumber = (String)detectivesJSON.get(USER_PHONE_NUMBER);
 
-                detective.add(new Detective(associate, department, userID1, firstName, lastName, username, password, email, phoneNumber));
+                detective.add(new Detective(associate, department, userID, firstName, lastName, username, password, email, phoneNumber));
             }
             return detective;
         }catch(Exception e){
@@ -76,8 +73,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<policeJSON.size();i++){
                 JSONObject policesJSON = (JSONObject)policeJSON.get(i);
-                String userID = (String)policesJSON.get(USER_USER_ID);
-                UUID userID1 = UUID.fromString(userID);
+                UUID userID = (UUID)policesJSON.get(USER_USER_ID);
                 String firstName = (String)policesJSON.get(USER_FIRST_NAME);
                 String lastName = (String)policesJSON.get(USER_LAST_NAME);
                 String username = (String)policesJSON.get(USER_USERNAME);
@@ -86,12 +82,10 @@ public class DataReader extends DataConstants{
                 String phoneNumber = (String)policesJSON.get(USER_PHONE_NUMBER);
                 String department = (String)policesJSON.get(USER_DEPARTMENT);
                 String badgeID = (String)policesJSON.get(POLICEMEN_BADGE_ID);
-                String caseCount = (String)policesJSON.get(POLICEMEN_CASE_COUNT);
-                int caseCount1 = Integer.parseInt(caseCount);
-                String editAccess = (String)policesJSON.get(POLICEMEN_EDIT_ACCESS);
-                boolean editAccess1 = Boolean.parseBoolean(editAccess);
+                int caseCount = (int)policesJSON.get(POLICEMEN_CASE_COUNT);
+                boolean editAccess = (boolean)policesJSON.get(POLICEMEN_EDIT_ACCESS);
 
-                policeOfficer.add(new policeOfficer(userID1, firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount1, editAccess1));
+                policeOfficer.add(new policeOfficer(userID, firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount, editAccess));
             }
             return policeOfficer;
         }catch(Exception e){
@@ -213,6 +207,98 @@ public class DataReader extends DataConstants{
                 poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, reasonofInterest, avaliableDetails));
             }
             return poi;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ArrayList<Suspect> loadSuspect(){
+        ArrayList<Suspect> suspect = new ArrayList<Suspect>();
+        try{
+            FileReader reader = new FileReader(SUSPECTS_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray suspectJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for(int i=0;i<suspectJSON.size();i++){
+                JSONObject suspectsJSON = (JSONObject)suspectJSON.get(i);
+                String firstName = (String)suspectsJSON.get(PERSON_FIRST_NAME);
+                String lastName = (String)suspectsJSON.get(PERSON_LAST_NAME);
+                int age = (int)suspectsJSON.get(PERSON_AGE);
+                double height = (double)suspectsJSON.get(PERSON_HEIGHT);
+                double weight = (double)suspectsJSON.get(PERSON_WEIGHT);
+                String phoneNumber = (String)suspectsJSON.get(PERSON_PHONE_NUMBER);
+                String address = (String)suspectsJSON.get(PERSON_ADDRESS);
+                String occupation = (String)suspectsJSON.get(PERSON_OCCUPATION);
+                String hairColor = (String)suspectsJSON.get(SUSPECT_HAIR_COLOR);
+                String eyeColor = (String)suspectsJSON.get(SUSPECT_EYE_COLOR);
+                String footSize = (String)suspectsJSON.get(SUSPECT_FOOT_SIZE);
+                String bloodType = (String)suspectsJSON.get(SUSPECT_BLOOD_TYPE);
+                String fingerPrint = (String)suspectsJSON.get(SUSPECT_FINGERPRINT);
+                String details = (String)suspectsJSON.get(SUSPECT_DETAILS);
+                ArrayList<String> clothing = (ArrayList<String>)suspectsJSON.get(SUSPECT_CLOTHING);
+
+                suspect.add(new Suspect(firstName, lastName, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing));
+            }
+            return suspect;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ArrayList<Witness> loadWitness(){
+        ArrayList<Witness> witness = new ArrayList<Witness>();
+        try{
+            FileReader reader = new FileReader(WITNESSES_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray witnessJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for(int i=0;i<witnessJSON.size();i++){
+                JSONObject witnessesJSON = (JSONObject)witnessJSON.get(i);
+                String firstName = (String)witnessesJSON.get(PERSON_FIRST_NAME);
+                String lastName = (String)witnessesJSON.get(PERSON_LAST_NAME);
+                int age = (int)witnessesJSON.get(PERSON_AGE);
+                double height = (double)witnessesJSON.get(PERSON_HEIGHT);
+                double weight = (double)witnessesJSON.get(PERSON_WEIGHT);
+                String phoneNumber = (String)witnessesJSON.get(PERSON_PHONE_NUMBER);
+                String address = (String)witnessesJSON.get(PERSON_ADDRESS);
+                String occupation = (String)witnessesJSON.get(PERSON_OCCUPATION);
+                String relationship = (String)witnessesJSON.get(WITNESS_RELATIONSHIP);
+                String statement = (String)witnessesJSON.get(WITNESS_STATEMENT);
+
+                witness.add(new Witness(firstName, lastName, age, height, weight, phoneNumber, address, occupation, relationship, statement));
+            }
+            return witness;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ArrayList<Victim> loadVictim(){
+        ArrayList<Victim> victim = new ArrayList<Victim>();
+        try{
+            FileReader reader = new FileReader(VICTIMS_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray victimJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for(int i=0;i<victimJSON.size();i++){
+                JSONObject victimsJSON = (JSONObject)victimJSON.get(i);
+                String firstName = (String)victimsJSON.get(PERSON_FIRST_NAME);
+                String lastName = (String)victimsJSON.get(PERSON_LAST_NAME);
+                int age = (int)victimsJSON.get(PERSON_AGE);
+                double height = (double)victimsJSON.get(PERSON_HEIGHT);
+                double weight = (double)victimsJSON.get(PERSON_WEIGHT);
+                String phoneNumber = (String)victimsJSON.get(PERSON_PHONE_NUMBER);
+                String address = (String)victimsJSON.get(PERSON_ADDRESS);
+                String occupation = (String)victimsJSON.get(PERSON_OCCUPATION);
+                String relationship = (String)victimsJSON.get(VICTIM_RELATIONSHIP);
+                String statement = (String)victimsJSON.get(VICTIM_STATEMENT);
+
+                victim.add(new Victim(firstName, lastName, age, height, weight, phoneNumber, address, occupation, relationship, statement));
+            }
+            return victim;
         }catch(Exception e){
             e.printStackTrace();
         }
