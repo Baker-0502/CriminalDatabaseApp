@@ -31,6 +31,11 @@ public class DataWriter extends DataConstants {
         for(int i = 0; i < tattoos.size(); i++) {
             tattoosJSON.add(tattoos.get(i));
         }
+        JSONArray clothingJSON = new JSONArray();
+        ArrayList<String> clothing = criminal.getClothing();
+        for(int i = 0; i < clothing.size(); i++) {
+            clothingJSON.add(clothing.get(i));
+        }
         criminalObject.put(PERSON_ID, criminal.getUUID().toString());
         criminalObject.put(PERSON_FIRST_NAME, criminal.getFirstName());
         criminalObject.put(PERSON_LAST_NAME, criminal.getLastName());
@@ -45,7 +50,7 @@ public class DataWriter extends DataConstants {
         criminalObject.put(CRIMINAL_BLOOD_TYPE, criminal.getBloodType());
         criminalObject.put(CRIMINAL_FINGERPRINT, criminal.getFingerPrint());
         criminalObject.put(CRIMINAL_HAIR_COLOR, criminal.getHairColor());
-        criminalObject.put(CRIMINAL_CLOTHING, criminal.getClothing();
+        criminalObject.put(CRIMINAL_CLOTHING, clothingJSON);
         criminalObject.put(CRIMINAL_FOOT_SIZE, criminal.getFootSize());
         criminalObject.put(CRIMINAL_EYE_COLOR, criminal.getEyeColor());
         criminalObject.put(CRIMINAL_IS_ALIVE, criminal.isAlive());
@@ -58,14 +63,14 @@ public class DataWriter extends DataConstants {
     public static void saveVictims() {
         PersonList people = PersonList.getInstance();
         ArrayList<Victim> victims = people.getVictims(); 
-        JSONArray jsonCriminals = new JSONArray();
+        JSONArray jsonVictims = new JSONArray();
 
         for(int i = 0; i < victims.size(); i++) {
-            jsonCriminals.add(getVictimJSON(victims.get(i)));
+            jsonVictims.add(getVictimJSON(victims.get(i)));
         }
 
         try (FileWriter file = new FileWriter(VICTIMS_FILE_NAME)) {
-            file.write(jsonCriminals.toJSONString());
+            file.write(jsonVictims.toJSONString());
             file.flush();
         } 
         catch(IOException e) {
@@ -157,6 +162,11 @@ public class DataWriter extends DataConstants {
 
     public static JSONObject getSuspectJSON(Suspect suspect) {
         JSONObject suspectObject = new JSONObject();
+        JSONArray clothingJSON = new JSONArray();
+        ArrayList<String> clothing = suspect.getClothing();
+        for(int i = 0; i < clothing.size(); i++) {
+            clothingJSON.add(clothing.get(i));
+        }
         
         suspectObject.put(PERSON_ID, suspect.getUUID().toString());
         suspectObject.put(PERSON_FIRST_NAME, suspect.getFirstName());
@@ -169,9 +179,13 @@ public class DataWriter extends DataConstants {
         suspectObject.put(PERSON_PHONE_NUMBER, suspect.getPhoneNumber());
         suspectObject.put(PERSON_ADDRESS, suspect.getAddress());
         suspectObject.put(PERSON_OCCUPATION, suspect.getOccupation());
-        suspectObject.put(VICTIM_RELATIONSHIP, suspect.getRelationship());
-        suspectObject.put(VICTIM_STATEMENT, suspect.getStatement());
-        
+        suspectObject.put(SUSPECT_BLOOD_TYPE, suspect.getBloodType());
+        suspectObject.put(SUSPECT_FINGERPRINT, suspect.getFingerPrint());
+        suspectObject.put(SUSPECT_HAIR_COLOR, suspect.getHairColor());
+        suspectObject.put(SUSPECT_CLOTHING, clothingJSON);
+        suspectObject.put(SUSPECT_FOOT_SIZE, suspect.getFootSize());
+        suspectObject.put(SUSPECT_EYE_COLOR, suspect.getEyeColor());
+        suspectObject.put(SUSPECT_DETAILS, suspect.getDetails());
 
         return suspectObject;
 
