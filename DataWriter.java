@@ -190,4 +190,71 @@ public class DataWriter extends DataConstants {
         return suspectObject;
 
     }
+    public static void saveWitnesss() {
+        PersonList people = PersonList.getInstance();
+        ArrayList<Witness> witnesses = people.getWitnesses(); 
+        JSONArray jsonWitness = new JSONArray();
+
+        for(int i = 0; i < witnesses.size(); i++) {
+            jsonWitness.add(getWitnessJSON(witnesses.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(WITNESSES_FILE_NAME)) {
+            file.write(jsonWitness.toJSONString());
+            file.flush();
+        } 
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getWitnessJSON(Witness witness) {
+        JSONObject witnessObject = new JSONObject();
+        
+        witnessObject.put(PERSON_ID, witness.getUUID().toString());
+        witnessObject.put(PERSON_FIRST_NAME, witness.getFirstName());
+        witnessObject.put(PERSON_LAST_NAME, witness.getLastName());
+        witnessObject.put(PERSON_GENDER, witness.getGender());
+        witnessObject.put(PERSON_RACE, witness.getRace());
+        witnessObject.put(PERSON_AGE, witness.getAge());
+        witnessObject.put(PERSON_HEIGHT, witness.getHeight());
+        witnessObject.put(PERSON_WEIGHT, witness.getWeight());
+        witnessObject.put(PERSON_PHONE_NUMBER, witness.getPhoneNumber());
+        witnessObject.put(PERSON_ADDRESS, witness.getAddress());
+        witnessObject.put(PERSON_OCCUPATION, witness.getOccupation());
+        witnessObject.put(WITNESS_RELATIONSHIP, witness.getRelationship());
+        witnessObject.put(WITNESS_STATEMENT, witness.getStatement());
+        
+
+        return witnessObject;
+
+    }
+
+    public static void saveAdministrators() {
+        PersonList people = UserList.getInstance();
+        ArrayList<Administrator> administrators = users.getAdministrators(); 
+        JSONArray jsonAdministrator = new JSONArray();
+
+        for(int i = 0; i < administrators.size(); i++) {
+            jsonAdministrator.add(getAdministratorJSON(administrators.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(ADMINISTRATOR_FILE_NAME)) {
+            file.write(jsonAdministrator.toJSONString());
+            file.flush();
+        } 
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getAdministratorJSON(Administrator administrator) {
+        JSONObject administratorObject = new JSONObject();
+        
+        
+
+        return administratorObject;
+
+    }
+
 }

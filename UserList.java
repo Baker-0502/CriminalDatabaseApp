@@ -2,10 +2,22 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class UserList {
+    private ArrayList<Administrator> administrators;
+    private ArrayList<Detective> detectives;
+    private ArrayList<policeOfficer> officers;
+    private static UserList userList;
     private User user;
 
-    private UserList(ArrayList<String> User){
-        User = new ArrayList<String>();
+    public UserList() {
+        
+    }
+
+    public static UserList getInstance() {
+        if(userList == null) {
+            userList = new UserList();
+        }
+
+        return userList;
     }
 
     public void makeLogin(){
@@ -16,6 +28,7 @@ public class UserList {
         System.out.println("adding user!");
     }
 
+    //Fix/Implement These!
     public User findUser(UUID User){
         return user;
     }
@@ -36,5 +49,7 @@ public class UserList {
     public User searchID(UUID ID){
         return user;
     }
+
+    
     
 }
