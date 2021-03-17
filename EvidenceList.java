@@ -3,11 +3,28 @@ import java.util.UUID;
 
 public class EvidenceList {
     private ArrayList<Evidence> evidenceList;
+    private static EvidenceList evidenceListObj;
     Evidence evidence;
 
     public EvidenceList(ArrayList<Evidence> evidence)
     {
         evidence = new ArrayList<Evidence>();
+    }
+
+    public EvidenceList() {
+
+    }
+
+    public static EvidenceList getInstance() {
+        if(evidenceListObj == null) {
+            evidenceListObj = new EvidenceList();
+        }
+
+        return evidenceListObj;
+    }
+
+    public ArrayList<Evidence> getEvidence() {
+        return evidenceList;
     }
 
     public Evidence searchID(UUID evidenceID)

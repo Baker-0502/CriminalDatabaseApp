@@ -231,7 +231,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveAdministrators() {
-        PersonList people = UserList.getInstance();
+        UserList users = UserList.getInstance();
         ArrayList<Administrator> administrators = users.getAdministrators(); 
         JSONArray jsonAdministrator = new JSONArray();
 
@@ -251,10 +251,201 @@ public class DataWriter extends DataConstants {
     public static JSONObject getAdministratorJSON(Administrator administrator) {
         JSONObject administratorObject = new JSONObject();
         
-        
+        administratorObject.put(USER_USER_ID, administrator.getUserID().toString());
+        administratorObject.put(USER_FIRST_NAME, administrator.getFirstName());
+        administratorObject.put(USER_LAST_NAME, administrator.getLastName());
+        administratorObject.put(USER_USERNAME, administrator.getUserName());
+        administratorObject.put(USER_PASSWORD, administrator.getPassword());
+        administratorObject.put(USER_EMAIL, administrator.getEmail());
+        administratorObject.put(USER_PHONE_NUMBER, administrator.getPhoneNumber());
+        administratorObject.put(USER_DEPARTMENT, administrator.getDepartment());
+        administratorObject.put(ADMINISTRATOR_UPDATE_CASE, administrator.getUpdateCase());
 
         return administratorObject;
 
     }
+
+    public static void saveDetectives() {
+        UserList users = UserList.getInstance();
+        ArrayList<Detective> detectives = users.getDetectives(); 
+        JSONArray jsonDetective = new JSONArray();
+
+        for(int i = 0; i < detectives.size(); i++) {
+            jsonDetective.add(getDetectiveJSON(detectives.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(DETECTIVES_FILE_NAME)) {
+            file.write(jsonDetective.toJSONString());
+            file.flush();
+        } 
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getDetectiveJSON(Detective detective) {
+        JSONObject detectiveObject = new JSONObject();
+        
+        detectiveObject.put(USER_USER_ID, detective.getUserID().toString());
+        detectiveObject.put(USER_FIRST_NAME, detective.getFirstName());
+        detectiveObject.put(USER_LAST_NAME, detective.getLastName());
+        detectiveObject.put(USER_USERNAME, detective.getUserName());
+        detectiveObject.put(USER_PASSWORD, detective.getPassword());
+        detectiveObject.put(USER_EMAIL, detective.getEmail());
+        detectiveObject.put(USER_PHONE_NUMBER, detective.getPhoneNumber());
+        detectiveObject.put(USER_DEPARTMENT, detective.getDepartment());
+        detectiveObject.put(DETECTIVE_ASSOCIATE, detective.getAssociate());
+
+
+        return detectiveObject;
+
+    }
+
+    public static void savepoliceMans() {
+        UserList users = UserList.getInstance();
+        ArrayList<policeOfficer> policeMen = users.getPoliceOfficers(); 
+        JSONArray jsonPoliceMan = new JSONArray();
+
+        for(int i = 0; i < policeMen.size(); i++) {
+            jsonPoliceMan.add(getPoliceManJSON(policeMen.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(POLICEMEN_FILE_NAME)) {
+            file.write(jsonPoliceMan.toJSONString());
+            file.flush();
+        } 
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getPoliceManJSON(policeOfficer policeMan) {
+        JSONObject policeManObject = new JSONObject();
+        
+        policeManObject.put(USER_USER_ID, policeMan.getUserID().toString());
+        policeManObject.put(USER_FIRST_NAME, policeMan.getFirstName());
+        policeManObject.put(USER_LAST_NAME, policeMan.getLastName());
+        policeManObject.put(USER_USERNAME, policeMan.getUserName());
+        policeManObject.put(USER_PASSWORD, policeMan.getPassword());
+        policeManObject.put(USER_EMAIL, policeMan.getEmail());
+        policeManObject.put(USER_PHONE_NUMBER, policeMan.getPhoneNumber());
+        policeManObject.put(USER_DEPARTMENT, policeMan.getDepartment());
+        policeManObject.put(POLICEMEN_BADGE_ID, policeMan.getBadgeID());
+        policeManObject.put(POLICEMEN_CASE_COUNT, policeMan.getCaseCount());
+        policeManObject.put(POLICEMEN_EDIT_ACCESS, policeMan.getEditAccess());
+
+        return policeManObject;
+
+    }
+
+    public static void saveCases() {
+        CaseList cases = CaseList.getInstance();
+        ArrayList<Case> caseList = cases.getCases(); 
+        JSONArray jsonCase = new JSONArray();
+
+        for(int i = 0; i < caseList.size(); i++) {
+            jsonCase.add(getCaseJSON(caseList.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(CASES_FILE_NAME)) {
+            file.write(jsonCase.toJSONString());
+            file.flush();
+        } 
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getCaseJSON(Case casePass) {
+        JSONObject caseObject = new JSONObject();
+        //Convert Arrays into JSON Arrays.
+        JSONArray userWorkingJSON = new JSONArray();
+        ArrayList<User> userWorking = casePass.getUserWorking();
+        for(int i = 0; i < userWorking.size(); i++) {
+            userWorkingJSON.add(userWorking.get(i).getUserID().toString());
+        }
+        JSONArray suspectsJSON = new JSONArray();
+        ArrayList<Suspect> suspects = casePass.getSuspects();
+        for(int i = 0; i < suspects.size(); i++) {
+            suspectsJSON.add(suspects.get(i).getUUID().toString());
+        }
+        JSONArray witnessJSON = new JSONArray();
+        ArrayList<Witness> witnesses = casePass.getWitnesses();
+        for(int i = 0; i < witnesses.size(); i++) {
+            witnessJSON.add(witnesses.get(i).getUUID().toString());
+        }
+        
+		caseObject.put(CASE_ID, casePass.getCaseID());
+        caseObject.put(CASE_CLOSED_CASE, casePass.getClosedCase());
+        caseObject.put(CASE_NAME, casePass.getCaseName());
+        caseObject.put(CASE_UPDATE_CASE, casePass.getUpdateCase());
+        caseObject.put(CASE_FEDERAL_CASE, casePass.getFederalCase());
+        caseObject.put(CASE_MISDEMEANOR, casePass.getMisdimeanor());
+        caseObject.put(CASE_CATEGORY, casePass.getCategory().toString());
+        caseObject.put(CASE_USER_WORKING, userWorkingJSON);
+        caseObject.put(CASE_SUSPECTS, suspectsJSON);
+        caseObject.put(CASE_WITNESSES, witnessJSON);
+        caseObject.put(CASE_EVIDENCE_LIST, casePass.getEvidenceList().toString());
+
+        return caseObject;
+
+    }
+
+    public static void saveEvidences() {
+        EvidenceList evidenceList = EvidenceList.getInstance();
+        ArrayList<Evidence> evidence = evidenceList.getEvidence();
+        JSONArray jsonEvidence = new JSONArray();
+
+        for(int i = 0; i < evidence.size(); i++) {
+            jsonEvidence.add(getEvidenceJSON(evidence.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(EVIDENCE_FILE_NAME)) {
+            file.write(jsonEvidence.toJSONString());
+            file.flush();
+        } 
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getEvidenceJSON(Evidence evidence) {
+        JSONObject evidenceObject = new JSONObject();
+        
+		evidenceObject.put(EVIDENCE_EVIDENCE_ID, evidence.getEvidenceID().toString());
+        evidenceObject.put(EVIDENCE_EVIDENCE_TYPE, evidence.getEvidenceType());
+        evidenceObject.put(EVIDENCE_LOCATION_FOUND, evidence.getLocationFound());
+        evidenceObject.put(EVIDENCE_RELATION, evidence.getRelationToPerson().toString());
+
+        return evidenceObject;
+
+    }
+
+    //DEBUG ZONE
+    /* 
+    public static void saveEvidencesTEST() {
+        //EvidenceList evidenceList = EvidenceList.getInstance();
+        DataReader testReader = new DataReader();
+        ArrayList<Evidence> evidence = (ArrayList<Evidence>)testReader.loadEvidence().clone();
+        System.out.println(evidence.toString());
+        JSONArray jsonEvidence = new JSONArray();
+
+        for(int i = 0; i < evidence.size(); i++) {
+            jsonEvidence.add(getEvidenceJSON(evidence.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter("json/Test.json")) {
+            file.write(jsonEvidence.toJSONString());
+            file.flush();
+        } 
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        saveEvidences();
+    }
+    */
 
 }

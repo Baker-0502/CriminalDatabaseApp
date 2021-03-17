@@ -12,10 +12,10 @@ public class Case {
     private ArrayList<User> userWorking;
     private ArrayList<Suspect> suspects;
     private ArrayList<Witness> witness;
-    private ArrayList<EvidenceList> evidenceList;
+    private UUID evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
-    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<EvidenceList> evidenceList)
+    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, UUID evidenceList)
     {
         this.caseID = caseID;
         this.closedCase = closedCase;
@@ -99,6 +99,22 @@ public class Case {
     public Category getCategory()
     {
         return category;
+    }
+
+    public ArrayList<User> getUserWorking() {
+        return userWorking;
+    }
+
+    public ArrayList<Suspect> getSuspects() {
+        return suspects;
+    }
+
+    public ArrayList<Witness> getWitnesses() {
+        return witness;
+    }
+
+    public UUID getEvidenceList() {
+        return evidenceList;
     }
 
     public void createFile()

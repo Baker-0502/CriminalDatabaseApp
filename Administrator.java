@@ -25,6 +25,9 @@ public class Administrator extends User{
     public void updateCase(boolean updateCase){
         updateCase = true;
     }
+    public boolean getUpdateCase() {
+        return updateCase;
+    }
     public String toString(){
         return "Name: " + getFirstName() + " " + getLastName();
     }

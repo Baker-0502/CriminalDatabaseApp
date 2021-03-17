@@ -46,6 +46,10 @@ public abstract class User {
         this.firstName = firstName;
     }
 
+    public UUID getUserID() {
+        return userID;
+    }
+
     public String getFirstName() {
         return firstName;
     }

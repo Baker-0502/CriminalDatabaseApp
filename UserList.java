@@ -20,6 +20,18 @@ public class UserList {
         return userList;
     }
 
+    public ArrayList<Administrator> getAdministrators() {
+        return administrators;
+    }
+
+    public ArrayList<Detective> getDetectives() {
+        return detectives;
+    }
+
+    public ArrayList<policeOfficer> getPoliceOfficers() {
+        return officers;
+    }
+
     public void makeLogin(){
         System.out.println("making login");
     }

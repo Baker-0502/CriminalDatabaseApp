@@ -14,6 +14,9 @@ public class Evidence {
         this.relationToPersonID = relationToPersonID;
     }
 
+    public UUID getUUID() {
+        return evidenceID;
+    }
     public String getEvidenceType()
     {
         return evidenceType;

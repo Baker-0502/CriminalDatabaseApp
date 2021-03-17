@@ -30,6 +30,10 @@ public class Detective extends User{
         this.department = department;
     }
 
+    public String getAssociate() {
+        return associate;
+    }
+
     public String toString(){
         return department + associate;
     }
