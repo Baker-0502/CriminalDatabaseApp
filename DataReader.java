@@ -168,7 +168,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<evidenceJSON.size();i++){
                 JSONObject evidencesJSON = (JSONObject)evidenceJSON.get(i);
-                UUID evidenceID = (UUID)evidencesJSON.get(EVIDENCE_EVIDENCE_ID);
+                UUID evidenceID = UUID.fromString((String)evidencesJSON.get(EVIDENCE_EVIDENCE_ID));
                 String evidenceType = (String)evidencesJSON.get(EVIDENCE_EVIDENCE_TYPE);
                 String locationFound = (String)evidencesJSON.get(EVIDENCE_LOCATION_FOUND);
                 UUID relationToPersonID = (UUID)evidencesJSON.get(EVIDENCE_RELATION);

@@ -415,18 +415,18 @@ public class DataWriter extends DataConstants {
 		evidenceObject.put(EVIDENCE_EVIDENCE_ID, evidence.getEvidenceID().toString());
         evidenceObject.put(EVIDENCE_EVIDENCE_TYPE, evidence.getEvidenceType());
         evidenceObject.put(EVIDENCE_LOCATION_FOUND, evidence.getLocationFound());
-        evidenceObject.put(EVIDENCE_RELATION, evidence.getRelationToPerson().toString());
+        //evidenceObject.put(EVIDENCE_RELATION, evidence.getRelationToPerson().toString());
 
         return evidenceObject;
 
     }
 
     //DEBUG ZONE
-    /* 
+    
     public static void saveEvidencesTEST() {
         //EvidenceList evidenceList = EvidenceList.getInstance();
         DataReader testReader = new DataReader();
-        ArrayList<Evidence> evidence = (ArrayList<Evidence>)testReader.loadEvidence().clone();
+        ArrayList<Evidence> evidence = DataReader.loadEvidence();
         System.out.println(evidence.toString());
         JSONArray jsonEvidence = new JSONArray();
 
@@ -444,8 +444,8 @@ public class DataWriter extends DataConstants {
     }
 
     public static void main(String[] args) {
-        saveEvidences();
+        saveEvidencesTEST();
     }
-    */
+    
 
 }
