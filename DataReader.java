@@ -1,6 +1,8 @@
 import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -146,11 +148,11 @@ public class DataReader extends DataConstants{
                 String bloodType = (String)criminalsJSON.get(CRIMINAL_BLOOD_TYPE);
                 String fingerprint = (String)criminalsJSON.get(CRIMINAL_FINGERPRINT);
                 String hairColor = (String)criminalsJSON.get(CRIMINAL_HAIR_COLOR);
-                ArrayList<String> clothing = (ArrayList<String>)criminalsJSON.get(CRIMINAL_CLOTHING);
+                ArrayList<String> clothing = parseArr((JSONArray)criminalsJSON.get(CRIMINAL_CLOTHING));
                 String footSize = (String)criminalsJSON.get(CRIMINAL_FOOT_SIZE);
                 String eyeColor = (String)criminalsJSON.get(CRIMINAL_EYE_COLOR);
                 boolean isAlive = Boolean.parseBoolean((String)criminalsJSON.get(CRIMINAL_IS_ALIVE));
-                ArrayList<String> tattoos = (ArrayList<String>)criminalsJSON.get(PERSON_FIRST_NAME);
+                ArrayList<String> tattoos = parseArr((JSONArray)criminalsJSON.get(CRIMINAL_TATTOOS));
 
                 criminal.add(new Criminal(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, bloodType, fingerprint, hairColor, clothing, footSize, eyeColor, isAlive, tattoos));
             }
@@ -241,7 +243,7 @@ public class DataReader extends DataConstants{
                 String bloodType = (String)suspectsJSON.get(SUSPECT_BLOOD_TYPE);
                 String fingerPrint = (String)suspectsJSON.get(SUSPECT_FINGERPRINT);
                 String details = (String)suspectsJSON.get(SUSPECT_DETAILS);
-                ArrayList<String> clothing = (ArrayList<String>)suspectsJSON.get(SUSPECT_CLOTHING);
+                ArrayList<String> clothing = parseArr((JSONArray)suspectsJSON.get(SUSPECT_CLOTHING));
 
                 suspect.add(new Suspect(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing));
             }
@@ -314,18 +316,59 @@ public class DataReader extends DataConstants{
         return null;
     }
 
-    /*
-    public static ArrayList<String> parseArr(String jArray) {
+    public static ArrayList<String> parseArr(JSONArray jArray) {
         ArrayList<String> ret = new ArrayList<String>();
-        for (int i = 0; i < jArray.size(); i++) {
-              ret.add(jArray.get(i).toString());
-        } 
-        return ret;
+        if(jArray != null){
+            for (int i = 0; i < jArray.size(); i++) {
+                ret.add(jArray.get(i).toString());
+            } 
+        }
+        return ret; 
     }
-    */
+
+    public static ArrayList<User> parseArrUser(JSONArray jArray) {
+        ArrayList<User> ret = new ArrayList<User>();
+        if(jArray != null){
+            for (int i = 0; i < jArray.size(); i++) {
+                ret.add(jArray.get(i).toString());
+            } 
+        }
+        return ret; 
+    }
+
+    public static ArrayList<Suspect> parseArrSuspect(JSONArray jArray) {
+        ArrayList<Suspect> ret = new ArrayList<Suspect>();
+        if(jArray != null){
+            for (int i = 0; i < jArray.size(); i++) {
+                ret.add(jArray.get(i).toString());
+            } 
+        }
+        return ret; 
+    }
+
+    public static ArrayList<Witness> parseArrWitness(JSONArray jArray) {
+        ArrayList<Witness> ret = new ArrayList<Witness>();
+        if(jArray != null){
+            for (int i = 0; i < jArray.size(); i++) {
+                ret.add(jArray.get(i).toString());
+            } 
+        }
+        return ret; 
+    }
+
+    public static ArrayList<Evidence> parseArrEvidence(JSONArray jArray) {
+        ArrayList<Evidence> ret = new ArrayList<Evidence>();
+        if(jArray != null){
+            for (int i = 0; i < jArray.size(); i++) {
+                ret.add(jArray.get(i).toString());
+            } 
+        }
+        return ret; 
+    }
+    
     
 
     public static void main(String args[]){
-        System.out.println(loadAdmins());
+        System.out.println(loadSuspect());
     }
 }
