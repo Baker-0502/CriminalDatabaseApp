@@ -8,7 +8,7 @@
         "email": "bobd@gmail.com",
         "phoneNumber": "8432569867",
         "department": "LA",
-        "upateCase": true
+        "upateCase": "true"
 
     },{
         "userID": "702f0f38-4301-4d9f-b23f-1b31a61518c6",
@@ -19,7 +19,7 @@
         "email": "tobydakid1!@gmail.com",
         "phoneNumber": "4536759864",
         "department": "Nevada",
-        "updateCase": true
+        "updateCase": "true"
     },{
         "userID": "84a8bae8-004c-431b-9e8e-b5d841b656ad",
         "firstName": "Dora",
@@ -29,6 +29,6 @@
         "email": "dora.collier@hotmail.com",
         "phoneNumber": "9999999999",
         "department": "SC",
-        "updateCase": true
+        "updateCase": "true"
     }
 ]

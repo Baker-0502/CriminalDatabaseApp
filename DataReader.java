@@ -24,7 +24,7 @@ public class DataReader extends DataConstants{
                 String email = (String)adminsJSON.get(USER_EMAIL);
                 String phoneNumber = (String)adminsJSON.get(USER_PHONE_NUMBER);
                 String department = (String)adminsJSON.get(USER_DEPARTMENT);
-                boolean updateCase = (boolean)adminsJSON.get(ADMINISTRATOR_UPDATE_CASE);
+                boolean updateCase = Boolean.parseBoolean((String)adminsJSON.get(ADMINISTRATOR_UPDATE_CASE));
 
                 admin.add(new Administrator(userID, firstName, lastName, username, password, email, phoneNumber, department, updateCase));
             }
