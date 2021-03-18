@@ -151,6 +151,7 @@ public class DataWriter extends DataConstants {
     public static void saveSuspects() {
         PersonList people = PersonList.getInstance();
         ArrayList<Suspect> suspects = DataReader.loadSuspect();
+        //System.out.println(suspects);
         //ArrayList<Suspect> suspects = people.getSuspects(); 
         JSONArray jsonSuspects = new JSONArray();
 
@@ -171,8 +172,10 @@ public class DataWriter extends DataConstants {
         JSONObject suspectObject = new JSONObject();
         JSONArray clothingJSON = new JSONArray();
         ArrayList<String> clothing = suspect.getClothing();
-        for(int i = 0; i < clothing.size(); i++) {
-            clothingJSON.add(clothing.get(i));
+        if(clothing != null) {
+            for(int i = 0; i < clothing.size(); i++) {
+                clothingJSON.add(clothing.get(i));
+            }
         }
         
         suspectObject.put(PERSON_ID, suspect.getUUID().toString());
@@ -375,18 +378,24 @@ public class DataWriter extends DataConstants {
         //TODO fix back into user array
         //Currently using string array until methods are compiled
         ArrayList<User> userWorking = casePass.getUserWorking();
-        for(int i = 0; i < userWorking.size(); i++) {
-            userWorkingJSON.add(userWorking.get(i).getUserID().toString());
+        if(userWorking != null) {
+            for(int i = 0; i < userWorking.size(); i++) {
+                userWorkingJSON.add(userWorking.get(i).getUserID().toString());
+            }
         }
         JSONArray suspectsJSON = new JSONArray();
         ArrayList<Suspect> suspects = casePass.getSuspects();
-        for(int i = 0; i < suspects.size(); i++) {
-            suspectsJSON.add(suspects.get(i).getUUID().toString());
+        if(suspects != null) {
+            for(int i = 0; i < suspects.size(); i++) {
+                suspectsJSON.add(suspects.get(i).getUUID().toString());
+            }
         }
         JSONArray witnessJSON = new JSONArray();
         ArrayList<Witness> witnesses = casePass.getWitnesses();
-        for(int i = 0; i < witnesses.size(); i++) {
-            witnessJSON.add(witnesses.get(i).getUUID().toString());
+        if(casePass != null) {
+            for(int i = 0; i < witnesses.size(); i++) {
+                witnessJSON.add(witnesses.get(i).getUUID().toString());
+            }
         }
         
 		caseObject.put(CASE_ID, casePass.getCaseID());
@@ -443,11 +452,11 @@ public class DataWriter extends DataConstants {
     public static void main(String[] args) {
         //saveAdministrators();
         //saveCases();
-        saveCriminals();
+        //saveCriminals();
         //saveDetectives();
         //saveEvidences();
         //savePOI();
-        //saveSuspects();
+        saveSuspects();
         //saveVictims();
         //saveWitnesss();
         //savepoliceMans();

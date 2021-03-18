@@ -10,8 +10,19 @@ public class PersonList {
     private static PersonList personList = null;
 
 
-    public PersonList() {
-        
+    private PersonList() {
+        this.criminalList = DataReader.loadCriminal();
+        this.witnessList = DataReader.loadWitness();
+        this.suspectList = DataReader.loadSuspect();
+        this.victimList = DataReader.loadVictim();
+        this.poiList = DataReader.loadPOI();
+    }
+
+    public PersonList createPersonList() {
+        if(personList == null) {
+            personList = new PersonList();
+        }
+        return personList;
     }
 
     public static PersonList getInstance() {
