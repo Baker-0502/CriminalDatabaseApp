@@ -8,19 +8,19 @@ public class Administrator extends User{
     }
 
     public void addCase(String caseName){
-        System.out.print("Case" + caseName + "Added!");
+        caseName = "case";
     }
     public void addCriminal(String criminalName){
-        System.out.print("Criminal," + criminalName + "Added!");
+       criminalName = "name";
     }
     public void addPolice(String policeName){
-        System.out.print("Police Officer, " + policeName + " Added!");
+        policeName = "name";
     }
     public void addDetective(String detectiveName){
-        System.out.print("Detective, " + detectiveName + " Added!");
+        detectiveName = "name";
     }
     public void caseName(String caseName){
-        ;
+        
     }
     public void updateCase(boolean updateCase){
         updateCase = true;
