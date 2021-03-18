@@ -18,19 +18,40 @@ public class PersonList {
         this.poiList = DataReader.loadPOI();
     }
 
-    public PersonList createPersonList() {
+    public static PersonList getInstance() {
         if(personList == null) {
             personList = new PersonList();
         }
         return personList;
     }
 
-    public static PersonList getInstance() {
-        if(personList == null) {
-            personList = new PersonList();
+    public Person findPerson(UUID id){
+        for (int i = 0; i < criminalList.size(); i++) {
+            if (criminalList.get(i).equals(id)) {
+                return criminalList.get(i);
+            }
         }
-
-        return personList;
+        for (int i = 0; i < witnessList.size(); i++) {
+            if (witnessList.get(i).equals(id)) {
+                return witnessList.get(i);
+            }
+        }
+        for (int i = 0; i < suspectList.size(); i++) {
+            if (suspectList.get(i).equals(id)) {
+                return suspectList.get(i);
+            }
+        }
+        for (int i = 0; i < victimList.size(); i++) {
+            if (victimList.get(i).equals(id)) {
+                return victimList.get(i);
+            }
+        }
+        for (int i = 0; i < poiList.size(); i++) {
+            if (poiList.get(i).equals(id)) {
+                return poiList.get(i);
+            }
+        }
+        return null;
     }
 
     public ArrayList<Criminal> getCriminals() {
@@ -52,6 +73,7 @@ public class PersonList {
     public ArrayList<PersonOfInterest> getPersonsOfInterests() {
         return poiList;
     }
+    
 
 
 }

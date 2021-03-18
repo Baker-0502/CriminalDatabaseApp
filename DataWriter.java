@@ -6,6 +6,7 @@ import javax.xml.crypto.Data;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import java.util.UUID;
 
 public class DataWriter extends DataConstants {
     
@@ -456,10 +457,15 @@ public class DataWriter extends DataConstants {
         //saveDetectives();
         //saveEvidences();
         //savePOI();
-        saveSuspects();
+        //saveSuspects();
         //saveVictims();
         //saveWitnesss();
         //savepoliceMans();
+
+        //Test FindPerson()
+        PersonList newList = PersonList.getInstance();
+        UUID testID = UUID.fromString("b8132e6c-6edc-442a-bae2-284e53cb495f");
+        System.out.println(newList.findPerson(testID).toString());
     }
     
 
