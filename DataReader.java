@@ -346,7 +346,7 @@ public class DataReader extends DataConstants{
         return ret; 
     }
 
-    public static ArrayList<Witness> parseArr(JSONArray jArray) {
+    public static ArrayList<Witness> parseArrWitness(JSONArray jArray) {
         ArrayList<Witness> ret = new ArrayList<Witness>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
@@ -356,7 +356,7 @@ public class DataReader extends DataConstants{
         return ret; 
     }
 
-    public static ArrayList<Evidence> parseArr(JSONArray jArray) {
+    public static ArrayList<Evidence> parseArrEvidence(JSONArray jArray) {
         ArrayList<Evidence> ret = new ArrayList<Evidence>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
