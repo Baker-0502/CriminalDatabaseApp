@@ -112,7 +112,7 @@ public class DataReader extends DataConstants{
                 boolean federalCase = Boolean.parseBoolean((String)casesJSON.get(CASE_FEDERAL_CASE));
                 boolean misdimeanor = Boolean.parseBoolean((String)casesJSON.get(CASE_MISDEMEANOR));
                 Category category = Category.valueOf((String)casesJSON.get(CASE_CATEGORY));
-                ArrayList<User> userWorking = (ArrayList<User>)casesJSON.get(CASE_USER_WORKING);
+                ArrayList<User> userWorking = parseArrUser((JSONArray)casesJSON.get(CASE_USER_WORKING));
                 ArrayList<Suspect> suspects = (ArrayList<Suspect>)casesJSON.get(CASE_SUSPECTS);
                 ArrayList<Witness> witnesses = (ArrayList<Witness>)casesJSON.get(CASE_WITNESSES);
                 ArrayList<Evidence> evidenceList = (ArrayList<Evidence>)casesJSON.get(CASE_EVIDENCE_LIST);
@@ -135,6 +135,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<criminalJSON.size();i++){
                 JSONObject criminalsJSON = (JSONObject)criminalJSON.get(i);
+                UUID personID = UUID.fromString((String)criminalsJSON.get(PERSON_ID));
                 String firstName = (String)criminalsJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String)criminalsJSON.get(PERSON_LAST_NAME);
                 String gender = (String)criminalsJSON.get(PERSON_GENDER);
@@ -154,7 +155,7 @@ public class DataReader extends DataConstants{
                 boolean isAlive = Boolean.parseBoolean((String)criminalsJSON.get(CRIMINAL_IS_ALIVE));
                 ArrayList<String> tattoos = parseArr((JSONArray)criminalsJSON.get(CRIMINAL_TATTOOS));
 
-                criminal.add(new Criminal(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, bloodType, fingerprint, hairColor, clothing, footSize, eyeColor, isAlive, tattoos));
+                criminal.add(new Criminal(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, bloodType, fingerprint, hairColor, clothing, footSize, eyeColor, isAlive, tattoos));
             }
             return criminal;
         }catch(Exception e){
@@ -194,6 +195,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<poiJSON.size();i++){
                 JSONObject poisJSON = (JSONObject)poiJSON.get(i);
+                UUID personID = UUID.fromString((String)poisJSON.get(PERSON_ID));
                 String firstName = (String)poisJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String)poisJSON.get(PERSON_LAST_NAME);
                 String gender = (String)poisJSON.get(PERSON_GENDER);
@@ -209,7 +211,7 @@ public class DataReader extends DataConstants{
                 String reasonofInterest = (String)poisJSON.get(PERSON_OF_INTEREST_REASON_OF_INTEREST);
                 String avaliableDetails = (String)poisJSON.get(PERSON_OF_INTEREST_AVAILABLE_DETAILS);
 
-                poi.add(new PersonOfInterest(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, reasonofInterest, avaliableDetails));
+                poi.add(new PersonOfInterest(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, reasonofInterest, avaliableDetails));
             }
             return poi;
         }catch(Exception e){
@@ -227,6 +229,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<suspectJSON.size();i++){
                 JSONObject suspectsJSON = (JSONObject)suspectJSON.get(i);
+                UUID personID = UUID.fromString((String)suspectsJSON.get(PERSON_ID));
                 String firstName = (String)suspectsJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String)suspectsJSON.get(PERSON_LAST_NAME);
                 String gender = (String)suspectsJSON.get(PERSON_GENDER);
@@ -245,7 +248,7 @@ public class DataReader extends DataConstants{
                 String details = (String)suspectsJSON.get(SUSPECT_DETAILS);
                 ArrayList<String> clothing = parseArr((JSONArray)suspectsJSON.get(SUSPECT_CLOTHING));
 
-                suspect.add(new Suspect(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing));
+                suspect.add(new Suspect(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing));
             }
             return suspect;
         }catch(Exception e){
@@ -263,6 +266,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<witnessJSON.size();i++){
                 JSONObject witnessesJSON = (JSONObject)witnessJSON.get(i);
+                UUID personID = UUID.fromString((String)witnessesJSON.get(PERSON_ID));
                 String firstName = (String)witnessesJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String)witnessesJSON.get(PERSON_LAST_NAME);
                 String gender = (String)witnessesJSON.get(PERSON_GENDER);
@@ -276,7 +280,7 @@ public class DataReader extends DataConstants{
                 String relationship = (String)witnessesJSON.get(WITNESS_RELATIONSHIP);
                 String statement = (String)witnessesJSON.get(WITNESS_STATEMENT);
 
-                witness.add(new Witness(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement));
+                witness.add(new Witness(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement));
             }
             return witness;
         }catch(Exception e){
@@ -294,6 +298,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<victimJSON.size();i++){
                 JSONObject victimsJSON = (JSONObject)victimJSON.get(i);
+                UUID personID = UUID.fromString((String)victimsJSON.get(PERSON_ID));
                 String firstName = (String)victimsJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String)victimsJSON.get(PERSON_LAST_NAME);
                 String gender = (String)victimsJSON.get(PERSON_GENDER);
@@ -307,7 +312,7 @@ public class DataReader extends DataConstants{
                 String relationship = (String)victimsJSON.get(VICTIM_RELATIONSHIP);
                 String statement = (String)victimsJSON.get(VICTIM_STATEMENT);
 
-                victim.add(new Victim(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement));
+                victim.add(new Victim(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement));
             }
             return victim;
         }catch(Exception e){
@@ -323,14 +328,14 @@ public class DataReader extends DataConstants{
                 ret.add(jArray.get(i).toString());
             } 
         }
-        return ret; 
+        return ret;
     }
 
     public static ArrayList<User> parseArrUser(JSONArray jArray) {
         ArrayList<User> ret = new ArrayList<User>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
-                ret.add(jArray.get(i).toString());
+                ret.add(jArray.get(i));
             } 
         }
         return ret; 
