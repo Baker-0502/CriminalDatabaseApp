@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.UUID;
-import java.util.Scanner;
 
 public abstract class User {
     private UUID userID;
@@ -11,7 +9,6 @@ public abstract class User {
     private String email;
     private String phoneNumber;
     private String department;
-    static Scanner sc = new Scanner(System.in);
 
     public User(UUID userID, String firstName, String lastName, String userName, String password, String email, String phoneNumber, String department)
     {
