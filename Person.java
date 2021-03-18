@@ -73,7 +73,7 @@ public class Person {
     }
 
     public String toString() {
-        return "Person ID: "+personID+"\nFirst Name: "+firstName+"\nLast Name: "+lastName+"\nGender: "+gender+"\nRace: "+race+"\nLast Name: "+lastName+"\nAge: "+age+"\nHeight: "+
+        return "Person ID: "+personID+"\nFirst Name: "+firstName+"\nLast Name: "+lastName+"\nGender: "+gender+"\nRace: "+race+"\nAge: "+age+"\nHeight: "+
         height+"\nWeight: "+weight+"\nPhone Number: "+phoneNumber+"\nAddress: "+address+"\nOccupation: "+occupation;
     }
 }
