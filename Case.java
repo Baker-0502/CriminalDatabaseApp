@@ -12,7 +12,7 @@ public class Case {
     private ArrayList<User> userWorking;
     private ArrayList<Suspect> suspects;
     private ArrayList<Witness> witness;
-    private UUID evidenceList;
+    private ArrayList<Evidence> evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
     Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList)
