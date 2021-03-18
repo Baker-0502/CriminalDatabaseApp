@@ -1,27 +1,27 @@
 [
     {
         "caseID": "16bdf265-ac3f-4981-870d-be83693d195e",
-        "closedCase": false,
+        "closedCase": "false",
         "caseName": "The Hash Slinging Slasher",
-        "updateCase": true,
-        "federalCase": false,
-        "misdemeanor": true,
-        "category": "Level 1 Crime",
-        "userWorking": [1,3],
-        "suspects": [1],
-        "witnesses": [2,3],
-        "evidenceList": [1,3,4]
+        "updateCase": "true",
+        "federalCase": "false",
+        "misdemeanor": "true",
+        "category": "ROBBERY",
+        "userWorking": ["5e2fbf77-8406-4ef7-a567-36daeb808430","48d384bf-f11f-4062-99df-11583454571e"],
+        "suspects": ["b8132e6c-6edc-442a-bae2-284e53cb495f"],
+        "witnesses": ["e81f06f2-4834-42e0-9c5f-4dee082c1569","6c12b3e6-8525-4562-abf5-0b335a5e7853"],
+        "evidenceList": ["d400cf43-a072-4e88-a725-2ee3c3fbda40","58e17e76-edde-4f6d-b6a2-d69cbc3cd8c1","8e762149-9714-43c8-80ae-fb968ab6e644"]
     },{
         "caseID": "bdb1f052-2801-43d2-862a-ed96dba8d642",
-        "closedCase": true,
+        "closedCase": "true",
         "caseName": "Dissapearence of Julio Jackson",
-        "updateCase": false,
-        "federalCase": true,
-        "misdemeanor": false,
-        "category": "Level 3 Crime",
-        "userWorking": [1,2,4],
-        "suspects": [3],
+        "updateCase": "false",
+        "federalCase": "true",
+        "misdemeanor": "false",
+        "category": "HOMICIDE",
+        "userWorking": ["d19e45bc-3b9a-44c6-a6de-6d5c77f6b236","5fd7100c-4e3b-4721-a460-bc777ababaa3","48d384bf-f11f-4062-99df-11583454571e"],
+        "suspects": ["8351ff8f-ee7c-41be-aad7-e4abcab823cd"],
         "witnesses": [],
-        "evidenceList": [2]
+        "evidenceList": ["58e17e76-edde-4f6d-b6a2-d69cbc3cd8c1"]
     }
 ]

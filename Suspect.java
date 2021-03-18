@@ -9,9 +9,9 @@ public class Suspect extends Person{
     private String details;
     private ArrayList<String> clothing;
 
-    public Suspect(String firstName, String lastName, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing)
+    public Suspect(String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing)
     {
-        super(firstName, lastName, age, height, weight, phoneNumber, address, occupation);
+        super(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation);
         this.hairColor = hairColor;
         this.eyeColor = eyeColor;
         this.footSize = footSize;
@@ -47,5 +47,10 @@ public class Suspect extends Person{
 
     public ArrayList<String> getClothing() {
         return clothing;
+    }
+
+    public String toString(){
+        return super.toString()+"\nHair Color: "+hairColor+"\nEye Color: "+eyeColor+"\nFoot Size: "+footSize+
+        "\nBlood Type: "+bloodType+"\nFinger Print: "+fingerPrint+"\nDetails: "+details+"\nClothing: "+clothing+"\n";
     }
 }

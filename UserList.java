@@ -2,10 +2,34 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class UserList {
+    private ArrayList<Administrator> administrators;
+    private ArrayList<Detective> detectives;
+    private ArrayList<policeOfficer> officers;
+    private static UserList userList;
     private User user;
 
-    private UserList(ArrayList<String> User){
-        User = new ArrayList<String>();
+    public UserList() {
+        
+    }
+
+    public static UserList getInstance() {
+        if(userList == null) {
+            userList = new UserList();
+        }
+
+        return userList;
+    }
+
+    public ArrayList<Administrator> getAdministrators() {
+        return administrators;
+    }
+
+    public ArrayList<Detective> getDetectives() {
+        return detectives;
+    }
+
+    public ArrayList<policeOfficer> getPoliceOfficers() {
+        return officers;
     }
 
     public void makeLogin(){
@@ -16,8 +40,24 @@ public class UserList {
         System.out.println("adding user!");
     }
 
-    public User findUser(UUID User){
-        return user;
+    //Fix/Implement These!
+    public User findUser(UUID id){
+        for (int i = 0; i < administrators.size(); i++) {
+            if (administrators.get(i).equals(id)) {
+                return administrators.get(i);
+            }
+        }
+        for (int i = 0; i < detectives.size(); i++) {
+            if (detectives.get(i).equals(id)) {
+                return detectives.get(i);
+            }
+        }
+        for (int i = 0; i < officers.size(); i++) {
+            if (officers.get(i).equals(id)) {
+                return officers.get(i);
+            }
+        }
+        return null;
     }
 
     public User findUserName(String userName)
@@ -36,5 +76,7 @@ public class UserList {
     public User searchID(UUID ID){
         return user;
     }
+
+    
     
 }

@@ -6,14 +6,16 @@ public class Evidence {
     private String locationFound;
     private UUID relationToPersonID;
 
-    public Evidence(UUID evidenceID, String evidenceType, String locationFound, UUID relationToPersonID)
+    public Evidence(UUID evidenceID, String evidenceType, String locationFound)
     {
         this.evidenceID = evidenceID;
         this.evidenceType = evidenceType;
         this.locationFound = locationFound;
-        this.relationToPersonID = relationToPersonID;
     }
 
+    public UUID getUUID() {
+        return evidenceID;
+    }
     public String getEvidenceType()
     {
         return evidenceType;
@@ -22,11 +24,6 @@ public class Evidence {
     public String getLocationFound()
     {
         return locationFound;
-    }
-
-    public UUID getRelationToPerson()
-    {
-        return relationToPersonID;
     }
 
     public UUID getEvidenceID()

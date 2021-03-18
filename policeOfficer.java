@@ -43,8 +43,17 @@ public class policeOfficer extends User{
     {
         editAccess = false;
     }
+    public String getBadgeID() {
+        return badgeID;
+    }
+    public int getCaseCount() {
+        return caseCount;
+    }
+    public boolean getEditAccess() {
+        return editAccess;
+    }
     public String toString(){
-        return badgeID + caseCount + editAccess + getFirstName() + getLastName();
+        return super.toString()+"\nBadge ID: "+badgeID+"\nCase Count: "+caseCount+"\nEdit Access: "+editAccess+"\n";
     }
    
 }

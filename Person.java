@@ -12,10 +12,12 @@ public class Person {
     private String address;
     private String occupation;
 
-    public Person(String firstName, String lastName, int age, double height, double weight, String phoneNumber, String address, String occupation)
+    public Person(String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation)
     {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.gender = gender;
+        this.race = race;
         this.age = age;
         this.height = height;
         this.weight = weight;
@@ -70,7 +72,7 @@ public class Person {
     }
 
     public String toString() {
-        return "First Name: "+firstName+"\nLast Name: "+lastName+"\nAge: "+age+"\nHeight: "+
+        return "First Name: "+firstName+"\nLast Name: "+"\nGender: "+gender+"\nRace: "+race+"\nLast Name: "+lastName+"\nAge: "+age+"\nHeight: "+
         height+"\nWeight: "+weight+"\nPhone Number: "+phoneNumber+"\nAddress: "+address+"\nOccupation: "+occupation;
     }
 }
