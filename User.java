@@ -109,7 +109,7 @@ public abstract class User {
         return department;
     }
 
-    public String getLoginInfo() {
+    public String toString() {
         return "UserName: "+userName+"\nPassword: "+password+"\nUser ID: "+userID+"\nEmail: "+email+"\nPhone Number: "+phoneNumber+
         "\nDepartment: "+department;
     }

@@ -4,9 +4,9 @@ public class PersonOfInterest extends Person{
     private String reasonofInterest;
     private String avaliableDetails;
 
-public PersonOfInterest(String firstName, String lastName, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String reasonofInterest, String avaliableDetails)
+public PersonOfInterest(String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String reasonofInterest, String avaliableDetails)
 {
-    super(firstName, lastName, age, height, weight, phoneNumber, address, occupation);
+    super(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation);
     this.hairColor = hairColor;
     this.eyeColor = eyeColor;
     this.reasonofInterest = reasonofInterest;

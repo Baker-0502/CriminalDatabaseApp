@@ -10,9 +10,9 @@ public class Criminal extends Person{
     private boolean isAlive;
     private ArrayList<String> tattoos;
 
-public Criminal(String firstName, String lastName, int age, double height, double weight, String phoneNumber, String address, String occupation, String bloodType, String fingerprint, String hairColor, ArrayList<String> clothing, String footSize, String eyeColor, boolean isAlive, ArrayList<String> tattoos)
+public Criminal(String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String bloodType, String fingerprint, String hairColor, ArrayList<String> clothing, String footSize, String eyeColor, boolean isAlive, ArrayList<String> tattoos)
 {
-    super(firstName, lastName, age, height, weight, phoneNumber, address, occupation);
+    super(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation);
     this.bloodType = bloodType;
     this.fingerPrint = fingerprint;
     this.hairColor = hairColor;
