@@ -314,6 +314,16 @@ public class DataReader extends DataConstants{
         return null;
     }
 
+    /*
+    public static ArrayList<String> parseArr(String jArray) {
+        ArrayList<String> ret = new ArrayList<String>();
+        for (int i = 0; i < jArray.size(); i++) {
+              ret.add(jArray.get(i).toString());
+        } 
+        return ret;
+    }
+    */
+    
     public static void main(String args[]){
         System.out.println(loadAdmins());
     }

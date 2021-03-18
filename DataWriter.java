@@ -372,6 +372,8 @@ public class DataWriter extends DataConstants {
         JSONObject caseObject = new JSONObject();
         //Convert Arrays into JSON Arrays.
         JSONArray userWorkingJSON = new JSONArray();
+        //TODO fix back into user array
+        //Currently using string array until methods are compiled
         ArrayList<User> userWorking = casePass.getUserWorking();
         for(int i = 0; i < userWorking.size(); i++) {
             userWorkingJSON.add(userWorking.get(i).getUserID().toString());
@@ -439,7 +441,16 @@ public class DataWriter extends DataConstants {
     
 
     public static void main(String[] args) {
-        saveAdministrators();
+        //saveAdministrators();
+        //saveCases();
+        saveCriminals();
+        //saveDetectives();
+        //saveEvidences();
+        //savePOI();
+        //saveSuspects();
+        //saveVictims();
+        //saveWitnesss();
+        //savepoliceMans();
     }
     
 
