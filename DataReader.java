@@ -16,7 +16,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<adminJSON.size();i++){
                 JSONObject adminsJSON = (JSONObject)adminJSON.get(i);
-                UUID userID = (UUID)adminsJSON.get(USER_USER_ID);
+                UUID userID = UUID.fromString((String)adminsJSON.get(USER_USER_ID));
                 String firstName = (String)adminsJSON.get(USER_FIRST_NAME);
                 String lastName = (String)adminsJSON.get(USER_LAST_NAME);
                 String username = (String)adminsJSON.get(USER_USERNAME);
@@ -47,7 +47,7 @@ public class DataReader extends DataConstants{
                 JSONObject detectivesJSON = (JSONObject)detectiveJSON.get(i);
                 String associate = (String)detectivesJSON.get(DETECTIVE_ASSOCIATE);
                 String department = (String)detectivesJSON.get(USER_DEPARTMENT);
-                UUID userID = (UUID)detectivesJSON.get(USER_USER_ID);
+                UUID userID = UUID.fromString((String)detectivesJSON.get(USER_USER_ID));
                 String firstName = (String)detectivesJSON.get(USER_FIRST_NAME);
                 String lastName = (String)detectivesJSON.get(USER_LAST_NAME);
                 String username = (String)detectivesJSON.get(USER_USERNAME);
@@ -73,7 +73,7 @@ public class DataReader extends DataConstants{
 
             for(int i=0;i<policeJSON.size();i++){
                 JSONObject policesJSON = (JSONObject)policeJSON.get(i);
-                UUID userID = (UUID)policesJSON.get(USER_USER_ID);
+                UUID userID = UUID.fromString((String)policesJSON.get(USER_USER_ID));
                 String firstName = (String)policesJSON.get(USER_FIRST_NAME);
                 String lastName = (String)policesJSON.get(USER_LAST_NAME);
                 String username = (String)policesJSON.get(USER_USERNAME);
@@ -82,7 +82,7 @@ public class DataReader extends DataConstants{
                 String phoneNumber = (String)policesJSON.get(USER_PHONE_NUMBER);
                 String department = (String)policesJSON.get(USER_DEPARTMENT);
                 String badgeID = (String)policesJSON.get(POLICEMEN_BADGE_ID);
-                int caseCount = (int)policesJSON.get(POLICEMEN_CASE_COUNT);
+                int caseCount = ((Number)policesJSON.get(POLICEMEN_CASE_COUNT)).intValue();
                 boolean editAccess = (boolean)policesJSON.get(POLICEMEN_EDIT_ACCESS);
 
                 policeOfficer.add(new policeOfficer(userID, firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount, editAccess));
@@ -135,9 +135,9 @@ public class DataReader extends DataConstants{
                 JSONObject criminalsJSON = (JSONObject)criminalJSON.get(i);
                 String firstName = (String)criminalsJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String)criminalsJSON.get(PERSON_LAST_NAME);
-                int age = (int)criminalsJSON.get(PERSON_AGE);
-                double height = (double)criminalsJSON.get(PERSON_HEIGHT);
-                double weight = (double)criminalsJSON.get(PERSON_WEIGHT);
+                int age = ((Number)criminalsJSON.get(PERSON_AGE)).intValue();
+                double height = ((Number)criminalsJSON.get(PERSON_HEIGHT)).doubleValue();
+                double weight = ((Number)criminalsJSON.get(PERSON_WEIGHT)).doubleValue();
                 String phoneNumber = (String)criminalsJSON.get(PERSON_PHONE_NUMBER);
                 String address = (String)criminalsJSON.get(PERSON_ADDRESS);
                 String occupation = (String)criminalsJSON.get(PERSON_OCCUPATION);
@@ -171,9 +171,8 @@ public class DataReader extends DataConstants{
                 UUID evidenceID = UUID.fromString((String)evidencesJSON.get(EVIDENCE_EVIDENCE_ID));
                 String evidenceType = (String)evidencesJSON.get(EVIDENCE_EVIDENCE_TYPE);
                 String locationFound = (String)evidencesJSON.get(EVIDENCE_LOCATION_FOUND);
-                UUID relationToPersonID = (UUID)evidencesJSON.get(EVIDENCE_RELATION);
 
-                evidence.add(new Evidence(evidenceID, evidenceType, locationFound, relationToPersonID));
+                evidence.add(new Evidence(evidenceID, evidenceType, locationFound));
             }
             return evidence;
         }catch(Exception e){
@@ -306,6 +305,14 @@ public class DataReader extends DataConstants{
     }
 
     public static void main(String args[]){
+        System.out.println(loadAdmins());
+        System.out.println(loadPoliceOfficer());
         System.out.println(loadCase());
+        System.out.println(loadCriminal());
+        System.out.println(loadEvidence());
+        System.out.println(loadPOI());
+        System.out.println(loadSuspect());
+        System.out.println(loadWitness());
+        System.out.println(loadVictim());
     }
 }
