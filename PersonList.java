@@ -11,7 +11,7 @@ public class PersonList {
 
 
     public PersonList() {
-        
+        this.criminalList = DataReader.loadCriminal();
     }
 
     public static PersonList getInstance() {
