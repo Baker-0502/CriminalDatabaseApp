@@ -41,8 +41,23 @@ public class UserList {
     }
 
     //Fix/Implement These!
-    public User findUser(UUID User){
-        return user;
+    public User findUser(UUID id){
+        for (int i = 0; i < administrators.size(); i++) {
+            if (administrators.get(i).equals(id)) {
+                return administrators.get(i);
+            }
+        }
+        for (int i = 0; i < detectives.size(); i++) {
+            if (detectives.get(i).equals(id)) {
+                return detectives.get(i);
+            }
+        }
+        for (int i = 0; i < officers.size(); i++) {
+            if (officers.get(i).equals(id)) {
+                return officers.get(i);
+            }
+        }
+
     }
 
     public User findUserName(String userName)
