@@ -53,7 +53,7 @@ public class policeOfficer extends User{
         return editAccess;
     }
     public String toString(){
-        return badgeID + caseCount + editAccess + getFirstName() + getLastName();
+        return super.toString()+"\nBadge ID: "+badgeID+"\nCase Count: "+caseCount+"\nEdit Access: "+editAccess+"\n";
     }
    
 }

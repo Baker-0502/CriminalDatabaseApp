@@ -35,6 +35,6 @@ public class Detective extends User{
     }
 
     public String toString(){
-        return department + associate;
+        return super.toString()+"\nDepartment: "+department+"\nAssociate: "+associate+"\n";
     }
 }

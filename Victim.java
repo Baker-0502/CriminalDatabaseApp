@@ -13,8 +13,21 @@ public String getRelationship() {
     return relationship;
 }
 
+public void setRelationship(String relationship)
+{
+    this.relationship = relationship;
+}
+
 public String getStatement() {
     return statement;
 }
 
+public void setStatement(String statement)
+{
+    this.statement = statement;
+}
+
+public String toString(){
+    return super.toString() + "\nRelationship: "+relationship+"\nStatement: "+statement+"\n";
+}
 }

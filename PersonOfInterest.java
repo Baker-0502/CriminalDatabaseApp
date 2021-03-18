@@ -28,4 +28,9 @@ public String getReasonofInterest() {
 public String getAvaliableDetails() {
     return avaliableDetails;
 }
+
+public String toString(){
+    return super.toString()+"\nHair Color: "+hairColor+"\nEye Color: "+eyeColor+"\nReason of Interest: "
+    +reasonofInterest+"\nAvaliable Details: "+avaliableDetails+"\n";
+}
 }

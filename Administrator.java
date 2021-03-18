@@ -29,7 +29,7 @@ public class Administrator extends User{
         return updateCase;
     }
     public String toString(){
-        return "Name: " + getFirstName() + " " + getLastName();
+        return super.toString()+"\nUpdate Case: "+updateCase+"\n";
     }
 
     

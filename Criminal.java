@@ -50,12 +50,13 @@ public boolean isAlive() {
     return isAlive;
 }
 
-public String toString() {
-    return bloodType+fingerPrint+hairColor+clothing+footSize+eyeColor+isAlive+tattoos;
-}
-
 public ArrayList<String> getTattoos(){
     return this.tattoos;
+}
+
+public String toString(){
+    return super.toString()+"\nBlood Type: "+bloodType+"\nFinger Print: "+fingerPrint+"\nHair Color: "+hairColor+"\nClothing: "+clothing+
+    "\nFoot Size: "+footSize+"\nEye Color: "+eyeColor+"\nAlive: "+isAlive+"\nTattoos: "+tattoos+"\n";
 }
 
 

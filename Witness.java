@@ -17,4 +17,8 @@ public String getStatement() {
     return statement;
 }
 
+public String toString(){
+    return super.toString() + "\nRelationship: "+relationship+"\nStatement: "+statement+"\n";
+}
+
 }

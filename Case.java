@@ -15,7 +15,7 @@ public class Case {
     private UUID evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
-    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, UUID evidenceList)
+    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList)
     {
         this.caseID = caseID;
         this.closedCase = closedCase;
@@ -113,7 +113,7 @@ public class Case {
         return witness;
     }
 
-    public UUID getEvidenceList() {
+    public ArrayList<Evidence> getEvidenceList() {
         return evidenceList;
     }
 
@@ -126,4 +126,10 @@ public class Case {
     {
         filepath = "File";
     }
+
+    public String toString(){
+        return "Case ID: "+caseID+"\nActive Case: "+closedCase+"\nCase Name: "+caseName+"\nUpdate Case: "+updateCase+"\nUpdate Federal Case: "+federalCase+
+        "\nMisdimeanor: "+misdimeanor+"\nCategory: "+category+"\nUser Working: "+userWorking+"\nSuspects: "+suspects+"\nWintesses: "+witness+
+        "\nEvidence List: "+evidenceList+"\n";
+    } 
 }

@@ -48,4 +48,9 @@ public class Suspect extends Person{
     public ArrayList<String> getClothing() {
         return clothing;
     }
+
+    public String toString(){
+        return super.toString()+"\nHair Color: "+hairColor+"\nEye Color: "+eyeColor+"\nFoot Size: "+footSize+
+        "\nBlood Type: "+bloodType+"\nFinger Print: "+fingerPrint+"\nDetails: "+details+"\nClothing: "+clothing+"\n";
+    }
 }
