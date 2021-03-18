@@ -8,16 +8,16 @@ public class Administrator extends User{
     }
 
     public void addCase(String caseName){
-        caseName = "case";
+        
     }
     public void addCriminal(String criminalName){
        criminalName = "name";
     }
     public void addPolice(String policeName){
-        policeName = "name";
+        CriminalDatabaseApplication.createPolice(userID, policeName, policeName, policeName, policeName, policeName, policeName, policeName, policeName, 0, updateCase, null);
     }
     public void addDetective(String detectiveName){
-        detectiveName = "name";
+        CriminalDatabaseApplication.createDetective(detectiveName, detectiveName, userID, detectiveName, detectiveName, detectiveName, detectiveName, detectiveName, detectiveName, null);
     }
     public void caseName(String caseName){
         
