@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Suspect extends Person{
     private String hairColor;
@@ -9,9 +10,9 @@ public class Suspect extends Person{
     private String details;
     private ArrayList<String> clothing;
 
-    public Suspect(String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing)
+    public Suspect(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing)
     {
-        super(firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation);
+        super(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation);
         this.hairColor = hairColor;
         this.eyeColor = eyeColor;
         this.footSize = footSize;
