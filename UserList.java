@@ -57,7 +57,7 @@ public class UserList {
                 return officers.get(i);
             }
         }
-
+        return null;
     }
 
     public User findUserName(String userName)
