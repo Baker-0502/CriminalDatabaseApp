@@ -12,7 +12,7 @@ public class EvidenceList {
     }
 
     public EvidenceList() {
-
+        this.evidenceList = DataReader.loadEvidence();
     }
 
     public static EvidenceList getInstance() {
@@ -27,7 +27,7 @@ public class EvidenceList {
         return evidenceList;
     }
 
-    public Evidence searchID(UUID evidenceID)
+    public Evidence findEvidence(UUID evidenceID)
     {
         for(Evidence evidence: evidenceList)
         {

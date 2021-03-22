@@ -2,6 +2,7 @@ import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.lang.reflect.Type;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -113,9 +114,9 @@ public class DataReader extends DataConstants{
                 boolean misdimeanor = Boolean.parseBoolean((String)casesJSON.get(CASE_MISDEMEANOR));
                 Category category = Category.valueOf((String)casesJSON.get(CASE_CATEGORY));
                 ArrayList<User> userWorking = parseArrUser((JSONArray)casesJSON.get(CASE_USER_WORKING));
-                ArrayList<Suspect> suspects = (ArrayList<Suspect>)casesJSON.get(CASE_SUSPECTS);
-                ArrayList<Witness> witnesses = (ArrayList<Witness>)casesJSON.get(CASE_WITNESSES);
-                ArrayList<Evidence> evidenceList = (ArrayList<Evidence>)casesJSON.get(CASE_EVIDENCE_LIST);
+                ArrayList<Suspect> suspects = parseArrSuspect((JSONArray)casesJSON.get(CASE_SUSPECTS));
+                ArrayList<Witness> witnesses = parseArrWitness((JSONArray)casesJSON.get(CASE_WITNESSES));
+                ArrayList<Evidence> evidenceList = parseArrEvidence((JSONArray)casesJSON.get(CASE_EVIDENCE_LIST));
 
                 Case.add(new Case(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witnesses, evidenceList));
             }
@@ -335,7 +336,9 @@ public class DataReader extends DataConstants{
         ArrayList<User> ret = new ArrayList<User>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
-                ret.add(jArray.get(i));
+                UUID userID = UUID.fromString((String)jArray.get(i));
+                User user = UserList.getInstance().findUser(userID);
+                ret.add(user);
             } 
         }
         return ret; 
@@ -345,7 +348,9 @@ public class DataReader extends DataConstants{
         ArrayList<Suspect> ret = new ArrayList<Suspect>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
-                ret.add(jArray.get(i).toString());
+                UUID userID = UUID.fromString((String)jArray.get(i));
+                Suspect suspect = SuspectList.getInstance().findSuspect(userID);
+                ret.add(suspect);
             } 
         }
         return ret; 
@@ -355,7 +360,9 @@ public class DataReader extends DataConstants{
         ArrayList<Witness> ret = new ArrayList<Witness>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
-                ret.add(jArray.get(i).toString());
+                UUID userID = UUID.fromString((String)jArray.get(i));
+                Witness witness = WitnessList.getInstance().findWitness(userID);
+                ret.add(witness);
             } 
         }
         return ret; 
@@ -365,7 +372,9 @@ public class DataReader extends DataConstants{
         ArrayList<Evidence> ret = new ArrayList<Evidence>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
-                ret.add(jArray.get(i).toString());
+                UUID evidenceID = UUID.fromString((String)jArray.get(i));
+                Evidence evidence = EvidenceList.getInstance().findEvidence(evidenceID);
+                ret.add(evidence);
             } 
         }
         return ret; 

@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CriminalUI {
-    private CriminalDatabaseApplication application;
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
     private String[] mainMenuOptions = {"Create Account","Login","Exit"};
     private boolean quit;
 
     public void run(){
-        application = CriminalDatabaseApplication.getInstance();
+        CriminalDatabaseApplication application = CriminalDatabaseApplication.getInstance();
         System.out.println(WELCOME_MESSAGE);
         quit = true;
         while(quit){

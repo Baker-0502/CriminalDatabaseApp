@@ -8,7 +8,7 @@ public class CaseList {
         caseList = new ArrayList<String>();
     }
     public CaseList() {
-        //Depending on implementation of reader and database, we may eventually not need a parametrized constructor.
+        this.caseList = DataReader.loadCase();
     }
 
     public static CaseList getInstance() {

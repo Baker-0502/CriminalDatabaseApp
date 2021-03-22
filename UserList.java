@@ -9,7 +9,7 @@ public class UserList {
     private User user;
 
     public UserList() {
-        
+        //ArrayList<User> user = DataReader.loadCase();
     }
 
     public static UserList getInstance() {

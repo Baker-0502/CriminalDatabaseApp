@@ -1,21 +1,26 @@
 import java.util.UUID;
 
 public class CriminalDatabaseApplication {
-    private CaseList caseList;
-    private UserList userList;
-    private PersonList personList;
-    private User user;
+    private static CaseList caseList;
+    private static UserList userList;
+    private static PersonList personList;
+    private static User user;
+    private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        this.caseList = caseList;
-        this.userList = userList;
-        this.personList = personList;
-        this.user = user;
+        CriminalDatabaseApplication.caseList = caseList;
+        CriminalDatabaseApplication.userList = userList;
+        CriminalDatabaseApplication.personList = personList;
+        CriminalDatabaseApplication.user = user;
     }
 
     //Please Implement! Thank you!
-    public CriminalDatabaseApplication getInstance() {
-        
+    public static CriminalDatabaseApplication getInstance() {
+        if (criminalDatabaseApplication == null){
+            System.out.println("Creating a Criminal Database Application");
+            criminalDatabaseApplication = new CriminalDatabaseApplication(caseList, userList, personList, user);
+        }
+        return criminalDatabaseApplication;
     }
 
     public User createAdmin(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase, User user)
