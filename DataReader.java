@@ -22,14 +22,14 @@ public class DataReader extends DataConstants{
                 UUID userID = UUID.fromString((String)adminsJSON.get(USER_USER_ID));
                 String firstName = (String)adminsJSON.get(USER_FIRST_NAME);
                 String lastName = (String)adminsJSON.get(USER_LAST_NAME);
-                String username = (String)adminsJSON.get(USER_USERNAME);
+                String userName = (String)adminsJSON.get(USER_USERNAME);
                 String password = (String)adminsJSON.get(USER_PASSWORD);
                 String email = (String)adminsJSON.get(USER_EMAIL);
                 String phoneNumber = (String)adminsJSON.get(USER_PHONE_NUMBER);
                 String department = (String)adminsJSON.get(USER_DEPARTMENT);
                 boolean updateCase = Boolean.parseBoolean((String)adminsJSON.get(ADMINISTRATOR_UPDATE_CASE));
 
-                admin.add(new Administrator(userID, firstName, lastName, username, password, email, phoneNumber, department, updateCase));
+                admin.add(new Administrator(userID, firstName, lastName, userName, password, email, phoneNumber, department, updateCase));
             }
 
             return admin;
@@ -53,12 +53,12 @@ public class DataReader extends DataConstants{
                 UUID userID = UUID.fromString((String)detectivesJSON.get(USER_USER_ID));
                 String firstName = (String)detectivesJSON.get(USER_FIRST_NAME);
                 String lastName = (String)detectivesJSON.get(USER_LAST_NAME);
-                String username = (String)detectivesJSON.get(USER_USERNAME);
+                String userName = (String)detectivesJSON.get(USER_USERNAME);
                 String password = (String)detectivesJSON.get(USER_PASSWORD);
                 String email = (String)detectivesJSON.get(USER_EMAIL);
                 String phoneNumber = (String)detectivesJSON.get(USER_PHONE_NUMBER);
 
-                detective.add(new Detective(associate, department, userID, firstName, lastName, username, password, email, phoneNumber));
+                detective.add(new Detective(associate, department, userID, firstName, lastName, userName, password, email, phoneNumber));
             }
             return detective;
         }catch(Exception e){
@@ -79,7 +79,7 @@ public class DataReader extends DataConstants{
                 UUID userID = UUID.fromString((String)policesJSON.get(USER_USER_ID));
                 String firstName = (String)policesJSON.get(USER_FIRST_NAME);
                 String lastName = (String)policesJSON.get(USER_LAST_NAME);
-                String username = (String)policesJSON.get(USER_USERNAME);
+                String userName = (String)policesJSON.get(USER_USERNAME);
                 String password = (String)policesJSON.get(USER_PASSWORD);
                 String email = (String)policesJSON.get(USER_EMAIL);
                 String phoneNumber = (String)policesJSON.get(USER_PHONE_NUMBER);
@@ -88,7 +88,7 @@ public class DataReader extends DataConstants{
                 int caseCount = ((Number)policesJSON.get(POLICEMEN_CASE_COUNT)).intValue();
                 boolean editAccess = Boolean.parseBoolean((String)policesJSON.get(POLICEMEN_EDIT_ACCESS));
 
-                policeOfficer.add(new policeOfficer(userID, firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount, editAccess));
+                policeOfficer.add(new policeOfficer(userID, firstName, lastName, userName, password, email, phoneNumber, department, badgeID, caseCount, editAccess));
             }
             return policeOfficer;
         }catch(Exception e){
@@ -383,19 +383,19 @@ public class DataReader extends DataConstants{
     
 
     public static void main(String args[]){
-        UserList test = UserList.getInstance();
-        ArrayList<policeOfficer> officers = loadPoliceOfficer();
-        ArrayList<Detective> detectives = loadDetective();
-        ArrayList<Administrator> administrator = loadAdmins();
-        for(int i = 0; i < officers.size(); i++) {
-            test.addPolice(officers.get(i));
-        }
-        for(int i = 0; i < detectives.size(); i++) {
-            test.addDetective(detectives.get(i));
-        }
-        for(int i = 0; i < administrator.size(); i++) {
-            test.addAdmin(administrator.get(i));
-        }
-        System.out.println(loadCase());
+            UserList test = UserList.getInstance();
+            ArrayList<policeOfficer> officers = loadPoliceOfficer();
+            ArrayList<Detective> detectives = loadDetective();
+            ArrayList<Administrator> administrator = loadAdmins();
+            for(int i = 0; i < officers.size(); i++) {
+                test.addPolice(officers.get(i));
+            }
+            for(int i = 0; i < detectives.size(); i++) {
+                test.addDetective(detectives.get(i));
+            }
+            for(int i = 0; i < administrator.size(); i++) {
+                test.addAdmin(administrator.get(i));
+            }
+        System.out.println(loadPoliceOfficer());
     }
 }
