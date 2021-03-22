@@ -23,22 +23,23 @@ public class CriminalDatabaseApplication {
         return criminalDatabaseApplication;
     }
 
-    public User createAdmin(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase, User user)
+    public void createAdmin(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase, User user)
     {
-        return userList.add(new Administrator(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, updateCase));
+        Administrator admin = new Administrator(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, updateCase);
+        userList.addAdmin(admin);
     }
 
-    public User createPolice(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String badgeID, int caseCount, boolean editAccess, Object object)
+    public void createPolice(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String badgeID, int caseCount, boolean editAccess, Object object)
     {
-        return new policeOfficer(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount, editAccess);
+        policeOfficer policeofficer = new policeOfficer(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount, editAccess);
+        userList.addPolice(policeofficer);
     }
 
 
-    public Detective createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, User user)
+    public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, User user)
     {
        Detective detective = new Detective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
        userList.addDetective(detective);
-       return detective;
     }
 
 
@@ -48,10 +49,4 @@ public class CriminalDatabaseApplication {
         return user;
     }
 
-    public static void createPolice(UUID userID, String firstName, String lastName, String username, String password,
-            String email, String phoneNumber, String department, String badgeID, int i, boolean updateCase) {
-    }
-    public static void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber){
-        
-    }
 }
