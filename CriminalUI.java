@@ -102,7 +102,20 @@ public class CriminalUI {
     }
 
     public void addAdmin() {
-
+        String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", };
+        ArrayList<String> wordsArr = new ArrayList<>(Arrays.asList(words));
+        ArrayList<String> inputs = new ArrayList<String>();
+        for(int i = 0; i < wordsArr.size(); i++) {
+            System.out.println(wordsArr.get(i) + ":");
+            inputs.add(readIn.nextLine());
+        }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String username = inputs.get(2);
+        String password = inputs.get(3);
+        String email = inputs.get(4);
+        String phoneNumber = inputs.get(5);
+        String department = inputs.get(6);
     }
 
     //private void add

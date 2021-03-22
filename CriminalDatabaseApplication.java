@@ -36,9 +36,6 @@ public class CriminalDatabaseApplication {
         userList.addPolice(policeofficer);
     }
 
-<<<<<<< HEAD
-    public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber)
-=======
     public void createCase(String caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor, Category category, ArrayList<User> userWorking,
             ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList){
         Case case =  new Case(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witness, evidenceList);
@@ -52,7 +49,6 @@ public class CriminalDatabaseApplication {
 
 
     public void createDetective(UUID id, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String associate)
->>>>>>> 5c783289cfedc51a0bfea1dfc7601c1f31f03af2
     {
        Detective detective = new Detective(associate, department, id, firstName, lastName, username, password, email, phoneNumber);
        userList.addDetective(detective);
