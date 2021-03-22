@@ -42,10 +42,10 @@ public class CriminalDatabaseApplication {
         caseList.addCase(case);
     }
 
-    public void createWitness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){
-        Witness witness = new Witness(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement);
-        caseList.addWitness(witness);
-    }
+    //public void createWitness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){
+     //   Witness witness = new Witness(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement);
+     //   caseList.addWitness(witness);
+    //}
 
 
     public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber)

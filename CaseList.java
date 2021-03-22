@@ -36,4 +36,9 @@ public class CaseList {
             caseList.add(newCase);
         }
     }
+   // public void addWitness(Witness newWitness){
+   //     if(newWitness!=null){
+    //        caseList.add(newWitness);
+     //   }
+   // }
 }
