@@ -383,6 +383,10 @@ public class DataReader extends DataConstants{
     
 
     public static void main(String args[]){
-        System.out.println(loadPOI());
+        UserList test = UserList.getInstance();
+        ArrayList<policeOfficer>
+        ArrayList<Detective>
+        ArrayList<Administrator>
+        System.out.println(loadCase());
     }
 }

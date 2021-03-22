@@ -11,7 +11,6 @@ public class CriminalUI {
     private boolean quit;
 
     public void run(){
-        CriminalDatabaseApplication application = CriminalDatabaseApplication.getInstance();
         System.out.println(WELCOME_MESSAGE);
         quit = true;
         while(quit){
