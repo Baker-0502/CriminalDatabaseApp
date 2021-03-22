@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class CaseList {
     private ArrayList<Case> caseList;
     private static CaseList caseListObj;
+    private ArrayList<Witness> witnesses = new ArrayList<Witness>();
+    private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
 
     public CaseList(ArrayList<String> caseList){
         caseList = new ArrayList<String>();
@@ -36,9 +38,16 @@ public class CaseList {
             caseList.add(newCase);
         }
     }
-   // public void addWitness(Witness newWitness){
-   //     if(newWitness!=null){
-    //        caseList.add(newWitness);
-     //   }
-   // }
+
+    public void addWitness(Witness newWitness){
+        if(newWitness!=null){
+            witnesses.add(newWitness);
+        }
+    }
+
+    public void addCriminal(Criminal newCriminal){
+        if(newCriminal!=null){
+            criminals.add(newCriminal);
+        }
+    }
 }
