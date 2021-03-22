@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class CriminalDatabaseApplication {
@@ -23,7 +24,7 @@ public class CriminalDatabaseApplication {
         return criminalDatabaseApplication;
     }
 
-    public void createAdmin(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase, User user)
+    public void createAdmin(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase)
     {
         Administrator admin = new Administrator(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, updateCase);
         userList.addAdmin(admin);
@@ -35,8 +36,14 @@ public class CriminalDatabaseApplication {
         userList.addPolice(policeofficer);
     }
 
+    public void createCase(String caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor, Category category, ArrayList<User> userWorking,
+            ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList){
+        Case case =  new Case(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witness, evidenceList);
+        caseList.addCase(case);
+        }
 
-    public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, User user)
+
+    public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber)
     {
        Detective detective = new Detective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
        userList.addDetective(detective);

@@ -30,4 +30,10 @@ public class CaseList {
     public Case searchByKeyword(String keyword){
         return caseList.get(0);
     }
+
+    public void addCase(Case newCase){
+        if(newCase!=null){
+            caseList.add(newCase);
+        }
+    }
 }
