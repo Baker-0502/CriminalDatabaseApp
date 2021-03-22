@@ -36,23 +36,7 @@ public class CriminalDatabaseApplication {
         userList.addPolice(policeofficer);
     }
 
-<<<<<<< HEAD
     public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber)
-=======
-    public void createCase(String caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor, Category category, ArrayList<User> userWorking,
-            ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList){
-        Case case =  new Case(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witness, evidenceList);
-        caseList.addCase(case);
-    }
-
-    //public void createWitness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){
-     //   Witness witness = new Witness(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement);
-     //   caseList.addWitness(witness);
-    //}
-
-
-    public void createDetective(UUID id, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String associate)
->>>>>>> 5c783289cfedc51a0bfea1dfc7601c1f31f03af2
     {
        Detective detective = new Detective(associate, department, id, firstName, lastName, username, password, email, phoneNumber);
        userList.addDetective(detective);
@@ -74,6 +58,23 @@ public class CriminalDatabaseApplication {
     public void createWitness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){
         Witness witness = new Witness(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement);
         caseList.addWitness(witness);
+    }
+
+    public void createVictim(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){
+        Victim victim = new Victim(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement);
+        caseList.addVictim(victim);
+    }
+
+    public void createSuspect(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, 
+    String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing){
+        Suspect suspect = new Suspect(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing);
+        caseList.addSuspect(suspect);
+    }
+
+    public void createPOI(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor,
+    String eyeColor, String reasonofInterest, String avaliableDetails){
+        PersonOfInterest poi = new PersonOfInterest(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, reasonofInterest, avaliableDetails);
+        caseList.addPOI(poi);
     }
 
 
