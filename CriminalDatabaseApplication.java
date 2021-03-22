@@ -48,9 +48,9 @@ public class CriminalDatabaseApplication {
     //}
 
 
-    public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber)
+    public void createDetective(UUID id, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String associate)
     {
-       Detective detective = new Detective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
+       Detective detective = new Detective(associate, department, id, firstName, lastName, username, password, email, phoneNumber);
        userList.addDetective(detective);
     }
 
