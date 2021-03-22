@@ -17,7 +17,7 @@
         "clothing": ["Blue Hoodie"],
         "footSize": "10M",
         "eyeColor": "Red",
-        "isAlive": true,
+        "isAlive": "true",
         "tattoos": []
     },{
         "personID": "45880058-9b1b-4128-8986-8e2d304a4588",
@@ -37,7 +37,7 @@
         "clothing": ["Red Shirt", "Blue Jeans", "Metal Ring"],
         "footSize": "12M",
         "eyeColor": "Blue",
-        "isAlive": false,
+        "isAlive": "false",
         "tattoos": ["left shoulder, heart tattoo"]
     }
 ]

@@ -10,6 +10,7 @@ public abstract class DataConstants {
     protected static final String SUSPECTS_FILE_NAME = "json/Suspects.json";
     protected static final String VICTIMS_FILE_NAME = "json/Victims.json";
     protected static final String WITNESSES_FILE_NAME = "json/Witnesses.json";
+    protected static final String TEST_FILE_NAME = "json/Test.json";
     //User vars are used by Admins, Detectives, and Officers.
     protected static final String USER_USER_ID = "userID";
     protected static final String USER_FIRST_NAME = "firstName";

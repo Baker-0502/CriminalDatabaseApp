@@ -8,25 +8,28 @@ public class Administrator extends User{
     }
 
     public void addCase(String caseName){
-        System.out.print("Case" + caseName + "Added!");
+        
     }
     public void addCriminal(String criminalName){
-        System.out.print("Criminal," + criminalName + "Added!");
+       criminalName = "name";
     }
     public void addPolice(String policeName){
-        System.out.print("Police Officer, " + policeName + " Added!");
+        CriminalDatabaseApplication.createPolice(userID, policeName, policeName, policeName, policeName, policeName, policeName, policeName, policeName, 0, updateCase, null);
     }
     public void addDetective(String detectiveName){
-        System.out.print("Detective, " + detectiveName + " Added!");
+        CriminalDatabaseApplication.createDetective(detectiveName, detectiveName, userID, detectiveName, detectiveName, detectiveName, detectiveName, detectiveName, detectiveName, null);
     }
     public void caseName(String caseName){
-        ;
+        
     }
     public void updateCase(boolean updateCase){
         updateCase = true;
     }
+    public boolean getUpdateCase() {
+        return updateCase;
+    }
     public String toString(){
-        return "Name: " + getFirstName() + " " + getLastName();
+        return super.toString()+"\nUpdate Case: "+updateCase+"\n";
     }
 
     

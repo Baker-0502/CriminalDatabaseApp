@@ -30,7 +30,11 @@ public class Detective extends User{
         this.department = department;
     }
 
+    public String getAssociate() {
+        return associate;
+    }
+
     public String toString(){
-        return department + associate;
+        return super.toString()+"\nDepartment: "+department+"\nAssociate: "+associate+"\n";
     }
 }

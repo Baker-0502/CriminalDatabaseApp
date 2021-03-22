@@ -12,10 +12,10 @@ public class Case {
     private ArrayList<User> userWorking;
     private ArrayList<Suspect> suspects;
     private ArrayList<Witness> witness;
-    private ArrayList<EvidenceList> evidenceList;
+    private ArrayList<Evidence> evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
-    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<EvidenceList> evidenceList)
+    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList)
     {
         this.caseID = caseID;
         this.closedCase = closedCase;
@@ -101,6 +101,22 @@ public class Case {
         return category;
     }
 
+    public ArrayList<User> getUserWorking() {
+        return userWorking;
+    }
+
+    public ArrayList<Suspect> getSuspects() {
+        return suspects;
+    }
+
+    public ArrayList<Witness> getWitnesses() {
+        return witness;
+    }
+
+    public ArrayList<Evidence> getEvidenceList() {
+        return evidenceList;
+    }
+
     public void createFile()
     {
 
@@ -110,4 +126,10 @@ public class Case {
     {
         filepath = "File";
     }
+
+    public String toString(){
+        return "Case ID: "+caseID+"\nActive Case: "+closedCase+"\nCase Name: "+caseName+"\nUpdate Case: "+updateCase+"\nUpdate Federal Case: "+federalCase+
+        "\nMisdimeanor: "+misdimeanor+"\nCategory: "+category+"\nUser Working: "+userWorking+"\nSuspects: "+suspects+"\nWintesses: "+witness+
+        "\nEvidence List: "+evidenceList+"\n";
+    } 
 }
