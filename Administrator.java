@@ -12,6 +12,7 @@ public class Administrator extends User{
     private String department;
     private String badgeID;
     private String associate;
+    private static Administrator admin;
     
     public Administrator(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase){
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);
@@ -26,6 +27,13 @@ public class Administrator extends User{
         this.department = department;
         this.badgeID = badgeID;
         this.associate = associate;
+    }
+
+    
+
+    public static Administrator getInstance(){
+        admin = new Administrator();
+        return admin;
     }
 
     public void addCase(String caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor, Category category, ArrayList<User> userWorking,

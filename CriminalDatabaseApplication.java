@@ -44,7 +44,7 @@ public class CriminalDatabaseApplication {
 
     public void createWitness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){
         Witness witness = new Witness(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement);
-        
+        caseList.addWitness(witness);
     }
 
 
