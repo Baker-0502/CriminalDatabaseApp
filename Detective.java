@@ -2,12 +2,10 @@ import java.util.UUID;
 
 public class Detective extends User{
     private String associate;
-    private String department;
 
     public Detective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber){
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);
         this.associate = associate;
-        this.department = department;
     }
 
     public void addWitnessStatement(String witnessStatement){
@@ -26,15 +24,11 @@ public class Detective extends User{
         System.out.println("Evidence: " + evidence + " added.");
     }
 
-    public void updateDepartment(String department){
-        this.department = department;
-    }
-
     public String getAssociate() {
         return associate;
     }
 
     public String toString(){
-        return super.toString()+"\nDepartment: "+department+"\nAssociate: "+associate+"\n";
+        return super.toString()+"\nAssociate: "+associate+"\n";
     }
 }

@@ -11,6 +11,7 @@ public class CriminalUI {
     private boolean quit;
 
     public void run(){
+        CriminalDatabaseApplication application = CriminalDatabaseApplication.getInstance();
         System.out.println(WELCOME_MESSAGE);
         quit = true;
         while(quit){
@@ -49,6 +50,10 @@ public class CriminalUI {
         switch(choice) {
             case 1:
                 addPolice();
+            case 2:
+                addDetective();
+            case 3:
+                addAdmin();
         }
     }
 
@@ -69,9 +74,30 @@ public class CriminalUI {
         String department = inputs.get(6);
         String badgeID = inputs.get(7);
         boolean editAccess = Boolean.parseBoolean(inputs.get(8));
-        System.out.println(database.createPolice(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, editAccess));
+        database.createPolice(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, editAccess);
 
         System.out.println();
+    }
+
+    public void addDetective() {
+        String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", "Associate"};
+        ArrayList<String> wordsArr = new ArrayList<>(Arrays.asList(words));
+        ArrayList<String> inputs = new ArrayList<String>();
+        for(int i = 0; i < wordsArr.size(); i++) {
+            System.out.println(wordsArr.get(i) + ":");
+            inputs.add(readIn.nextLine());
+        }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String username = inputs.get(2);
+        String password = inputs.get(3);
+        String email = inputs.get(4);
+        String phoneNumber = inputs.get(5);
+        String department = inputs.get(6);
+    }
+
+    public void addAdmin() {
+
     }
 
     //private void add
