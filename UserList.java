@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class UserList {
-    private ArrayList<Administrator> administrators;
-    private ArrayList<Detective> detectives;
-    private ArrayList<policeOfficer> officers;
+    private ArrayList<Administrator> administrators = new ArrayList<Administrator>();
+    private ArrayList<Detective> detectives = new ArrayList<Detective>();
+    private ArrayList<policeOfficer> officers = new ArrayList<policeOfficer>();
     private static UserList userList;
     private User user;
 

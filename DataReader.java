@@ -384,9 +384,18 @@ public class DataReader extends DataConstants{
 
     public static void main(String args[]){
         UserList test = UserList.getInstance();
-        ArrayList<policeOfficer>
-        ArrayList<Detective>
-        ArrayList<Administrator>
+        ArrayList<policeOfficer> officers = loadPoliceOfficer();
+        ArrayList<Detective> detectives = loadDetective();
+        ArrayList<Administrator> administrator = loadAdmins();
+        for(int i = 0; i < officers.size(); i++) {
+            test.addPolice(officers.get(i));
+        }
+        for(int i = 0; i < detectives.size(); i++) {
+            test.addDetective(detectives.get(i));
+        }
+        for(int i = 0; i < administrator.size(); i++) {
+            test.addAdmin(administrator.get(i));
+        }
         System.out.println(loadCase());
     }
 }
