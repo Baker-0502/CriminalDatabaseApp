@@ -25,7 +25,10 @@ public class PersonList {
         return personList;
     }
 
+    
+
     public Person findPerson(UUID id){
+        id = Person.getUUID();
         for (int i = 0; i < criminalList.size(); i++) {
             if (criminalList.get(i).equals(id)) {
                 return criminalList.get(i);
@@ -49,6 +52,28 @@ public class PersonList {
         for (int i = 0; i < poiList.size(); i++) {
             if (poiList.get(i).equals(id)) {
                 return poiList.get(i);
+            }
+        }
+        return null;
+    }
+
+    public Witness findWitness(UUID personID){
+        
+        for(int i=0;i<witnessList.size();i++){
+            String temp = witnessList.get(i).getUUID().toString();
+            if(temp.equals(personID.toString())){
+                return witnessList.get(i);
+            }
+        }
+        return null;
+    }
+
+    public Suspect findSuspect(UUID personID){
+        
+        for(int i=0;i<suspectList.size();i++){
+            String temp = suspectList.get(i).getUUID().toString();
+            if(temp.equals(personID.toString())){
+                return suspectList.get(i);
             }
         }
         return null;

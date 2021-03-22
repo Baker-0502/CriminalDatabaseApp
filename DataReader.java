@@ -349,7 +349,7 @@ public class DataReader extends DataConstants{
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
                 UUID userID = UUID.fromString((String)jArray.get(i));
-                Suspect suspect = SuspectList.getInstance().findSuspect(userID);
+                Suspect suspect = PersonList.getInstance().findSuspect(userID);
                 ret.add(suspect);
             } 
         }
@@ -361,7 +361,7 @@ public class DataReader extends DataConstants{
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
                 UUID userID = UUID.fromString((String)jArray.get(i));
-                Witness witness = WitnessList.getInstance().findWitness(userID);
+                Witness witness = PersonList.getInstance().findWitness(userID);
                 ret.add(witness);
             } 
         }
@@ -383,6 +383,6 @@ public class DataReader extends DataConstants{
     
 
     public static void main(String args[]){
-        System.out.println(loadSuspect());
+        System.out.println(loadPOI());
     }
 }

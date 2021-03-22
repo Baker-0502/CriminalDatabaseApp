@@ -36,24 +36,29 @@ public class UserList {
         System.out.println("making login");
     }
 
-    public void addUser(String userName, String password, UUID ID){
-        System.out.println("adding user!");
+    public void addUser(User newUser){
+        if(newUser.getClass().toString().contains("policeOfficer")){
+            officers.add(newUser);
+        }
     }
 
     //Fix/Implement These!
     public User findUser(UUID id){
         for (int i = 0; i < administrators.size(); i++) {
-            if (administrators.get(i).equals(id)) {
+            String temp = administrators.get(i).getUserID().toString();
+            if (temp.equals(id.toString())) {
                 return administrators.get(i);
             }
         }
         for (int i = 0; i < detectives.size(); i++) {
-            if (detectives.get(i).equals(id)) {
+            String temp = detectives.get(i).getUserID().toString();
+            if (temp.equals(id.toString())) {
                 return detectives.get(i);
             }
         }
         for (int i = 0; i < officers.size(); i++) {
-            if (officers.get(i).equals(id)) {
+            String temp = officers.get(i).getUserID().toString();
+            if (temp.equals(id.toString())) {
                 return officers.get(i);
             }
         }
