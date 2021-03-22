@@ -465,7 +465,8 @@ public class DataWriter extends DataConstants {
         //Test FindPerson()
         PersonList newList = PersonList.getInstance();
         UUID testID = UUID.fromString("b8132e6c-6edc-442a-bae2-284e53cb495f");
-        System.out.println(newList.findPerson(testID).toString());
+        
+        System.out.println(newList.findPerson(testID));
     }
     
 

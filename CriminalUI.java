@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CriminalUI {
+    private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
     private String[] mainMenuOptions = {"Create Account","Login","Exit"};
@@ -69,10 +70,12 @@ public class CriminalUI {
         String department = inputs.get(6);
         String badgeID = inputs.get(7);
         boolean editAccess = Boolean.parseBoolean(inputs.get(8));
-        CriminalDatabaseApplication.createPolice(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, editAccess);
+        System.out.println(database.createPolice(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, editAccess));
 
         System.out.println();
     }
+
+    //private void add
 
     public void displayLogin(){
         System.out.println("displaying login");
