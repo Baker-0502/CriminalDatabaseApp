@@ -25,7 +25,7 @@ public class CriminalDatabaseApplication {
 
     public User createAdmin(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase, User user)
     {
-        return new Administrator(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, updateCase);
+        return userList.add(new Administrator(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, updateCase));
     }
 
     public User createPolice(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String badgeID, int caseCount, boolean editAccess)
@@ -34,9 +34,11 @@ public class CriminalDatabaseApplication {
     }
 
 
-    public User createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, User user)
+    public Detective createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, User user)
     {
-        return new Detective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
+       Detective detective = new Detective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
+       userList.addDetective(detective);
+       return detective;
     }
 
 

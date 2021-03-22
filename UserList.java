@@ -36,9 +36,19 @@ public class UserList {
         System.out.println("making login");
     }
 
-    public void addUser(User newUser){
-        if(newUser.getClass().toString().contains("policeOfficer")){
+    public void addPolice(policeOfficer newUser){
+        if(newUser!=null){
             officers.add(newUser);
+        }
+    }
+    public void addDetective(Detective newUser){
+        if(newUser!=null){
+            detectives.add(newUser);
+        }
+    }
+    public void addAdmin(Administrator newUser){
+        if(newUser!=null){
+            administrators.add(newUser);
         }
     }
 
