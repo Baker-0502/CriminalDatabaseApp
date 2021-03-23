@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.UUID;
-public class Administrator extends User{
+public class Administrator extends User {
     private boolean updateCase;
     private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     
-    public Administrator(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase){
+    public Administrator(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase) {
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);
         this.updateCase = updateCase;
     }
@@ -26,14 +26,14 @@ public class Administrator extends User{
         database.createDetective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
     }
   
-    public void updateCase(boolean updateCase){
+    public void updateCase(boolean updateCase) {
         updateCase = true;
     }
     public boolean getUpdateCase() {
         return updateCase;
     }
-    public String toString(){
-        return super.toString()+"\nUpdate Case: "+updateCase+"\n";
+    public String toString() {
+        return super.toString() + "\nUpdate Case: " + updateCase + "\n";
     }
 
     
