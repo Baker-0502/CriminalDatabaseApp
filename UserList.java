@@ -43,7 +43,7 @@ public class UserList {
     }
 
     public void makeLogin(){
-        System.out.println("making login");
+        System.out.println("Making Login");
     }
 
     public void addPolice(policeOfficer newUser){
