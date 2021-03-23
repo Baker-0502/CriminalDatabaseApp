@@ -128,7 +128,12 @@ public class CriminalUI {
     //private void add
 
     public void displayLogin(){
-        System.out.println("Welcome to the Login Page!\nPlease input your credentials.\nUsername");
+        System.out.println("Welcome to the Login Page!\nPlease input your credentials.\nUsername:");
+        String username = readIn.nextLine();
+        System.out.println("Password:");
+        String password = readIn.nextLine();
+
+        database.login(username, password);
         
     }
 
