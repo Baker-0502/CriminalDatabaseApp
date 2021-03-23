@@ -96,7 +96,7 @@ public class CriminalUI {
         String department = inputs.get(6);
         String associate = inputs.get(7);
 
-        database.createDetective(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, associate);
+        database.createDetective(firstName, lastName, UUID.randomUUID(), username, password, email, phoneNumber, department, associate);
 
         System.out.println();
     }
