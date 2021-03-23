@@ -80,14 +80,27 @@ public class CriminalDatabaseApplication {
 
     public User login(String userName, String password)
     {
-        User user = userList.findUserName(userName);
+        User desiredUser = userList.findUserName(userName);
+        if(userName.equals(user.getUserName())){
+            if(password.equals(user.getPassword())){
+                return desiredUser;
+            }else{
+                System.out.println("Password not found");
+            }
+        }else{
+            System.out.println("User name not found");
+        }
+        return desiredUser;
+
+
+        //User user = userList.findUserName(userName);
         /*String name = user.getUserName();
         if (name instanceof String) {
             String passCheck = (String) name;
             System.out.println("we good");//we got a string
         }else {
             System.out.println("problems");//not a string
-        }   */
+        }   
         if(userName.equals(user.getUserName())){
             if(password.equals(user.getPassword())){
                 return user;
@@ -100,6 +113,6 @@ public class CriminalDatabaseApplication {
             System.out.println("User name not found");
         }
         return user;
-    }
+    }*/
 
 }
