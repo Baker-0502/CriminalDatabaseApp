@@ -78,9 +78,20 @@ public class CriminalDatabaseApplication {
     }
 
 
-    public User login(String userName, String password, boolean userNameFound)
+    public User login(String userName, String password)
     {
-        userList.findUserName(userName);
+        User user = userList.findUserName(userName);
+        if(userName.equals(user.getUserName())){
+            if(password.equals(user.getPassword())){
+                return user;
+            }
+            else{
+                System.out.println("Password not found");
+            }
+        }
+        else{
+            System.out.println("User name not found");
+        }
         return user;
     }
 
