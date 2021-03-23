@@ -28,46 +28,46 @@ public class CaseList {
         return caseList;
     }
 
-    public Case searchID(Case caseID){
+    public Case searchID(Case caseID) {
         return caseID;
     }
 
-    public Case searchByKeyword(String keyword){
+    public Case searchByKeyword(String keyword) {
         return caseList.get(0);
     }
 
-    public void addCase(Case newCase){
-        if(newCase!=null){
+    public void addCase(Case newCase) {
+        if(newCase!=null) {
             caseList.add(newCase);
         }
     }
 
-    public void addWitness(Witness newWitness){
-        if(newWitness!=null){
+    public void addWitness(Witness newWitness) {
+        if(newWitness!=null) {
             witnesses.add(newWitness);
         }
     }
 
-    public void addCriminal(Criminal newCriminal){
-        if(newCriminal!=null){
+    public void addCriminal(Criminal newCriminal) {
+        if(newCriminal!=null) {
             criminals.add(newCriminal);
         }
     }
 
-    public void addVictim(Victim newVictim){
-        if(newVictim!=null){
+    public void addVictim(Victim newVictim) {
+        if(newVictim!=null) {
             victims.add(newVictim);
         }
     }
 
-    public void addSuspect(Suspect newSuspect){
-        if(newSuspect!=null){
+    public void addSuspect(Suspect newSuspect) {
+        if(newSuspect!=null) {
             suspects.add(newSuspect);
         }
     }
 
-    public void addPOI(PersonOfInterest newPOI){
-        if(newPOI!=null){
+    public void addPOI(PersonOfInterest newPOI) {
+        if(newPOI!=null) {
             pois.add(newPOI);
         }
     }
