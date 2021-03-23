@@ -8,8 +8,19 @@ public class UserList {
     private static UserList userList;
     private User user;
 
-    public UserList() {
-        //ArrayList<User> user = DataReader.loadCase();
+    public UserList(ArrayList<Administrator> administrators, ArrayList<Detective> detectives, ArrayList<policeOfficer> officers, UserList userList, User user){
+        this.administrators =  administrators;
+        this.detectives = detectives;
+        this.officers = officers;
+        this.user = user;
+    }
+
+    public UserList(){
+        administrators = DataReader.loadAdmins();
+        detectives = DataReader.loadDetective();
+        officers = DataReader.loadPoliceOfficer();
+    }
+        
     }
 
     public static UserList getInstance() {
