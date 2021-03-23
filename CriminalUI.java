@@ -128,7 +128,8 @@ public class CriminalUI {
     //private void add
 
     public void displayLogin(){
-        System.out.println("Welcome to the Login Page!\nPlease input your credentials.");
+        System.out.println("Welcome to the Login Page!\nPlease input your credentials.\nUsername");
+        
     }
 
     public void displayAddCase(){

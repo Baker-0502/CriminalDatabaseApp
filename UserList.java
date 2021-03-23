@@ -21,7 +21,6 @@ public class UserList {
         officers = DataReader.loadPoliceOfficer();
     }
         
-    }
 
     public static UserList getInstance() {
         if(userList == null) {
