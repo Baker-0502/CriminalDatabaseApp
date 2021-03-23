@@ -2,15 +2,11 @@ import java.util.ArrayList;
 import java.util.UUID;
 public class Administrator extends User{
     private boolean updateCase;
-    private String badgeID;
-    private String associate;
     private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     
     public Administrator(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase){
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);
         this.updateCase = updateCase;
-        this.badgeID = badgeID;
-        this.associate = associate;
     }
 
 
