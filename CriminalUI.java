@@ -7,7 +7,7 @@ public class CriminalUI {
     private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
-    private String[] mainMenuOptions = {"Create Account","Login","Exit"};
+    private String[] mainMenuOptions = {"Create Account","Login","Add People","Add Evidence","Add Case", "Exit"};
     private User loggedIn;
     private boolean quit;
 
@@ -25,6 +25,15 @@ public class CriminalUI {
                     displayLogin();
                 }
                 else if(choice == 3) {
+                    displayAddPeople();
+                }
+                else if(choice == 4) {
+                    displayAddEvidence();
+                }
+                else if(choice == 5) {
+                    displayAddCase();
+                }
+                else if(choice == 6) {
                     quit = false;
                     break;
                 }
@@ -48,7 +57,7 @@ public class CriminalUI {
         int choice;
         boolean quit2 = false;
         while(!quit) {
-            System.out.println("Welcome to the add account screen!\nWhich type of account would you like to add?\n1. Police Officer\n2. Detective\n3. Administrator\n4. Go Back");
+            System.out.println("Welcome to the add account screen!\nWhich type of account would you like to add?\n1. Police Officer\n2. Detective\n3. Administrator\n4. Go Back\n");
             choice = readIn.nextInt();
             readIn.nextLine();
             if(choice == 1) {
@@ -144,6 +153,59 @@ public class CriminalUI {
 
     public void displayAddCase(){
         System.out.println("adding case");
+    }
+
+    public void displayAddPeople() {
+        int choice;
+        boolean quit2 = false;
+        while(!quit) {
+            System.out.println("Welcome to the add account screen!\nWhich type of person would you like to add?\n1. Criminal\n2. Person of Interest\n3. Suspect\n4. Victim\n5. Witness\n6. Go Back\n");
+            choice = readIn.nextInt();
+            readIn.nextLine();
+            if(choice == 1) {
+                addCriminal();
+            }
+            else if(choice == 2) {
+                addPOI();
+            }
+            else if(choice == 3) {
+                addSuspect();
+            }
+            else if(choice == 4) {
+                addVictim();
+            }
+            else if(choice == 5) {
+                addWitness();
+            }
+            else if(choice == 6){
+                quit2 = true;
+                break;
+            }
+        }
+    }
+
+    public void addCriminal() {
+
+    }
+
+    public void addPOI() {
+
+    }
+
+    public void addSuspect() {
+
+    }
+
+    public void addVictim() {
+
+    }
+
+    public void addWitness() {
+
+    }
+
+    public void displayAddEvidence() {
+        
     }
 
     public void displayCases(){
