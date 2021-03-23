@@ -3,7 +3,7 @@ import java.util.UUID;
 
 public class CriminalDatabaseApplication {
     private static CaseList caseList;
-    private static UserList userList;
+    private static UserList userList = UserList.getInstance();
     private static PersonList personList;
     private static User user;
     private static CriminalDatabaseApplication criminalDatabaseApplication;

@@ -8,10 +8,12 @@ public class CriminalUI {
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
     private String[] mainMenuOptions = {"Create Account","Login","Exit"};
+    private boolean loggedIn;
     private boolean quit;
 
     public void run(){
         System.out.println(WELCOME_MESSAGE);
+        loggedIn = false;
         quit = true;
         while(quit){
             displayMenu();
@@ -95,19 +97,47 @@ public class CriminalUI {
         String department = inputs.get(6);
         String associate = inputs.get(7);
 
+<<<<<<< HEAD
+        database.createDetective(associate, department, UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber);
+=======
         database.createDetective(firstName, lastName, UUID.randomUUID(), username, password, email, phoneNumber, department, associate);
+>>>>>>> 71f2854e716774ab83f71aaa60a1126af5fd7fa0
 
         System.out.println();
     }
 
     public void addAdmin() {
+        String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", "Update Case"};
+        ArrayList<String> wordsArr = new ArrayList<>(Arrays.asList(words));
+        ArrayList<String> inputs = new ArrayList<String>();
+        for(int i = 0; i < wordsArr.size(); i++) {
+            System.out.println(wordsArr.get(i) + ":");
+            inputs.add(readIn.nextLine());
+        }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String username = inputs.get(2);
+        String password = inputs.get(3);
+        String email = inputs.get(4);
+        String phoneNumber = inputs.get(5);
+        String department = inputs.get(6);
+        boolean updateCase = Boolean.parseBoolean(inputs.get(7));
 
+        database.createAdmin(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, updateCase);
+
+        System.out.println();
     }
 
     //private void add
 
     public void displayLogin(){
-        System.out.println("displaying login");
+        System.out.println("Welcome to the Login Page!\nPlease input your credentials.\nUsername:");
+        String username = readIn.nextLine();
+        System.out.println("Password:");
+        String password = readIn.nextLine();
+
+        database.login(username, password);
+        
     }
 
     public void displayAddCase(){
