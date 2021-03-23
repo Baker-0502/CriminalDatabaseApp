@@ -1,6 +1,6 @@
 import java.util.UUID;
 
-public class Witness extends Person{
+public class Witness extends Person {
     private String relationship;
     private String statement;
 
@@ -19,7 +19,7 @@ public String getStatement() {
     return statement;
 }
 
-public String toString(){
+public String toString() { 
     return super.toString() + "\nRelationship: "+relationship+"\nStatement: "+statement+"\n";
 }
 

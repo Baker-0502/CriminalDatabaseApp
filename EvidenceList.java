@@ -6,8 +6,7 @@ public class EvidenceList {
     private static EvidenceList evidenceListObj;
     Evidence evidence;
 
-    public EvidenceList(ArrayList<Evidence> evidence)
-    {
+    public EvidenceList(ArrayList<Evidence> evidence) {
         evidence = new ArrayList<Evidence>();
     }
 
@@ -27,12 +26,9 @@ public class EvidenceList {
         return evidenceList;
     }
 
-    public Evidence findEvidence(UUID evidenceID)
-    {
-        for(Evidence evidence: evidenceList)
-        {
-            if(evidenceID.equals(evidence.getEvidenceID()))
-            {
+    public Evidence findEvidence(UUID evidenceID) {
+        for(Evidence evidence: evidenceList) {
+            if(evidenceID.equals(evidence.getEvidenceID())) {
                 return evidence;
             }
         }

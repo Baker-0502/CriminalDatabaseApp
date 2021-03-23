@@ -51,61 +51,50 @@ public abstract class User {
         return firstName;
     }
 
-    public void setLastName(String lastName)
-    {
+    public void setLastName(String lastName){
         this.lastName = lastName;
     }
     public String getLastName() {
         return lastName;
     }
 
-    public void setUserName(String userName)
-    {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public String getUserName()
-    {
+    public String getUserName() {
         return userName;
     }
 
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
-    public void setEmail(String email)
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
-    public void setPhoneNumber(String phoneNumber)
-    {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getPhoneNumber()
-    {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setDepartment(String department)
-    {
+    public void setDepartment(String department) {
         this.department = department;
     }
 
-    public String getDepartment()
-    {
+    public String getDepartment() {
         return department;
     }
 

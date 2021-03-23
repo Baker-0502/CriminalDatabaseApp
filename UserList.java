@@ -8,14 +8,14 @@ public class UserList {
     private static UserList userList;
     private User user;
 
-    public UserList(ArrayList<Administrator> administrators, ArrayList<Detective> detectives, ArrayList<policeOfficer> officers, UserList userList, User user){
+    public UserList(ArrayList<Administrator> administrators, ArrayList<Detective> detectives, ArrayList<policeOfficer> officers, UserList userList, User user) {
         this.administrators =  administrators;
         this.detectives = detectives;
         this.officers = officers;
         this.user = user;
     }
 
-    public UserList(){
+    public UserList() {
         administrators = DataReader.loadAdmins();
         detectives = DataReader.loadDetective();
         officers = DataReader.loadPoliceOfficer();
@@ -43,27 +43,27 @@ public class UserList {
     }
 
     public void makeLogin(){
-        System.out.println("making login");
+        System.out.println("Making Login");
     }
 
-    public void addPolice(policeOfficer newUser){
+    public void addPolice(policeOfficer newUser) {
         if(newUser!=null){
             officers.add(newUser);
         }
     }
-    public void addDetective(Detective newUser){
+    public void addDetective(Detective newUser) {
         if(newUser!=null){
             detectives.add(newUser);
         }
     }
-    public void addAdmin(Administrator newUser){
+    public void addAdmin(Administrator newUser) {
         if(newUser!=null){
             administrators.add(newUser);
         }
     }
 
     //Fix/Implement These!
-    public User findUser(UUID id){
+    public User findUser(UUID id) {
         for (int i = 0; i < administrators.size(); i++) {
             String temp = administrators.get(i).getUserID().toString();
             if (temp.equals(id.toString())) {
@@ -90,15 +90,15 @@ public class UserList {
         return user;
     }
 
-    public User loginSystem(String userName, String password){
+    public User loginSystem(String userName, String password) {
         return user;
     }
 
-    public boolean checkPasswords(User userLogin, String Passoword){
+    public boolean checkPasswords(User userLogin, String Passoword) {
         return false;
     }
 
-    public User searchID(UUID ID){
+    public User searchID(UUID ID) {
         return user;
     }
 

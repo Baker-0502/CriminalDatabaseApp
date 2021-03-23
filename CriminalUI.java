@@ -267,12 +267,11 @@ public class CriminalUI {
         
     }
 
-    public void displayCases(){
+    public void displayCases() {
         System.out.println("displaying cases");
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         CriminalUI driver = new CriminalUI();
         driver.run();
     }
