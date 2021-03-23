@@ -85,23 +85,11 @@ public class UserList {
         return null;
     }
 
+    //TODO Fix This!
     public User findUserName(String userName)
     {
         return user;
     }
 
-    public User loginSystem(String userName, String password) {
-        return user;
-    }
-
-    public boolean checkPasswords(User userLogin, String Passoword) {
-        return false;
-    }
-
-    public User searchID(UUID ID) {
-        return user;
-    }
-
-    
     
 }
