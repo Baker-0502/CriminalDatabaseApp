@@ -190,6 +190,37 @@ public class CriminalUI {
     }
 
     public void addCriminal() {
+        String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Blood Type", "Fingerprint", "Hair Color", "Articles of Clothing (#)", "Foot Size", "Eye Color", "Currently Alive? (y/n)", "Tattoos (#)"};
+        ArrayList<String> inputs = new ArrayList<String>();
+        ArrayList<String> clothing = new ArrayList<String>();
+        ArrayList<String> tattoos = new ArrayList<String>();
+        int j = 0;
+        for (String i : words) {
+            if(i.equals("Articles of Clothing (#)")) {
+                System.out.println(i + ":");
+                j = readIn.nextInt();
+                readIn.nextLine();
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Article " + (k + 1) +":");
+                    clothing.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Tattoos (#)")) {
+                System.out.println(i + ":");
+                j = readIn.nextInt();
+                readIn.nextLine();
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Tattoo " + (k+1) +":");
+                    clothing.add(readIn.nextLine());
+                }
+            }
+            else {
+                System.out.println(i + ":");
+                inputs.add(readIn.nextLine());
+            }
+        }
+        //Pass Values to Database!
+        
 
     }
 
