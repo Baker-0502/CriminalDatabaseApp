@@ -2,54 +2,32 @@ import java.util.ArrayList;
 import java.util.UUID;
 public class Administrator extends User{
     private boolean updateCase;
-    private UUID userID;
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String password;
-    private String email;
-    private String phoneNumber;
-    private String department;
     private String badgeID;
     private String associate;
-    private static Administrator admin;
+    private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     
     public Administrator(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, boolean updateCase){
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);
         this.updateCase = updateCase;
-        this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.department = department;
         this.badgeID = badgeID;
         this.associate = associate;
     }
 
-    
-
-    public static Administrator getInstance(){
-        admin = new Administrator();
-        return admin;
-    }
 
     public void addCase(String caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor, Category category, ArrayList<User> userWorking,
             ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList){
-        CriminalDatabaseApplication.createCase(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witness, evidenceList);
+        database.createCase(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witness, evidenceList);
     }
-    public void addCriminal(String criminalName){
-       criminalName = "name";
+    public void addCriminal(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String bloodType, String fingerprint, String hairColor, ArrayList<String> clothing, String footSize, String eyeColor, boolean isAlive, ArrayList<String> tattoos){
+        database.createCriminal(UUID.randomUUID(), firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, bloodType, fingerprint, hairColor, clothing, footSize, eyeColor, isAlive, tattoos);
     }
     public void addPolice(String userID, String firstName, String lastName, String username, String password, String email, 
             String phoneNumber, String department, String badgeID, int caseCount, boolean updateCase){
-        CriminalDatabaseApplication.createPolice(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, updateCase);
+        database.createPolice(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, updateCase);
     }
     public void addDetective(String associate, String department, String userID, String firstName, String lastName,
             String username, String password, String email, String phoneNumber){
-        CriminalDatabaseApplication.createDetective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
+        database.createDetective(associate, department, UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber);
     }
   
     public void updateCase(boolean updateCase){
