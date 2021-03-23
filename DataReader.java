@@ -1,8 +1,5 @@
 import java.io.FileReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.lang.reflect.Type;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -14,7 +11,7 @@ public class DataReader extends DataConstants{
         ArrayList<Administrator> admin = new ArrayList<Administrator>();
         try{
             FileReader reader = new FileReader(ADMINISTRATOR_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray adminJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<adminJSON.size();i++){
@@ -43,7 +40,7 @@ public class DataReader extends DataConstants{
         ArrayList<Detective> detective = new ArrayList<Detective>();
         try{
             FileReader reader = new FileReader(DETECTIVES_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray detectiveJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<detectiveJSON.size();i++){
@@ -71,7 +68,7 @@ public class DataReader extends DataConstants{
         ArrayList<policeOfficer> policeOfficer = new ArrayList<policeOfficer>();
         try{
             FileReader reader = new FileReader(POLICEMEN_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray policeJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<policeJSON.size();i++){
@@ -101,7 +98,7 @@ public class DataReader extends DataConstants{
         ArrayList<Case> Case = new ArrayList<Case>();
         try{
             FileReader reader = new FileReader(CASES_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray caseJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<caseJSON.size();i++){
@@ -131,7 +128,7 @@ public class DataReader extends DataConstants{
         ArrayList<Criminal> criminal = new ArrayList<Criminal>();
         try{
             FileReader reader = new FileReader(CRIMINALS_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray criminalJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<criminalJSON.size();i++){
@@ -169,7 +166,7 @@ public class DataReader extends DataConstants{
         ArrayList<Evidence> evidence = new ArrayList<Evidence>();
         try{
             FileReader reader = new FileReader(EVIDENCE_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray evidenceJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<evidenceJSON.size();i++){
@@ -191,7 +188,7 @@ public class DataReader extends DataConstants{
         ArrayList<PersonOfInterest> poi = new ArrayList<PersonOfInterest>();
         try{
             FileReader reader = new FileReader(PERSONS_OF_INTEREST_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray poiJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<poiJSON.size();i++){
@@ -225,7 +222,7 @@ public class DataReader extends DataConstants{
         ArrayList<Suspect> suspect = new ArrayList<Suspect>();
         try{
             FileReader reader = new FileReader(SUSPECTS_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray suspectJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<suspectJSON.size();i++){
@@ -262,7 +259,7 @@ public class DataReader extends DataConstants{
         ArrayList<Witness> witness = new ArrayList<Witness>();
         try{
             FileReader reader = new FileReader(WITNESSES_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray witnessJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<witnessJSON.size();i++){
@@ -294,7 +291,7 @@ public class DataReader extends DataConstants{
         ArrayList<Victim> victim = new ArrayList<Victim>();
         try{
             FileReader reader = new FileReader(VICTIMS_FILE_NAME);
-            JSONParser parser = new JSONParser();
+            //JSONParser parser = new JSONParser();
             JSONArray victimJSON = (JSONArray)new JSONParser().parse(reader);
 
             for(int i=0;i<victimJSON.size();i++){
