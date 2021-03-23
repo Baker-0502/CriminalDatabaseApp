@@ -8,11 +8,13 @@ public class CriminalUI {
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
     private String[] mainMenuOptions = {"Create Account","Login","Exit"};
+    private boolean loggedIn;
     private boolean quit;
 
     public void run(){
         CriminalDatabaseApplication application = CriminalDatabaseApplication.getInstance();
         System.out.println(WELCOME_MESSAGE);
+        loggedIn = false;
         quit = true;
         while(quit){
             displayMenu();
@@ -96,13 +98,13 @@ public class CriminalUI {
         String department = inputs.get(6);
         String associate = inputs.get(7);
 
-        database.createDetective(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, associate);
+        database.createDetective(associate, department, UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber);
 
         System.out.println();
     }
 
     public void addAdmin() {
-        String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", };
+        String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", "Update Case"};
         ArrayList<String> wordsArr = new ArrayList<>(Arrays.asList(words));
         ArrayList<String> inputs = new ArrayList<String>();
         for(int i = 0; i < wordsArr.size(); i++) {
@@ -116,12 +118,17 @@ public class CriminalUI {
         String email = inputs.get(4);
         String phoneNumber = inputs.get(5);
         String department = inputs.get(6);
+        boolean updateCase = Boolean.parseBoolean(inputs.get(7));
+
+        database.createAdmin(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, updateCase);
+
+        System.out.println();
     }
 
     //private void add
 
     public void displayLogin(){
-        System.out.println("displaying login");
+        System.out.println("Welcome to the Login Page!\nPlease input your credentials.");
     }
 
     public void displayAddCase(){

@@ -5,6 +5,9 @@ public class CaseList {
     private static CaseList caseListObj;
     private ArrayList<Witness> witnesses = new ArrayList<Witness>();
     private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
+    private ArrayList<Victim> victims = new ArrayList<Victim>();
+    private ArrayList<Suspect> suspects = new ArrayList<Suspect>();
+    private ArrayList<PersonOfInterest> pois = new ArrayList<PersonOfInterest>();
 
     public CaseList(ArrayList<String> caseList){
         caseList = new ArrayList<String>();
@@ -48,6 +51,24 @@ public class CaseList {
     public void addCriminal(Criminal newCriminal){
         if(newCriminal!=null){
             criminals.add(newCriminal);
+        }
+    }
+
+    public void addVictim(Victim newVictim){
+        if(newVictim!=null){
+            victims.add(newVictim);
+        }
+    }
+
+    public void addSuspect(Suspect newSuspect){
+        if(newSuspect!=null){
+            suspects.add(newSuspect);
+        }
+    }
+
+    public void addPOI(PersonOfInterest newPOI){
+        if(newPOI!=null){
+            pois.add(newPOI);
         }
     }
 }
