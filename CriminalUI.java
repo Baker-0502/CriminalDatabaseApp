@@ -51,10 +51,13 @@ public class CriminalUI {
         switch(choice) {
             case 1:
                 addPolice();
+                break;
             case 2:
                 addDetective();
+                break;
             case 3:
                 addAdmin();
+                break;
         }
     }
 
@@ -100,6 +103,7 @@ public class CriminalUI {
         database.createDetective(firstName, lastName, UUID.randomUUID(), username, password, email, phoneNumber, department, associate);
 
         System.out.println();
+
     }
 
     public void addAdmin() {
