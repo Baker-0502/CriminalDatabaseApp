@@ -8,31 +8,31 @@ public class CriminalUI {
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
     private String[] mainMenuOptions = {"Create Account","Login","Exit"};
-    private boolean loggedIn;
+    private User loggedIn;
     private boolean quit;
 
     public void run(){
         CriminalDatabaseApplication application = CriminalDatabaseApplication.getInstance();
         System.out.println(WELCOME_MESSAGE);
-        loggedIn = false;
-        quit = true;
-        while(quit){
+        quit = false;
+        while(!quit){
             displayMenu();
             int choice = readIn.nextInt();
             readIn.nextLine();
-            switch(choice) {
-                case 1: 
+                if(choice == 1) {
                     displayAddAccount();
-                    break;
-                case 2:
+                }
+                else if(choice == 2) {
                     displayLogin();
-                    break;
-                case 3:
+                }
+                else if(choice == 3) {
                     quit = false;
                     break;
-                default:
+                }
+                else {
                     System.out.println("Please input a valid option!");
-            }
+                }
+                
         }
     }
 
@@ -46,16 +46,25 @@ public class CriminalUI {
     }
 
     public void displayAddAccount() {
-        System.out.println("Welcome to the add account screen!\nWhich type of account would you like to add?\n1. Police Officer\n2. Detective\n3. Administrator");
-        int choice = readIn.nextInt();
-        readIn.nextLine();
-        switch(choice) {
-            case 1:
+        int choice;
+        boolean quit2 = false;
+        while(!quit) {
+            System.out.println("Welcome to the add account screen!\nWhich type of account would you like to add?\n1. Police Officer\n2. Detective\n3. Administrator\n4. Go Back");
+            choice = readIn.nextInt();
+            readIn.nextLine();
+            if(choice == 1) {
                 addPolice();
-            case 2:
+            }
+            else if(choice == 2) {
                 addDetective();
-            case 3:
+            }
+            else if(choice == 3) {
                 addAdmin();
+            }
+            else if(choice == 4){
+                quit2 = true;
+                break;
+            }
         }
     }
 
@@ -77,8 +86,6 @@ public class CriminalUI {
         String badgeID = inputs.get(7);
         boolean editAccess = Boolean.parseBoolean(inputs.get(8));
         database.createPolice(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, editAccess);
-
-        System.out.println();
     }
 
     public void addDetective() {
@@ -98,11 +105,7 @@ public class CriminalUI {
         String department = inputs.get(6);
         String associate = inputs.get(7);
 
-<<<<<<< HEAD
         database.createDetective(associate, department, UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber);
-=======
-        database.createDetective(firstName, lastName, UUID.randomUUID(), username, password, email, phoneNumber, department, associate);
->>>>>>> 71f2854e716774ab83f71aaa60a1126af5fd7fa0
 
         System.out.println();
     }
@@ -137,8 +140,7 @@ public class CriminalUI {
         System.out.println("Password:");
         String password = readIn.nextLine();
 
-        database.login(username, password);
-        
+        loggedIn = database.login(username, password);
     }
 
     public void displayAddCase(){
