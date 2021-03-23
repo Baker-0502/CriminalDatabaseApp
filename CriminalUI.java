@@ -194,6 +194,7 @@ public class CriminalUI {
         ArrayList<String> inputs = new ArrayList<String>();
         ArrayList<String> clothing = new ArrayList<String>();
         ArrayList<String> tattoos = new ArrayList<String>();
+        boolean alive = false;
         int j = 0;
         for (String i : words) {
             if(i.equals("Articles of Clothing (#)")) {
@@ -220,8 +221,30 @@ public class CriminalUI {
             }
         }
         //Pass Values to Database!
-        
+        if (inputs.get(15).equalsIgnoreCase("y") || inputs.get(15).equalsIgnoreCase("yes")) {
+            alive = true;
+        }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String gender = inputs.get(2);
+        String race = inputs.get(3);
+        int age = Integer.parseInt(inputs.get(4));
+        double height = Double.parseDouble(inputs.get(5));
+        double weight = Double.parseDouble(inputs.get(6));
+        String phoneNumber = inputs.get(7);
+        String address = inputs.get(8);
+        String occupation = inputs.get(9);
+        String bloodType = inputs.get(10);
+        String fingerprint = inputs.get(11);
+        String hairColor = inputs.get(12);
+        //clothing
+        String footSize = inputs.get(13);
+        String eyeColor = inputs.get(14);
+        //alive
+        //tattoos
 
+
+        database.createCriminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
     }
 
     public void addPOI() {
