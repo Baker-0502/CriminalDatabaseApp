@@ -32,7 +32,7 @@ public class Case {
 
     public boolean activeCase(boolean closedCase)
     {
-        if(!closedCase){
+        if(!closedCase) {
             closedCase = true;
         }
         else{
@@ -66,38 +66,31 @@ public class Case {
         return federalCase;
     }
 
-    public UUID getCaseID()
-    {
+    public UUID getCaseID() {
         return caseID;
     }
 
-    public String getCaseName()
-    {
+    public String getCaseName() {
         return caseName;
     }
 
-    public boolean getUpdateCase()
-    {
+    public boolean getUpdateCase() {
         return updateCase;
     }
 
-    public boolean getClosedCase()
-    {
+    public boolean getClosedCase() {
         return closedCase;
     }
 
-    public boolean getFederalCase()
-    {
+    public boolean getFederalCase() {
         return federalCase;
     }
 
-    public boolean getMisdimeanor()
-    {
+    public boolean getMisdimeanor() {
         return misdimeanor;
     }
 
-    public Category getCategory()
-    {
+    public Category getCategory() {
         return category;
     }
 
@@ -117,17 +110,15 @@ public class Case {
         return evidenceList;
     }
 
-    public void createFile()
-    {
+    public void createFile() {
 
     }
 
-    public void readFile(String filepath)
-    {
+    public void readFile(String filepath) {
         filepath = "File";
     }
 
-    public String toString(){
+    public String toString() {
         return "Case ID: "+caseID+"\nActive Case: "+closedCase+"\nCase Name: "+caseName+"\nUpdate Case: "+updateCase+"\nUpdate Federal Case: "+federalCase+
         "\nMisdimeanor: "+misdimeanor+"\nCategory: "+category+"\nUser Working: "+userWorking+"\nSuspects: "+suspects+"\nWintesses: "+witness+
         "\nEvidence List: "+evidenceList+"\n";
