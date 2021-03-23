@@ -147,8 +147,13 @@ public class CriminalUI {
         String username = readIn.nextLine();
         System.out.println("Password:");
         String password = readIn.nextLine();
-
-        loggedIn = database.login(username, password);
+        if (password instanceof String) {
+            String passCheck = (String) password;
+            System.out.println("good");
+         } else {
+            System.out.println("nah");
+         }
+        //loggedIn = database.login(username, password);
     }
 
     public void displayAddCase(){

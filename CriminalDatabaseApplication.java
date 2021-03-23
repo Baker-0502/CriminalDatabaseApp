@@ -81,6 +81,13 @@ public class CriminalDatabaseApplication {
     public User login(String userName, String password)
     {
         User user = userList.findUserName(userName);
+        /*String name = user.getUserName();
+        if (name instanceof String) {
+            String passCheck = (String) name;
+            System.out.println("we good");//we got a string
+        }else {
+            System.out.println("problems");//not a string
+        }   */
         if(userName.equals(user.getUserName())){
             if(password.equals(user.getPassword())){
                 return user;
