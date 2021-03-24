@@ -15,8 +15,7 @@ public class Case {
     private ArrayList<Evidence> evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
-    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList)
-    {
+    Category category, ArrayList<User> userWorking, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList) {
         this.caseID = caseID;
         this.closedCase = closedCase;
         this.caseName = caseName;

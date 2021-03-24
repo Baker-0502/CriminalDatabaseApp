@@ -12,8 +12,7 @@ public class Person {
     private String address;
     private String occupation;
 
-    public Person(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation)
-    {
+    public Person(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation) {
         this.personID = personID;
         this.firstName = firstName;
         this.lastName = lastName;
