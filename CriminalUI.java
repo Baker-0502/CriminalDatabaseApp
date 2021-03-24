@@ -232,11 +232,8 @@ public class CriminalUI {
         String bloodType = inputs.get(10);
         String fingerprint = inputs.get(11);
         String hairColor = inputs.get(12);
-        //clothing
         String footSize = inputs.get(13);
         String eyeColor = inputs.get(14);
-        //alive
-        //tattoos
 
 
         database.createCriminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
