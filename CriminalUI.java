@@ -240,19 +240,115 @@ public class CriminalUI {
     }
 
     public void addPOI() {
+        String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Reason of Interest", "Avaliable Details"};
+        ArrayList<String> inputs = new ArrayList<String>();
+        for (String i : words) {
+                System.out.println(i + ":");
+                inputs.add(readIn.nextLine());
+        }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String gender = inputs.get(2);
+        String race = inputs.get(3);
+        int age = Integer.parseInt(inputs.get(4));
+        double height = Double.parseDouble(inputs.get(5));
+        double weight = Double.parseDouble(inputs.get(6));
+        String phoneNumber = inputs.get(7);
+        String address = inputs.get(8);
+        String occupation = inputs.get(9);
+        String hairColor = inputs.get(10);
+        String eyeColor = inputs.get(11);
+        String reasonofInterest = inputs.get(12);
+        String avaliableDetails = inputs.get(13);
+
+        database.createPOI(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,reasonofInterest,avaliableDetails);
 
     }
 
     public void addSuspect() {
-
+        String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Foot Size", "Blood Type", "Finger Print", "details", "Articles of Clothing (#)"};
+        ArrayList<String> inputs = new ArrayList<String>();
+        ArrayList<String> clothing = new ArrayList<String>();
+        int j = 0;
+        for (String i : words) {
+            if(i.equals("Articles of Clothing (#)")) {
+                System.out.println(i + ":");
+                j = readIn.nextInt();
+                readIn.nextLine();
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Article " + (k + 1) +":");
+                    clothing.add(readIn.nextLine());
+                }
+            }
+            else {
+                System.out.println(i + ":");
+                inputs.add(readIn.nextLine());
+            }
+        }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String gender = inputs.get(2);
+        String race = inputs.get(3);
+        int age = Integer.parseInt(inputs.get(4));
+        double height = Double.parseDouble(inputs.get(5));
+        double weight = Double.parseDouble(inputs.get(6));
+        String phoneNumber = inputs.get(7);
+        String address = inputs.get(8);
+        String occupation = inputs.get(9);
+        String hairColor = inputs.get(10);
+        String eyeColor = inputs.get(11);
+        String footSize = inputs.get(12);
+        String bloodType = inputs.get(13);
+        String fingerPrint = inputs.get(14);
+        String details = inputs.get(15);
+    
+        database.createSuspect(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,footSize,bloodType,fingerPrint,details,clothing);
     }
 
     public void addVictim() {
+        String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
+        ArrayList<String> inputs = new ArrayList<String>();
+        for (String i : words) {
+            System.out.println(i + ":");
+            inputs.add(readIn.nextLine());
+    }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String gender = inputs.get(2);
+        String race = inputs.get(3);
+        int age = Integer.parseInt(inputs.get(4));
+        double height = Double.parseDouble(inputs.get(5));
+        double weight = Double.parseDouble(inputs.get(6));
+        String phoneNumber = inputs.get(7);
+        String address = inputs.get(8);
+        String occupation = inputs.get(9);
+        String relationship = inputs.get(10);
+        String statement = inputs.get(11);
 
+        database.createVictim(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
     }
 
     public void addWitness() {
+        String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
+        ArrayList<String> inputs = new ArrayList<String>();
+        for (String i : words) {
+            System.out.println(i + ":");
+            inputs.add(readIn.nextLine());
+    }
+        String firstName = inputs.get(0);
+        String lastName = inputs.get(1);
+        String gender = inputs.get(2);
+        String race = inputs.get(3);
+        int age = Integer.parseInt(inputs.get(4));
+        double height = Double.parseDouble(inputs.get(5));
+        double weight = Double.parseDouble(inputs.get(6));
+        String phoneNumber = inputs.get(7);
+        String address = inputs.get(8);
+        String occupation = inputs.get(9);
+        String relationship = inputs.get(10);
+        String statement = inputs.get(11);
 
+        database.createWitness(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
     }
 
     public void displayAddEvidence() {

@@ -85,10 +85,27 @@ public class UserList {
         return null;
     }
 
-    //TODO Fix This!
     public User findUserName(String userName)
     {
-        return user;
+        for (int i = 0; i < administrators.size(); i++) {
+            String temp = administrators.get(i).getUserName();
+            if (temp.equals(userName.toString())) {
+                return administrators.get(i);
+            }
+        }
+        for (int i = 0; i < officers.size(); i++) {
+            String temp = officers.get(i).getUserName();
+            if (temp.equals(userName.toString())) {
+                return officers.get(i);
+            }
+        }
+        for (int i = 0; i < detectives.size(); i++) {
+            String temp = detectives.get(i).getUserName();
+            if (temp.equals(userName.toString())) {
+                return detectives.get(i);
+            }
+        }
+        return null;
     }
 
     
