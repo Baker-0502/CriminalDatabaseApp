@@ -245,6 +245,10 @@ public class CriminalUI {
     public void addPOI() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Reason of Interest", "Avaliable Details"};
         ArrayList<String> inputs = new ArrayList<String>();
+        for (String i : words) {
+                System.out.println(i + ":");
+                inputs.add(readIn.nextLine());
+        }
         String firstName = inputs.get(0);
         String lastName = inputs.get(1);
         String gender = inputs.get(2);
@@ -307,6 +311,10 @@ public class CriminalUI {
     public void addVictim() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
         ArrayList<String> inputs = new ArrayList<String>();
+        for (String i : words) {
+            System.out.println(i + ":");
+            inputs.add(readIn.nextLine());
+    }
         String firstName = inputs.get(0);
         String lastName = inputs.get(1);
         String gender = inputs.get(2);
@@ -326,6 +334,10 @@ public class CriminalUI {
     public void addWitness() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
         ArrayList<String> inputs = new ArrayList<String>();
+        for (String i : words) {
+            System.out.println(i + ":");
+            inputs.add(readIn.nextLine());
+    }
         String firstName = inputs.get(0);
         String lastName = inputs.get(1);
         String gender = inputs.get(2);
