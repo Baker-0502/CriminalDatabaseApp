@@ -355,6 +355,19 @@ public class CriminalUI {
         
     }
 
+    public void addEvidence(){
+        String[] words = {"Evidence Type", "Location Found"};
+        ArrayList<String> inputs = new ArrayList<String>();
+        for (String i : words) {
+            System.out.println(i + ":");
+            inputs.add(readIn.nextLine());
+    }
+        String evidenceType = inputs.get(0);
+        String locationFound = inputs.get(1);
+
+        database.createEvidence(UUID.randomUUID(), evidenceType, locationFound);
+    }
+
     public void displayCases() {
         System.out.println("displaying cases");
     }

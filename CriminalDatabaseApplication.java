@@ -77,6 +77,11 @@ public class CriminalDatabaseApplication {
         caseList.addPOI(poi);
     }
 
+    public void createEvidence(UUID evidenceID, String evidenceType, String locationFound){
+        Evidence evidence = new Evidence(evidenceID, evidenceType, locationFound);
+        caseList.addEvidence(evidence);
+    }
+
 
     public User login(String userName, String password)
     {

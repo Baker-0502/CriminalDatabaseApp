@@ -8,6 +8,7 @@ public class CaseList {
     private ArrayList<Victim> victims = new ArrayList<Victim>();
     private ArrayList<Suspect> suspects = new ArrayList<Suspect>();
     private ArrayList<PersonOfInterest> pois = new ArrayList<PersonOfInterest>();
+    private ArrayList<Evidence> evidences = new ArrayList<Evidence>();
 
     public CaseList(ArrayList<String> caseList){
         caseList = new ArrayList<String>();
@@ -69,6 +70,12 @@ public class CaseList {
     public void addPOI(PersonOfInterest newPOI) {
         if(newPOI!=null) {
             pois.add(newPOI);
+        }
+    }
+
+    public void addEvidence(Evidence evidence){
+        if(evidence!=null){
+            evidences.add(evidence);
         }
     }
 }
