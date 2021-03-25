@@ -148,7 +148,7 @@ public class CriminalUI {
         System.out.println("Password:");
         String password = readIn.nextLine();
         
-        //loggedIn = database.login(username, password);
+        loggedIn = database.login(username, password);
     }
 
     //Implement
