@@ -73,6 +73,9 @@ public class CriminalUI {
                 quit2 = true;
                 break;
             }
+            else {
+                System.out.println("Please input a valid option!");
+            }
         }
     }
 
@@ -148,10 +151,16 @@ public class CriminalUI {
         System.out.println("Password:");
         String password = readIn.nextLine();
         
+<<<<<<< HEAD
         loggedIn = database.login(username, password);
+=======
+        if(database.login(username, password)!=null){
+            loggedIn = database.login(username, password);
+        }
+>>>>>>> b96ea91dc3e7e84509467ce7e194e32de0f4ed97
     }
 
-    //Implement
+    //TODO Implement
     public void addCase(){
         String[] words = {"Closed Case", "Case Name", "Update Case", "Federal Case", "Misdimeanor", "Category", "User Working", "Suspects", "Witness", "Evidence List"};
         ArrayList<String> inputs = new ArrayList<String>();
@@ -239,6 +248,9 @@ public class CriminalUI {
             else if(choice == 6){
                 quit2 = true;
                 break;
+            }
+            else {
+                System.out.println("Please input a valid option!");
             }
         }
     }
@@ -424,10 +436,6 @@ public class CriminalUI {
         String locationFound = inputs.get(1);
 
         database.createEvidence(UUID.randomUUID(), evidenceType, locationFound);
-    }
-
-    public void displayCases() {
-        System.out.println("displaying cases");
     }
 
     public static void main(String[] args) {
