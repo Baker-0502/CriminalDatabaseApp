@@ -192,6 +192,7 @@ public class CriminalUI {
         ArrayList<String> tattoos = new ArrayList<String>();
         boolean alive = false;
         int j = 0;
+        try {
         for (String i : words) {
             if(i.equals("Articles of Clothing (#)")) {
                 System.out.println(i + ":");
@@ -220,7 +221,7 @@ public class CriminalUI {
         if (inputs.get(15).equalsIgnoreCase("y") || inputs.get(15).equalsIgnoreCase("yes")) {
             alive = true;
         }
-        try{
+
             String firstName = inputs.get(0);
             String lastName = inputs.get(1);
             String gender = inputs.get(2);
@@ -241,7 +242,7 @@ public class CriminalUI {
             database.createCriminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
         } 
         catch (Exception e) {
-            System.out.println("Something Went Wrong!\nCheck your input and try again!");
+            System.out.println("-----------------------------\nSomething Went Wrong!\nCheck your input and try again!\n-----------------------------");
         }
     }
 
