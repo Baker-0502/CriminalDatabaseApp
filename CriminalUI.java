@@ -158,7 +158,65 @@ public class CriminalUI {
 
     //TODO Implement
     public void addCase(){
-        System.out.println("adding case");
+        String[] words = {"Closed Case", "Case Name", "Update Case", "Federal Case", "Misdimeanor", "Category", "User Working", "Suspects", "Witness", "Evidence List"};
+        ArrayList<String> inputs = new ArrayList<String>();
+        ArrayList<String> userWorking = new ArrayList<String>();
+        ArrayList<String> suspects = new ArrayList<String>();
+        ArrayList<String> witness = new ArrayList<String>();
+        ArrayList<String> evidenceList = new ArrayList<String>();
+        int j = 0;
+        for (String i : words) {
+            if(i.equals("User Working")) {
+                System.out.println(i + ":");
+                j = readIn.nextInt();
+                readIn.nextLine();
+                for (int k = 0; k < j; k++) {
+                    System.out.println("User Working " + (k + 1) +":");
+                    userWorking.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Suspects")) {
+                System.out.println(i + ":");
+                j = readIn.nextInt();
+                readIn.nextLine();
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Suspect " + (k+1) +":");
+                    suspects.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Witness")) {
+                System.out.println(i + ":");
+                j = readIn.nextInt();
+                readIn.nextLine();
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Witness " + (k+1) +":");
+                    witness.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Evidence List")) {
+                System.out.println(i + ":");
+                j = readIn.nextInt();
+                readIn.nextLine();
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Evidence List " + (k+1) +":");
+                    evidenceList.add(readIn.nextLine());
+                }
+            }
+            else {
+                System.out.println(i + ":");
+                inputs.add(readIn.nextLine());
+            }
+        }
+        String closedCase = inputs.get(0);
+        String caseName = inputs.get(1);
+        String updateCase = inputs.get(2);
+        String federalCase = inputs.get(3);
+        String misdomeanor = inputs.get(4);
+        String category = inputs.get(5);
+        
+        database.createCase(UUID.randomUUID(), closedCase, caseName, updateCase, federalCase, misdomeanor, category, userWorking, suspects, witness, evidenceList);
+
+        System.out.println();
     }
 
     public void displayAddPeople() {
