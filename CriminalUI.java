@@ -219,24 +219,29 @@ public class CriminalUI {
         if (inputs.get(15).equalsIgnoreCase("y") || inputs.get(15).equalsIgnoreCase("yes")) {
             alive = true;
         }
-        String firstName = inputs.get(0);
-        String lastName = inputs.get(1);
-        String gender = inputs.get(2);
-        String race = inputs.get(3);
-        int age = Integer.parseInt(inputs.get(4));
-        double height = Double.parseDouble(inputs.get(5));
-        double weight = Double.parseDouble(inputs.get(6));
-        String phoneNumber = inputs.get(7);
-        String address = inputs.get(8);
-        String occupation = inputs.get(9);
-        String bloodType = inputs.get(10);
-        String fingerprint = inputs.get(11);
-        String hairColor = inputs.get(12);
-        String footSize = inputs.get(13);
-        String eyeColor = inputs.get(14);
+        try{
+            String firstName = inputs.get(0);
+            String lastName = inputs.get(1);
+            String gender = inputs.get(2);
+            String race = inputs.get(3);
+            int age = Integer.parseInt(inputs.get(4));
+            double height = Double.parseDouble(inputs.get(5));
+            double weight = Double.parseDouble(inputs.get(6));
+            String phoneNumber = inputs.get(7);
+            String address = inputs.get(8);
+            String occupation = inputs.get(9);
+            String bloodType = inputs.get(10);
+            String fingerprint = inputs.get(11);
+            String hairColor = inputs.get(12);
+            String footSize = inputs.get(13);
+            String eyeColor = inputs.get(14);
 
 
-        database.createCriminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
+            database.createCriminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
+        } 
+        catch (Exception e) {
+            System.out.println("Something Went Wrong!\nCheck your input and try again!");
+        }
     }
 
     public void addPOI() {
