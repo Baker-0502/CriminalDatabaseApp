@@ -3,23 +3,21 @@ import java.util.UUID;
 
 public class CriminalDatabaseApplication {
     private static CaseList caseList;
-    private static UserList userList = UserList.getInstance();
+    private static UserList userList;
     private static PersonList personList;
     private static User user;
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        CriminalDatabaseApplication.caseList = caseList;
-        CriminalDatabaseApplication.userList = userList;
-        CriminalDatabaseApplication.personList = personList;
-        CriminalDatabaseApplication.user = user;
+        CriminalDatabaseApplication.userList = UserList.getInstance();
+        CriminalDatabaseApplication.personList = PersonList.getInstance();
+        CriminalDatabaseApplication.caseList = CaseList.getInstance();
     }
-
     //Please Implement! Thank you!
     public static CriminalDatabaseApplication getInstance() {
         if (criminalDatabaseApplication == null){
             System.out.println("Creating a Criminal Database Application");
-            criminalDatabaseApplication = new CriminalDatabaseApplication(caseList, userList, personList, user);
+            criminalDatabaseApplication = new CriminalDatabaseApplication(CaseList.getInstance(), UserList.getInstance(), PersonList.getInstance(), null);
         }
         return criminalDatabaseApplication;
     }
