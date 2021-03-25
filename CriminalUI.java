@@ -28,10 +28,10 @@ public class CriminalUI {
                     displayAddPeople();
                 }
                 else if(choice == 4) {
-                    displayAddEvidence();
+                    addEvidence();
                 }
                 else if(choice == 5) {
-                    displayAddCase();
+                    addCase();
                 }
                 else if(choice == 6) {
                     quit = false;
@@ -151,7 +151,8 @@ public class CriminalUI {
         //loggedIn = database.login(username, password);
     }
 
-    public void displayAddCase(){
+    //Implement
+    public void addCase(){
         System.out.println("adding case");
     }
 
@@ -352,10 +353,6 @@ public class CriminalUI {
         String statement = inputs.get(11);
 
         database.createWitness(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
-    }
-
-    public void displayAddEvidence() {
-        
     }
 
     public void addEvidence(){
