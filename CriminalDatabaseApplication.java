@@ -34,6 +34,7 @@ public class CriminalDatabaseApplication {
     {
         policeOfficer policeofficer = new policeOfficer(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount, editAccess);
         userList.addPolice(policeofficer);
+        
     }
 
     public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber)
@@ -85,17 +86,18 @@ public class CriminalDatabaseApplication {
 
     public User login(String userName, String password)
     {
+        if(userList.findUserName(userName)!=null){
         User desiredUser = userList.findUserName(userName);
-        if(userName.equals(user.getUserName())){
-            if(password.equals(user.getPassword())){
+        //System.out.println(desiredUser);//Colin is a dumb fool who needs to learn how to read
+        if(userName.equals(desiredUser.getUserName())){
+            if(password.equals(desiredUser.getPassword())){
+                //TODO fix dis bug kid
+                System.out.println("Logging in as "+desiredUser.getFirstName()+" "+desiredUser.getLastName());
                 return desiredUser;
-            }else{
-                System.out.println("Password not found");
             }
-        }else{
-            System.out.println("User name not found");
         }
-        return null;
-
+    }
+    System.out.println("Username/Password was incorrect");
+    return null;
     }
 }
