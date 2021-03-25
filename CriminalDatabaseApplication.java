@@ -9,15 +9,15 @@ public class CriminalDatabaseApplication {
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        CriminalDatabaseApplication.userList = UserList.getInstance();
-        CriminalDatabaseApplication.personList = PersonList.getInstance();
-        CriminalDatabaseApplication.caseList = CaseList.getInstance();
+        CriminalDatabaseApplication.userList = userList;//UserList.getInstance();
+        CriminalDatabaseApplication.personList = personList;//PersonList.getInstance();
+        CriminalDatabaseApplication.caseList = caseList;//CaseList.getInstance();
     }
     //Please Implement! Thank you!
     public static CriminalDatabaseApplication getInstance() {
         if (criminalDatabaseApplication == null){
             System.out.println("Creating a Criminal Database Application");
-            criminalDatabaseApplication = new CriminalDatabaseApplication(CaseList.getInstance(), UserList.getInstance(), PersonList.getInstance(), null);
+            criminalDatabaseApplication = new CriminalDatabaseApplication(caseList, userList, personList, user);//CaseList.getInstance(), UserList.getInstance(), PersonList.getInstance(), null);
         }
         return criminalDatabaseApplication;
     }
