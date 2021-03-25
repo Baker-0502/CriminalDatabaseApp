@@ -3,23 +3,21 @@ import java.util.UUID;
 
 public class CriminalDatabaseApplication {
     private static CaseList caseList;
-    private static UserList userList = UserList.getInstance();
+    private static UserList userList;
     private static PersonList personList;
     private static User user;
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        CriminalDatabaseApplication.caseList = caseList;
-        CriminalDatabaseApplication.userList = userList;
-        CriminalDatabaseApplication.personList = personList;
-        CriminalDatabaseApplication.user = user;
+        CriminalDatabaseApplication.userList = UserList.getInstance();
+        CriminalDatabaseApplication.personList = PersonList.getInstance();
+        CriminalDatabaseApplication.caseList = CaseList.getInstance();
     }
-
     //Please Implement! Thank you!
     public static CriminalDatabaseApplication getInstance() {
         if (criminalDatabaseApplication == null){
             System.out.println("Creating a Criminal Database Application");
-            criminalDatabaseApplication = new CriminalDatabaseApplication(caseList, userList, personList, user);
+            criminalDatabaseApplication = new CriminalDatabaseApplication(CaseList.getInstance(), UserList.getInstance(), PersonList.getInstance(), null);
         }
         return criminalDatabaseApplication;
     }
@@ -34,6 +32,7 @@ public class CriminalDatabaseApplication {
     {
         policeOfficer policeofficer = new policeOfficer(UUID.randomUUID(), firstName, lastName, username, password, email, phoneNumber, department, badgeID, caseCount, editAccess);
         userList.addPolice(policeofficer);
+        
     }
 
     public void createDetective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber)
@@ -85,17 +84,18 @@ public class CriminalDatabaseApplication {
 
     public User login(String userName, String password)
     {
+        if(userList.findUserName(userName)!=null){
         User desiredUser = userList.findUserName(userName);
-        if(userName.equals(user.getUserName())){
-            if(password.equals(user.getPassword())){
+        //System.out.println(desiredUser);//Colin is a dumb fool who needs to learn how to read
+        if(userName.equals(desiredUser.getUserName())){
+            if(password.equals(desiredUser.getPassword())){
+                //TODO fix dis bug kid
+                System.out.println("Logging in as "+desiredUser.getFirstName()+" "+desiredUser.getLastName());
                 return desiredUser;
-            }else{
-                System.out.println("Password not found");
             }
-        }else{
-            System.out.println("User name not found");
         }
-        return null;
-
+    }
+    System.out.println("Username/Password was incorrect");
+    return null;
     }
 }

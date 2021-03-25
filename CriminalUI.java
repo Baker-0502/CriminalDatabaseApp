@@ -78,6 +78,9 @@ public class CriminalUI {
                 quit2 = true;
                 break;
             }
+            else {
+                System.out.println("Please input a valid option!");
+            }
         }
     }
 
@@ -153,10 +156,12 @@ public class CriminalUI {
         System.out.println("Password:");
         String password = readIn.nextLine();
         
-        //loggedIn = database.login(username, password);
+        if(database.login(username, password)!=null){
+            loggedIn = database.login(username, password);
+        }
     }
 
-    //Implement
+    //TODO Implement
     public void addCase(){
         System.out.println("adding case");
     }
@@ -186,6 +191,9 @@ public class CriminalUI {
             else if(choice == 6){
                 quit2 = true;
                 break;
+            }
+            else {
+                System.out.println("Please input a valid option!");
             }
         }
     }
@@ -384,10 +392,6 @@ public class CriminalUI {
         String locationFound = inputs.get(1);
 
         database.createEvidence(UUID.randomUUID(), evidenceType, locationFound);
-    }
-
-    public void displayCases() {
-        System.out.println("displaying cases");
     }
 
     public static void main(String[] args) {
