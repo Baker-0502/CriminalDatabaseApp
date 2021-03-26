@@ -171,6 +171,7 @@ public class CriminalUI {
         ArrayList<Suspect> suspects = new ArrayList<Suspect>();
         ArrayList<Witness> witnesses = new ArrayList<Witness>();
         ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
+        ArrayList<String> inputs = new ArrayList<String>();
         boolean closedCase=false;
         boolean updateCase=false;
         boolean federalCase = false;
@@ -234,6 +235,32 @@ public class CriminalUI {
                     evidenceList.add(readIn.nextLine());
                 }
             }
+            else {
+                System.out.println(i + ":");
+                inputs.add(readIn.nextLine());
+            }
+        }
+        if (inputs.get(0).equalsIgnoreCase("y") || inputs.get(0).equalsIgnoreCase("yes")) {
+            closedCase = true;
+        }
+        if (inputs.get(2).equalsIgnoreCase("y") || inputs.get(2).equalsIgnoreCase("yes")) {
+            updateCase = true;
+        }
+        if (inputs.get(3).equalsIgnoreCase("y") || inputs.get(3).equalsIgnoreCase("yes")) {
+            federalCase = true;
+        }
+        if (inputs.get(4).equalsIgnoreCase("y") || inputs.get(4).equalsIgnoreCase("yes")) {
+            misdimeanor = true;
+        }
+        try{
+            String caseName = inputs.get(1);
+            Category category = Category.valueOf(inputs.get(5));
+
+            database.createCase(UUID.randomUUID(), closedCase, caseName, updateCase, federalCase, misdimeanor, category,
+            userWorking, suspects, witnesses, evidenceList);
+        }
+        catch (Exception e) {
+            System.out.println("-----------------------------\nSomething Went Wrong!\nCheck your input and try again!\n-----------------------------");
         }
     }
 
