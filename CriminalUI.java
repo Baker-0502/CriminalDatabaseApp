@@ -7,7 +7,7 @@ public class CriminalUI {
     private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
-    private String[] mainMenuOptions = {"Create Account","Login","Add People","Add Evidence","Add Case", "Exit"};
+    private String[] mainMenuOptions = {/*"Create Account","Login",*/"Add People","Add Evidence","Add Case", "Exit"};
     private User loggedIn;
     private boolean quit;
 
@@ -18,44 +18,46 @@ public class CriminalUI {
             displayMenu();
             int choice = readIn.nextInt();
             readIn.nextLine();
-                if(choice == 1) {
+            if(loggedIn==null){
+                if(choice==1){
                     displayAddAccount();
                 }
-                else if(choice == 2) {
+                else if(choice==2){
                     displayLogin();
                 }
-                else if(choice == 3) {
+            }else{
+                if(choice == 1) {
                     displayAddPeople();
                 }
-                else if(choice == 4) {
+                else if(choice == 2) {
                     addEvidence();
                 }
-                else if(choice == 5) {
+                else if(choice == 3) {
                     addCase();
                 }
-                else if(choice == 6) {
-                    quit = false;
+                else if(choice == 4) {
+                    quit=false;
                     break;
                 }
                 else {
                     System.out.println("Please input a valid option!");
                 }
-                
+            }    
         }
     }
 
     public void displayMenu(){
-        System.out.println("displaying menu");
+        if(loggedIn==null){
+            System.out.println("1. Create Account\n2. Login");
+        }
+        else{
         for(int i=0; i<mainMenuOptions.length;i++)
         {
-            if(i == 1) {
-                System.out.println((i+1) + ". "+mainMenuOptions[i]);
-            }
-            else if(loggedIn != null) {
-                System.out.println((i+1) + ". "+mainMenuOptions[i]);
-            }
+                System.out.println((i+1)+". "+mainMenuOptions[i]);
         }
         System.out.println("\n");
+    }
+        
     }
 
     public void displayAddAccount() {
@@ -161,9 +163,120 @@ public class CriminalUI {
         }
     }
 
-    //TODO Implement
+    //TODO Fix adding command to arraylist of type user
     public void addCase(){
         System.out.println("adding case");
+        String[] words = {"Closed Case?(y/n)","Case Name","Update Case?(y/n)","Federal Case?(y/n)","Misdimeanor?(y/n)","Category","Users Working","Criminals","Suspects","Witnesses","Evidence"};
+        ArrayList<User> userWorking = new ArrayList<User>();
+        ArrayList<Criminal> criminals = new ArrayList<Criminal>();
+        ArrayList<Suspect> suspects = new ArrayList<Suspect>();
+        ArrayList<Witness> witnesses = new ArrayList<Witness>();
+        ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
+        ArrayList<String> inputs = new ArrayList<String>();
+        boolean closedCase=false;
+        boolean updateCase=false;
+        boolean federalCase = false;
+        boolean misdimeanor = false;
+        int j=0;
+
+        for(String i : words){
+            if(i.equals("Users Working")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("User Working " + (k + 1) +":");
+                    userWorking.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Criminals")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Criminal " + (k + 1) +":");
+                    addCriminal();
+                }
+            }
+            else if(i.equals("Suspects")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Suspect " + (k + 1) +":");
+                    addSuspect();
+                }
+            }
+            else if(i.equals("Witnesses")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Witness " + (k + 1) +":");
+                    addWitness();
+                }
+            }
+            else if(i.equals("Evidence")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Evidence " + (k + 1) +":");
+                    addEvidence();
+                }
+            }
+            else {
+                System.out.println(i + ":");
+                inputs.add(readIn.nextLine());
+            }
+        }
+        if (inputs.get(0).equalsIgnoreCase("y") || inputs.get(0).equalsIgnoreCase("yes")) {
+            closedCase = true;
+        }
+        if (inputs.get(2).equalsIgnoreCase("y") || inputs.get(2).equalsIgnoreCase("yes")) {
+            updateCase = true;
+        }
+        if (inputs.get(3).equalsIgnoreCase("y") || inputs.get(3).equalsIgnoreCase("yes")) {
+            federalCase = true;
+        }
+        if (inputs.get(4).equalsIgnoreCase("y") || inputs.get(4).equalsIgnoreCase("yes")) {
+            misdimeanor = true;
+        }
+        try{
+            String caseName = inputs.get(1);
+            Category category = Category.valueOf(inputs.get(5));
+
+            database.createCase(UUID.randomUUID(), closedCase, caseName, updateCase, federalCase, misdimeanor, category,
+            userWorking, criminals, suspects, witnesses, evidenceList);
+        }
+        catch (Exception e) {
+            System.out.println("-----------------------------\nSomething Went Wrong!\nCheck your input and try again!\n-----------------------------");
+        }
     }
 
     public void displayAddPeople() {
