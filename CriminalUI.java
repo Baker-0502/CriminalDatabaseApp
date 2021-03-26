@@ -48,14 +48,20 @@ public class CriminalUI {
         System.out.println("displaying menu");
         for(int i=0; i<mainMenuOptions.length;i++)
         {
+            System.out.println((i+1)+". "+mainMenuOptions[i]);
+            /*
             if(i == 1) {
                 System.out.println((i+1) + ". "+mainMenuOptions[i]);
             }
+            */
+            /*
             else if(loggedIn != null) {
                 System.out.println((i+1) + ". "+mainMenuOptions[i]);
             }
+            */
         }
         System.out.println("\n");
+        
     }
 
     public void displayAddAccount() {
