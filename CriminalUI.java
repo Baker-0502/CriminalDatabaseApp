@@ -163,9 +163,78 @@ public class CriminalUI {
         }
     }
 
-    //TODO Implement
+    //TODO Fix adding command to arraylist of type user
     public void addCase(){
         System.out.println("adding case");
+        String[] words = {"Closed Case?(y/n)","Case Name","Update Case?(y/n)","Federal Case?(y/n)","Misdimeanor?(y/n)","Category","Users Working","Suspects","Witnesses","Evidence"};
+        ArrayList<User> userWorking = new ArrayList<User>();
+        ArrayList<Suspect> suspects = new ArrayList<Suspect>();
+        ArrayList<Witness> witnesses = new ArrayList<Witness>();
+        ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
+        boolean closedCase=false;
+        boolean updateCase=false;
+        boolean federalCase = false;
+        boolean misdimeanor = false;
+        int j=0;
+
+        for(String i : words){
+            if(i.equals("Users Working")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("User Working " + (k + 1) +":");
+                    userWorking.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Suspects")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Suspect " + (k + 1) +":");
+                    suspects.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Witnesses")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Witness " + (k + 1) +":");
+                    witnesses.add(readIn.nextLine());
+                }
+            }
+            else if(i.equals("Evidence")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Evidence " + (k + 1) +":");
+                    evidenceList.add(readIn.nextLine());
+                }
+            }
+        }
     }
 
     public void displayAddPeople() {
