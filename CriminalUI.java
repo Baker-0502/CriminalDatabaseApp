@@ -7,7 +7,7 @@ public class CriminalUI {
     private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
-    private String[] mainMenuOptions = {"Create Account","Login","Add People","Add Evidence","Add Case", "Exit"};
+    private String[] mainMenuOptions = {/*"Create Account","Login",*/"Add People","Add Evidence","Add Case", "Exit"};
     private User loggedIn;
     private boolean quit;
 
@@ -18,49 +18,45 @@ public class CriminalUI {
             displayMenu();
             int choice = readIn.nextInt();
             readIn.nextLine();
-                if(choice == 1) {
+            if(loggedIn==null){
+                if(choice==1){
                     displayAddAccount();
                 }
-                else if(choice == 2) {
+                else if(choice==2){
                     displayLogin();
                 }
-                else if(choice == 3) {
+            }else{
+                if(choice == 1) {
                     displayAddPeople();
                 }
-                else if(choice == 4) {
+                else if(choice == 2) {
                     addEvidence();
                 }
-                else if(choice == 5) {
+                else if(choice == 3) {
                     addCase();
                 }
-                else if(choice == 6) {
-                    quit = false;
+                else if(choice == 4) {
+                    quit=false;
                     break;
                 }
                 else {
                     System.out.println("Please input a valid option!");
                 }
-                
+            }    
         }
     }
 
     public void displayMenu(){
-        System.out.println("displaying menu");
+        if(loggedIn==null){
+            System.out.println("1. Create Account\n2. Login");
+        }
+        else{
         for(int i=0; i<mainMenuOptions.length;i++)
         {
-            System.out.println((i+1)+". "+mainMenuOptions[i]);
-            /*
-            if(i == 1) {
-                System.out.println((i+1) + ". "+mainMenuOptions[i]);
-            }
-            */
-            /*
-            else if(loggedIn != null) {
-                System.out.println((i+1) + ". "+mainMenuOptions[i]);
-            }
-            */
+                System.out.println((i+1)+". "+mainMenuOptions[i]);
         }
         System.out.println("\n");
+    }
         
     }
 
