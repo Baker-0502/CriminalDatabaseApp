@@ -166,8 +166,9 @@ public class CriminalUI {
     //TODO Fix adding command to arraylist of type user
     public void addCase(){
         System.out.println("adding case");
-        String[] words = {"Closed Case?(y/n)","Case Name","Update Case?(y/n)","Federal Case?(y/n)","Misdimeanor?(y/n)","Category","Users Working","Suspects","Witnesses","Evidence"};
+        String[] words = {"Closed Case?(y/n)","Case Name","Update Case?(y/n)","Federal Case?(y/n)","Misdimeanor?(y/n)","Category","Users Working","Criminals","Suspects","Witnesses","Evidence"};
         ArrayList<User> userWorking = new ArrayList<User>();
+        ArrayList<Criminal> criminals = new ArrayList<Criminal>();
         ArrayList<Suspect> suspects = new ArrayList<Suspect>();
         ArrayList<Witness> witnesses = new ArrayList<Witness>();
         ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
@@ -193,6 +194,20 @@ public class CriminalUI {
                     userWorking.add(readIn.nextLine());
                 }
             }
+            else if(i.equals("Criminals")){
+                System.out.println(i+":");
+                try{
+                    j=readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
+                for (int k = 0; k < j; k++) {
+                    System.out.println("Criminal " + (k + 1) +":");
+                    addCriminal();
+                }
+            }
             else if(i.equals("Suspects")){
                 System.out.println(i+":");
                 try{
@@ -204,7 +219,7 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Suspect " + (k + 1) +":");
-                    suspects.add(readIn.nextLine());
+                    addSuspect();
                 }
             }
             else if(i.equals("Witnesses")){
@@ -218,7 +233,7 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Witness " + (k + 1) +":");
-                    witnesses.add(readIn.nextLine());
+                    addWitness();
                 }
             }
             else if(i.equals("Evidence")){
@@ -232,7 +247,7 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Evidence " + (k + 1) +":");
-                    evidenceList.add(readIn.nextLine());
+                    addEvidence();
                 }
             }
             else {
@@ -257,7 +272,7 @@ public class CriminalUI {
             Category category = Category.valueOf(inputs.get(5));
 
             database.createCase(UUID.randomUUID(), closedCase, caseName, updateCase, federalCase, misdimeanor, category,
-            userWorking, suspects, witnesses, evidenceList);
+            userWorking, criminals, suspects, witnesses, evidenceList);
         }
         catch (Exception e) {
             System.out.println("-----------------------------\nSomething Went Wrong!\nCheck your input and try again!\n-----------------------------");
