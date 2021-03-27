@@ -168,10 +168,12 @@ public class CriminalUI {
         System.out.println("adding case");
         String[] words = {"Closed Case?(y/n)","Case Name","Update Case?(y/n)","Federal Case?(y/n)","Misdimeanor?(y/n)","Category","Users Working","Criminals","Suspects","Witnesses","Evidence"};
         ArrayList<User> userWorking = new ArrayList<User>();
+        
         ArrayList<Criminal> criminals = new ArrayList<Criminal>();
         ArrayList<Suspect> suspects = new ArrayList<Suspect>();
         ArrayList<Witness> witnesses = new ArrayList<Witness>();
         ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
+        
         ArrayList<String> inputs = new ArrayList<String>();
         boolean closedCase=false;
         boolean updateCase=false;
