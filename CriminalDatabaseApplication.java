@@ -3,16 +3,23 @@ import java.util.UUID;
 
 public class CriminalDatabaseApplication {
     private static CaseList caseList;
-    private static UserList userList;
+    private static UserList userList = UserList.getInstance();
     private static PersonList personList;
     private static User user;
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
+<<<<<<< HEAD
         //CriminalDatabaseApplication.personList = PersonList.getInstance();
         //broken
         CriminalDatabaseApplication.userList = UserList.getInstance();
         
+=======
+        CriminalDatabaseApplication.caseList = caseList;//CaseList.getInstance();
+        CriminalDatabaseApplication.userList = userList;//UserList.getInstance();
+        CriminalDatabaseApplication.personList = personList;//PersonList.getInstance();
+        CriminalDatabaseApplication.user = user;
+>>>>>>> 19c163d24c6f223a38334ff9e1551f336248af0d
     }
     //Please Implement! Thank you!
     public static CriminalDatabaseApplication getInstance() {
@@ -43,7 +50,7 @@ public class CriminalDatabaseApplication {
     }
 
     public void createCase(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor, Category category, ArrayList<User> userWorking,
-            ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList){
+            ArrayList<Criminal> criminals, ArrayList<Suspect> suspects, ArrayList<Witness> witness, ArrayList<Evidence> evidenceList){
             Case case1 =  new Case(caseID, closedCase, caseName, updateCase, federalCase, misdimeanor, category, userWorking, suspects, witness, evidenceList);
             caseList.addCase(case1);
     }
@@ -98,9 +105,14 @@ public class CriminalDatabaseApplication {
     }
     System.out.println("Username/Password was incorrect");
     return null;
+<<<<<<< HEAD
     }
 
     private void createCaseList() {
         CriminalDatabaseApplication.caseList = CaseList.getInstance();
     }
 }
+=======
+}
+}
+>>>>>>> 19c163d24c6f223a38334ff9e1551f336248af0d
