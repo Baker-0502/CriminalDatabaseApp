@@ -1,7 +1,7 @@
 [
     {
         "userID": "5e2fbf77-8406-4ef7-a567-36daeb808430",
-        "firstNames": "Greg",
+        "firstName": "Greg",
         "lastName": "Heffley",
         "userName": "greg9920",
         "password": "javaIsCool!",
@@ -13,7 +13,7 @@
         "editAccess": "false"
     },{
         "userID": "049d1490-5919-4652-b901-040086e41687",
-        "firstNames": "Manny",
+        "firstName": "Manny",
         "lastName": "Heffley",
         "userName": "manny128499",
         "password": "mannyAwesome449",
@@ -25,7 +25,7 @@
         "editAccess": "false"
     },{
         "userID": "48d384bf-f11f-4062-99df-11583454571e",
-        "firstNames": "Rodrick",
+        "firstName": "Rodrick",
         "lastName": "Heffley",
         "userName": "LoadedDiperFan",
         "password": "DiperRockin99",
@@ -37,7 +37,7 @@
         "editAccess": "false"
     },{
         "userID": "5fd7100c-4e3b-4721-a460-bc777ababaa3",
-        "firstNames": "Rowley",
+        "firstName": "Rowley",
         "lastName": "Jefferson",
         "userName": "ZooWeeMama",
         "password": "TheCheeseTouch2007",
