@@ -2,16 +2,13 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class CriminalDatabaseApplication {
-    private static CaseList caseList;
+    private static CaseList caseList = CaseList.getInstance();
     private static UserList userList = UserList.getInstance();
-    private static PersonList personList;
+    private static PersonList personList = PersonList.getInstance();
     private static User user;
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        CriminalDatabaseApplication.caseList = CaseList.getInstance();
-        CriminalDatabaseApplication.userList = userList;//UserList.getInstance();
-        CriminalDatabaseApplication.personList = PersonList.getInstance();
         CriminalDatabaseApplication.user = user;
     }
     //Please Implement! Thank you!
@@ -134,6 +131,18 @@ public class CriminalDatabaseApplication {
 
     public User findUser(UUID id) {
         return userList.findUser(id);
+    }
+
+    public void printUserList(){
+        userList.print();
+    }
+
+    public void printPersonList(){
+        personList.print();
+    }
+
+    public void printCaseList(){
+        caseList.print();
     }
 
 }

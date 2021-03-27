@@ -78,4 +78,10 @@ public class CaseList {
             evidences.add(evidence);
         }
     }
+
+    public void print(){
+        for(int i=0;i<caseList.size();i++){
+            System.out.println(caseList.get(i).toString());
+        }
+    }
 }

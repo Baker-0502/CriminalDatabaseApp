@@ -150,6 +150,24 @@ public class PersonList {
     public ArrayList<PersonOfInterest> getPersonsOfInterests() {
         return poiList;
     }
+
+    public void print(){
+        for(int i=0;i<criminalList.size();i++){
+            System.out.println(criminalList.get(i).toString());
+        }
+        for (int i=0;i<witnessList.size();i++){
+            System.out.println(witnessList.get(i).toString());
+        }
+        for(int i=0;i<suspectList.size();i++){
+            System.out.println(suspectList.get(i).toString());
+        }
+        for (int i=0;i<victimList.size();i++){
+            System.out.println(victimList.get(i).toString());
+        }
+        for (int i=0;i<poiList.size();i++){
+            System.out.println(poiList.get(i).toString());
+        }
+    }
     
 
 

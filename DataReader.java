@@ -335,12 +335,12 @@ public class DataReader extends DataConstants{
         return ret;
     }
 
-    public static ArrayList<Administrator> parseArrUser(JSONArray jArray) {
-        ArrayList<Administrator> ret = new ArrayList<Administrator>();
+    public static ArrayList<User> parseArrUser(JSONArray jArray) {
+        ArrayList<User> ret = new ArrayList<User>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
                 UUID userID = UUID.fromString((String)jArray.get(i));
-                Administrator user = database.findUser(userID);
+                User user = UserList.getInstance().findUser(userID);
                 ret.add(user);
             } 
         }

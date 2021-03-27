@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -106,6 +107,18 @@ public class UserList {
             }
         }
         return null;
+    }
+
+    public void print(){
+        for(int i=0;i<administrators.size();i++){
+            System.out.println(administrators.get(i).toString());
+        }
+        for(int i=0;i<detectives.size();i++){
+            System.out.println(detectives.get(i).toString());
+        }
+        for(int i=0;i<officers.size();i++){
+            System.out.println(officers.get(i).toString());
+        }
     }
 
     
