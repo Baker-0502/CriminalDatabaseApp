@@ -108,4 +108,12 @@ public class CriminalDatabaseApplication {
         return userList.findUserName(username);
     }
 
+    public Person findPerson(UUID id) {
+        return personList.findPerson(id);
+    }
+
+    public User findUser(UUID id) {
+        return userList.findUser(id);
+    }
+
 }
