@@ -193,7 +193,8 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("User Working " + (k + 1) +":");
-                    userWorking.add(readIn.nextLine());
+                    //TODO Fix Scanner Throwing Errors
+                    userWorking.add(database.findUser(readIn.nextLine()));
                 }
             }
             else if(i.equals("Criminals")){

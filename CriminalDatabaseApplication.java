@@ -98,5 +98,14 @@ public class CriminalDatabaseApplication {
     }
     System.out.println("Username/Password was incorrect");
     return null;
-}
+    }
+
+    public Person findPerson(String name) {
+        return personList.findPerson(name);
+    }
+
+    public User findUser(String username) {
+        return userList.findUserName(username);
+    }
+
 }

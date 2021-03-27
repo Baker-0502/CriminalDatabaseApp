@@ -17,8 +17,8 @@ public class UserList {
 
     public UserList() {
         administrators = DataReader.loadAdmins();
-        detectives = DataReader.loadDetective();
-        officers = DataReader.loadPoliceOfficer();
+        //detectives = DataReader.loadDetective();
+        //officers = DataReader.loadPoliceOfficer();
     }
         
 

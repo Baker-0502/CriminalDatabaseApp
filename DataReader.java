@@ -13,7 +13,10 @@ public class DataReader extends DataConstants{
             FileReader reader = new FileReader(ADMINISTRATOR_FILE_NAME);
             //JSONParser parser = new JSONParser();
             JSONArray adminJSON = (JSONArray)new JSONParser().parse(reader);
+            System.out.println(adminJSON.toString());
 
+            //TODO Issue In Loop
+            
             for(int i=0;i<adminJSON.size();i++){
                 JSONObject adminsJSON = (JSONObject)adminJSON.get(i);
                 UUID userID = UUID.fromString((String)adminsJSON.get(USER_USER_ID));
@@ -28,6 +31,7 @@ public class DataReader extends DataConstants{
 
                 admin.add(new Administrator(userID, firstName, lastName, userName, password, email, phoneNumber, department, updateCase));
             }
+            
 
             return admin;
         } catch (Exception e){
