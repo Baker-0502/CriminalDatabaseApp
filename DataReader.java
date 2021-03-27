@@ -7,6 +7,7 @@ import org.json.simple.parser.JSONParser;
 import java.util.UUID;
 
 public class DataReader extends DataConstants{
+    private static CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     public static ArrayList<Administrator> loadAdmins(){
         ArrayList<Administrator> admin = new ArrayList<Administrator>();
         try{
@@ -105,6 +106,7 @@ public class DataReader extends DataConstants{
             //JSONParser parser = new JSONParser();
             JSONArray caseJSON = (JSONArray)new JSONParser().parse(reader);
 
+            //TODO broken loop
             for(int i=0;i<caseJSON.size();i++){
                 JSONObject casesJSON = (JSONObject)caseJSON.get(i);
                 UUID caseID = UUID.fromString((String)casesJSON.get(CASE_ID));
@@ -333,12 +335,12 @@ public class DataReader extends DataConstants{
         return ret;
     }
 
-    public static ArrayList<User> parseArrUser(JSONArray jArray) {
-        ArrayList<User> ret = new ArrayList<User>();
+    public static ArrayList<Administrator> parseArrUser(JSONArray jArray) {
+        ArrayList<Administrator> ret = new ArrayList<Administrator>();
         if(jArray != null){
             for (int i = 0; i < jArray.size(); i++) {
                 UUID userID = UUID.fromString((String)jArray.get(i));
-                User user = UserList.getInstance().findUser(userID);
+                Administrator user = database.findUser(userID);
                 ret.add(user);
             } 
         }

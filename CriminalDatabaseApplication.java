@@ -9,9 +9,9 @@ public class CriminalDatabaseApplication {
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        CriminalDatabaseApplication.caseList = caseList;//CaseList.getInstance();
+        CriminalDatabaseApplication.caseList = CaseList.getInstance();
         CriminalDatabaseApplication.userList = userList;//UserList.getInstance();
-        CriminalDatabaseApplication.personList = personList;//PersonList.getInstance();
+        CriminalDatabaseApplication.personList = PersonList.getInstance();
         CriminalDatabaseApplication.user = user;
     }
     //Please Implement! Thank you!
@@ -53,6 +53,26 @@ public class CriminalDatabaseApplication {
         Criminal criminal = new Criminal(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, bloodType,
         fingerprint, hairColor, clothing, footSize, eyeColor, isAlive, tattoos);
         caseList.addCriminal(criminal);
+    }
+
+    public void addCriminal(Criminal criminal){
+        personList.addCriminal(criminal);
+    }
+
+    public void addSuspect(Suspect suspect){
+        personList.addSuspect(suspect);
+    }
+
+    public void addWitness(Witness witness){
+        personList.addWitness(witness);
+    }
+
+    public void addVictim(Victim victim){
+        personList.addVictim(victim);
+    }
+
+    public void addPOI(PersonOfInterest poi){
+        personList.addPOI(poi);
     }
 
     public void createWitness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){

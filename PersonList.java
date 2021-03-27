@@ -25,6 +25,26 @@ public class PersonList {
         return personList;
     }
 
+    public void addCriminal(Criminal criminal){
+        criminalList.add(criminal);
+    }
+
+    public void addWitness(Witness witness){
+        witnessList.add(witness);
+    }
+
+    public void addSuspect(Suspect suspect){
+        suspectList.add(suspect);
+    }
+
+    public void addVictim(Victim victim){
+        victimList.add(victim);
+    }
+
+    public void addPOI(PersonOfInterest poi){
+        poiList.add(poi);
+    }
+
     public Person findPerson(UUID id){
         //id = Person.getUUID();
         for (int i = 0; i < criminalList.size(); i++) {

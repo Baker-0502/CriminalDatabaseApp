@@ -182,7 +182,7 @@ public class CriminalUI {
         int j=0;
 
         for(String i : words){
-            if(i.equals("Users Working")){
+            if(i.equals("Users Working (Enter amount of users)")){
                 System.out.println(i+":");
                 try{
                     j=readIn.nextInt();
@@ -197,7 +197,7 @@ public class CriminalUI {
                     userWorking.add(database.findUser(readIn.nextLine()));
                 }
             }
-            else if(i.equals("Criminals")){
+            else if(i.equals("Criminals (Enter amount of Criminals)")){
                 System.out.println(i+":");
                 try{
                     j=readIn.nextInt();
@@ -211,7 +211,7 @@ public class CriminalUI {
                     addCriminal();
                 }
             }
-            else if(i.equals("Suspects")){
+            else if(i.equals("Suspects (Enter amount of Suspects)")){
                 System.out.println(i+":");
                 try{
                     j=readIn.nextInt();
@@ -225,7 +225,7 @@ public class CriminalUI {
                     addSuspect();
                 }
             }
-            else if(i.equals("Witnesses")){
+            else if(i.equals("Witnesses (Enter amount of Witnesses)")){
                 System.out.println(i+":");
                 try{
                     j=readIn.nextInt();
@@ -239,7 +239,7 @@ public class CriminalUI {
                     addWitness();
                 }
             }
-            else if(i.equals("Evidence")){
+            else if(i.equals("Evidence (Enter amount of Evidence)")){
                 System.out.println(i+":");
                 try{
                     j=readIn.nextInt();
@@ -377,10 +377,12 @@ public class CriminalUI {
             String footSize = inputs.get(13);
             String eyeColor = inputs.get(14);
 
-
-            database.createCriminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
+            Criminal temp = new Criminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
+            database.addCriminal(temp);
+            //return temp;
         } 
         catch (Exception e) {
+            e.printStackTrace();
             System.out.println("-----------------------------\nSomething Went Wrong!\nCheck your input and try again!\n-----------------------------");
         }
     }
@@ -407,7 +409,9 @@ public class CriminalUI {
         String reasonofInterest = inputs.get(12);
         String avaliableDetails = inputs.get(13);
 
-        database.createPOI(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,reasonofInterest,avaliableDetails);
+        PersonOfInterest temp = new PersonOfInterest(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,reasonofInterest,avaliableDetails);
+        database.addPOI(temp);
+        //return temp;
 
     }
 
@@ -448,7 +452,9 @@ public class CriminalUI {
         String fingerPrint = inputs.get(14);
         String details = inputs.get(15);
     
-        database.createSuspect(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,footSize,bloodType,fingerPrint,details,clothing);
+        Suspect temp = new Suspect(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,footSize,bloodType,fingerPrint,details,clothing);
+        database.addSuspect(temp);
+        //return temp;
     }
 
     public void addVictim() {
@@ -471,7 +477,9 @@ public class CriminalUI {
         String relationship = inputs.get(10);
         String statement = inputs.get(11);
 
-        database.createVictim(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
+        Victim temp = new Victim(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
+        database.addVictim(temp);
+        //return temp;
     }
 
     public void addWitness() {
@@ -494,7 +502,9 @@ public class CriminalUI {
         String relationship = inputs.get(10);
         String statement = inputs.get(11);
 
-        database.createWitness(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
+        Witness temp = new Witness(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
+        database.addWitness(temp);
+        //return temp;
     }
 
     public void addEvidence(){

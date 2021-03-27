@@ -5,7 +5,7 @@ public class UserList {
     private ArrayList<Administrator> administrators = new ArrayList<Administrator>();
     private ArrayList<Detective> detectives = new ArrayList<Detective>();
     private ArrayList<policeOfficer> officers = new ArrayList<policeOfficer>();
-    private static UserList userList;
+    private static UserList userList=null;
     private User user;
 
     public UserList(ArrayList<Administrator> administrators, ArrayList<Detective> detectives, ArrayList<policeOfficer> officers, UserList userList, User user) {
@@ -17,8 +17,8 @@ public class UserList {
 
     public UserList() {
         administrators = DataReader.loadAdmins();
-        //detectives = DataReader.loadDetective();
-        //officers = DataReader.loadPoliceOfficer();
+        detectives = DataReader.loadDetective();
+        officers = DataReader.loadPoliceOfficer();
     }
         
 
