@@ -9,9 +9,10 @@ public class CriminalDatabaseApplication {
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        CriminalDatabaseApplication.userList = userList;//UserList.getInstance();
-        CriminalDatabaseApplication.personList = personList;//PersonList.getInstance();
-        CriminalDatabaseApplication.caseList = caseList;//CaseList.getInstance();
+        //CriminalDatabaseApplication.personList = PersonList.getInstance();
+        //broken
+        CriminalDatabaseApplication.userList = UserList.getInstance();
+        
     }
     //Please Implement! Thank you!
     public static CriminalDatabaseApplication getInstance() {
@@ -97,5 +98,9 @@ public class CriminalDatabaseApplication {
     }
     System.out.println("Username/Password was incorrect");
     return null;
+    }
+
+    private void createCaseList() {
+        CriminalDatabaseApplication.caseList = CaseList.getInstance();
     }
 }
