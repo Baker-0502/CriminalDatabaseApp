@@ -26,6 +26,10 @@ public class EvidenceList {
         return evidenceList;
     }
 
+    public void addEvidence(Evidence evidence){
+        evidenceList.add(evidence);
+    }
+
     public Evidence findEvidence(UUID evidenceID) {
         for(Evidence evidence: evidenceList) {
             if(evidenceID.equals(evidence.getEvidenceID())) {

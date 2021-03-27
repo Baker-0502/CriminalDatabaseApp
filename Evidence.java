@@ -4,7 +4,6 @@ public class Evidence {
     private UUID evidenceID;
     private String evidenceType;
     private String locationFound;
-    private UUID relationToPersonID;
 
     public Evidence(UUID evidenceID, String evidenceType, String locationFound) {
         this.evidenceID = evidenceID;
@@ -28,7 +27,7 @@ public class Evidence {
     }
 
     public String toString() {
-        return "Evidence Type: "+evidenceType+"\nLocation Found: "+locationFound+"\nRelation to Person: "+relationToPersonID;
+        return "Evidence Type: "+evidenceType+"\nLocation Found: "+locationFound;
     }
 
     public void createFile() {
