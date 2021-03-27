@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import java.util.UUID;
 
 public class DataWriter extends DataConstants {
+    private static CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     
     public static void saveCriminals() {
         PersonList people = PersonList.getInstance();
@@ -381,7 +382,9 @@ public class DataWriter extends DataConstants {
         ArrayList<User> userWorking = casePass.getUserWorking();
         if(userWorking != null) {
             for(int i = 0; i < userWorking.size(); i++) {
-                userWorkingJSON.add(userWorking.get(i).getUserID().toString());
+                UUID tempID = userWorking.get(i).getUserID();
+                User temp = database.findUser(tempID);
+                userWorkingJSON.add(temp);
             }
         }
         JSONArray suspectsJSON = new JSONArray();
@@ -446,13 +449,17 @@ public class DataWriter extends DataConstants {
 
     }
 
+
     //DEBUG ZONE
     
     
-
+    //TODO Change all filepaths back to originals
     public static void main(String[] args) {
+        //Works
         //saveAdministrators();
-        //saveCases();
+
+
+        saveCases();
         //saveCriminals();
         //saveDetectives();
         //saveEvidences();
