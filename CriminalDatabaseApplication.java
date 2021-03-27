@@ -9,17 +9,10 @@ public class CriminalDatabaseApplication {
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-<<<<<<< HEAD
-        //CriminalDatabaseApplication.personList = PersonList.getInstance();
-        //broken
-        CriminalDatabaseApplication.userList = UserList.getInstance();
-        
-=======
         CriminalDatabaseApplication.caseList = caseList;//CaseList.getInstance();
         CriminalDatabaseApplication.userList = userList;//UserList.getInstance();
         CriminalDatabaseApplication.personList = personList;//PersonList.getInstance();
         CriminalDatabaseApplication.user = user;
->>>>>>> 19c163d24c6f223a38334ff9e1551f336248af0d
     }
     //Please Implement! Thank you!
     public static CriminalDatabaseApplication getInstance() {
@@ -105,14 +98,14 @@ public class CriminalDatabaseApplication {
     }
     System.out.println("Username/Password was incorrect");
     return null;
-<<<<<<< HEAD
     }
 
-    private void createCaseList() {
-        CriminalDatabaseApplication.caseList = CaseList.getInstance();
+    public Person findPerson(String name) {
+        return personList.findPerson(name);
     }
+
+    public User findUser(String username) {
+        return userList.findUserName(username);
+    }
+
 }
-=======
-}
-}
->>>>>>> 19c163d24c6f223a38334ff9e1551f336248af0d
