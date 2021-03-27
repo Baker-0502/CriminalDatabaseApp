@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import java.util.UUID;
 
 public class DataWriter extends DataConstants {
+    private static CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     
     public static void saveCriminals() {
         PersonList people = PersonList.getInstance();
@@ -446,27 +447,49 @@ public class DataWriter extends DataConstants {
 
     }
 
+
     //DEBUG ZONE
     
     
-
+    //TODO Change all filepaths back to originals
     public static void main(String[] args) {
+        //Works
         //saveAdministrators();
-        //saveCases();
+
+
+        saveCases();
+
+        //Works
         //saveCriminals();
+
+        //Works
         //saveDetectives();
+
+        //Works
         //saveEvidences();
+
+        //Works
         //savePOI();
+
+        //Works
         //saveSuspects();
+
+        //Works
         //saveVictims();
+
+        //Works
         //saveWitnesss();
+
+        //Works
         //savepoliceMans();
 
         //Test FindPerson()
+        /*
         PersonList newList = PersonList.getInstance();
         UUID testID = UUID.fromString("b8132e6c-6edc-442a-bae2-284e53cb495f");
         
         System.out.println(newList.findPerson(testID));
+        */
     }
     
 

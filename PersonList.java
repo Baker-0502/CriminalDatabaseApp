@@ -25,30 +25,84 @@ public class PersonList {
         return personList;
     }
 
+    public void addCriminal(Criminal criminal){
+        criminalList.add(criminal);
+    }
+
+    public void addWitness(Witness witness){
+        witnessList.add(witness);
+    }
+
+    public void addSuspect(Suspect suspect){
+        suspectList.add(suspect);
+    }
+
+    public void addVictim(Victim victim){
+        victimList.add(victim);
+    }
+
+    public void addPOI(PersonOfInterest poi){
+        poiList.add(poi);
+    }
+
     public Person findPerson(UUID id){
-        id = Person.getUUID();
+        //id = Person.getUUID();
         for (int i = 0; i < criminalList.size(); i++) {
-            if(criminalList.get(i).equals(id)) {
+            if(criminalList.get(i).getUUID().equals(id)) {
                 return criminalList.get(i);
             }
         }
         for (int i = 0; i < witnessList.size(); i++) {
-            if(witnessList.get(i).equals(id)) {
+            if(witnessList.get(i).getUUID().equals(id)) {
                 return witnessList.get(i);
             }
         }
         for (int i = 0; i < suspectList.size(); i++) {
-            if(suspectList.get(i).equals(id)) {
+            if(suspectList.get(i).getUUID().equals(id)) {
                 return suspectList.get(i);
             }
         }
         for (int i = 0; i < victimList.size(); i++) {
-            if(victimList.get(i).equals(id)) {
+            if(victimList.get(i).getUUID().equals(id)) {
                 return victimList.get(i);
             }
         }
         for (int i = 0; i < poiList.size(); i++) {
-            if(poiList.get(i).equals(id)) {
+            if(poiList.get(i).getUUID().equals(id)) {
+                return poiList.get(i);
+            }
+        }
+        return null;
+    }
+
+    public Person findPerson(String name){
+        for (int i = 0; i < criminalList.size(); i++) {
+            String fullName = criminalList.get(i).getFirstName() + criminalList.get(i).getLastName();
+            if(fullName.toLowerCase().contains(name)) {
+                return criminalList.get(i);
+            }
+        }
+        for (int i = 0; i < witnessList.size(); i++) {
+            String fullName = witnessList.get(i).getFirstName() + witnessList.get(i).getLastName();
+            if(fullName.toLowerCase().contains(name)) {
+                return witnessList.get(i);
+            }
+        }
+        for (int i = 0; i < suspectList.size(); i++) {
+            String fullName = suspectList.get(i).getFirstName() + suspectList.get(i).getLastName();
+            if(fullName.toLowerCase().contains(name)) {
+                return suspectList.get(i);
+            }
+        }
+        for (int i = 0; i < victimList.size(); i++) {
+            String fullName = victimList.get(i).getFirstName() + victimList.get(i).getLastName();
+            if(fullName.toLowerCase().contains(name)) {
+                return victimList.get(i);
+            }
+        }
+        for (int i = 0; i < poiList.size(); i++) {
+            String fullName = poiList.get(i).getFirstName() + poiList.get(i).getLastName();
+            if(fullName.toLowerCase().contains(name)) {
                 return poiList.get(i);
             }
         }
@@ -95,6 +149,24 @@ public class PersonList {
 
     public ArrayList<PersonOfInterest> getPersonsOfInterests() {
         return poiList;
+    }
+
+    public void print(){
+        for(int i=0;i<criminalList.size();i++){
+            System.out.println(criminalList.get(i).toString());
+        }
+        for (int i=0;i<witnessList.size();i++){
+            System.out.println(witnessList.get(i).toString());
+        }
+        for(int i=0;i<suspectList.size();i++){
+            System.out.println(suspectList.get(i).toString());
+        }
+        for (int i=0;i<victimList.size();i++){
+            System.out.println(victimList.get(i).toString());
+        }
+        for (int i=0;i<poiList.size();i++){
+            System.out.println(poiList.get(i).toString());
+        }
     }
     
 

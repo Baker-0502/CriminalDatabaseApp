@@ -2,16 +2,14 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class CriminalDatabaseApplication {
-    private static CaseList caseList;
+    private static CaseList caseList = CaseList.getInstance();
     private static UserList userList = UserList.getInstance();
-    private static PersonList personList;
+    private static PersonList personList = PersonList.getInstance();
+    private static EvidenceList evidenceList = EvidenceList.getInstance();
     private static User user;
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
     {
-        CriminalDatabaseApplication.caseList = caseList;//CaseList.getInstance();
-        CriminalDatabaseApplication.userList = userList;//UserList.getInstance();
-        CriminalDatabaseApplication.personList = personList;//PersonList.getInstance();
         CriminalDatabaseApplication.user = user;
     }
     //Please Implement! Thank you!
@@ -55,6 +53,26 @@ public class CriminalDatabaseApplication {
         caseList.addCriminal(criminal);
     }
 
+    public void addCriminal(Criminal criminal){
+        personList.addCriminal(criminal);
+    }
+
+    public void addSuspect(Suspect suspect){
+        personList.addSuspect(suspect);
+    }
+
+    public void addWitness(Witness witness){
+        personList.addWitness(witness);
+    }
+
+    public void addVictim(Victim victim){
+        personList.addVictim(victim);
+    }
+
+    public void addPOI(PersonOfInterest poi){
+        personList.addPOI(poi);
+    }
+
     public void createWitness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement){
         Witness witness = new Witness(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, relationship, statement);
         caseList.addWitness(witness);
@@ -79,7 +97,11 @@ public class CriminalDatabaseApplication {
 
     public void createEvidence(UUID evidenceID, String evidenceType, String locationFound){
         Evidence evidence = new Evidence(evidenceID, evidenceType, locationFound);
-        caseList.addEvidence(evidence);
+        evidenceList.addEvidence(evidence);
+    }
+
+    public void addEvidence(Evidence evidence){
+        evidenceList.addEvidence(evidence);
     }
 
 
@@ -98,5 +120,34 @@ public class CriminalDatabaseApplication {
     }
     System.out.println("Username/Password was incorrect");
     return null;
-}
+    }
+
+    public Person findPerson(String name) {
+        return personList.findPerson(name);
+    }
+
+    public User findUser(String username) {
+        return userList.findUserName(username);
+    }
+
+    public Person findPerson(UUID id) {
+        return personList.findPerson(id);
+    }
+
+    public User findUser(UUID id) {
+        return userList.findUser(id);
+    }
+
+    public void printUserList(){
+        userList.print();
+    }
+
+    public void printPersonList(){
+        personList.print();
+    }
+
+    public void printCaseList(){
+        caseList.print();
+    }
+
 }

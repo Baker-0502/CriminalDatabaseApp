@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class CaseList {
     private ArrayList<Case> caseList;
-    private static CaseList caseListObj;
+    private static CaseList caseListObj=null;
     private ArrayList<Witness> witnesses = new ArrayList<Witness>();
     private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
     private ArrayList<Victim> victims = new ArrayList<Victim>();
@@ -10,8 +10,8 @@ public class CaseList {
     private ArrayList<PersonOfInterest> pois = new ArrayList<PersonOfInterest>();
     private ArrayList<Evidence> evidences = new ArrayList<Evidence>();
 
-    public CaseList(ArrayList<String> caseList){
-        caseList = new ArrayList<String>();
+    public CaseList(ArrayList<Case> caseList){
+        caseList = new ArrayList<Case>();
     }
     public CaseList() {
         this.caseList = DataReader.loadCase();
@@ -76,6 +76,12 @@ public class CaseList {
     public void addEvidence(Evidence evidence){
         if(evidence!=null){
             evidences.add(evidence);
+        }
+    }
+
+    public void print(){
+        for(int i=0;i<caseList.size();i++){
+            System.out.println(caseList.get(i).toString());
         }
     }
 }

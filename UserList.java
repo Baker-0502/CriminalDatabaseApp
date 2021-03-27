@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -5,7 +6,7 @@ public class UserList {
     private ArrayList<Administrator> administrators = new ArrayList<Administrator>();
     private ArrayList<Detective> detectives = new ArrayList<Detective>();
     private ArrayList<policeOfficer> officers = new ArrayList<policeOfficer>();
-    private static UserList userList;
+    private static UserList userList=null;
     private User user;
 
     public UserList(ArrayList<Administrator> administrators, ArrayList<Detective> detectives, ArrayList<policeOfficer> officers, UserList userList, User user) {
@@ -106,6 +107,18 @@ public class UserList {
             }
         }
         return null;
+    }
+
+    public void print(){
+        for(int i=0;i<administrators.size();i++){
+            System.out.println(administrators.get(i).toString());
+        }
+        for(int i=0;i<detectives.size();i++){
+            System.out.println(detectives.get(i).toString());
+        }
+        for(int i=0;i<officers.size();i++){
+            System.out.println(officers.get(i).toString());
+        }
     }
 
     
