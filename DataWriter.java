@@ -382,9 +382,7 @@ public class DataWriter extends DataConstants {
         ArrayList<User> userWorking = casePass.getUserWorking();
         if(userWorking != null) {
             for(int i = 0; i < userWorking.size(); i++) {
-                UUID tempID = userWorking.get(i).getUserID();
-                User temp = database.findUser(tempID);
-                userWorkingJSON.add(temp);
+                userWorkingJSON.add(userWorking.get(i).getUserID().toString());
             }
         }
         JSONArray suspectsJSON = new JSONArray();
@@ -460,20 +458,38 @@ public class DataWriter extends DataConstants {
 
 
         saveCases();
+
+        //Works
         //saveCriminals();
+
+        //Works
         //saveDetectives();
+
+        //Works
         //saveEvidences();
+
+        //Works
         //savePOI();
+
+        //Works
         //saveSuspects();
+
+        //Works
         //saveVictims();
+
+        //Works
         //saveWitnesss();
+
+        //Works
         //savepoliceMans();
 
         //Test FindPerson()
+        /*
         PersonList newList = PersonList.getInstance();
         UUID testID = UUID.fromString("b8132e6c-6edc-442a-bae2-284e53cb495f");
         
         System.out.println(newList.findPerson(testID));
+        */
     }
     
 
