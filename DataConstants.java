@@ -1,3 +1,6 @@
+/**
+ * Provides all the constants that are used in the database such as those found in the json files, users, key words and categories, and details associated  
+ */
 public abstract class DataConstants {
     //Files
     protected static final String ADMINISTRATOR_FILE_NAME = "json/Administrator.json";

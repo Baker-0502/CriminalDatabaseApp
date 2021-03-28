@@ -166,10 +166,6 @@ public class Case {
     public ArrayList<Evidence> getEvidenceList() {
         return evidenceList;
     }
-
-    public void createFile() {
-
-    }
     /**
      * reads the file 
      * @param filepath is set to file
