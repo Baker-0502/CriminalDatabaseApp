@@ -162,6 +162,22 @@ public class CriminalDatabaseApplication {
         evidenceList.print();
     }
 
+    public void searchFirst(String firstName){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Person name = personList.getSuspects().get(i);
+            if(name.getFirstName().equals(firstName)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+            }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Person name = personList.getCriminals().get(i);
+            if(name.getFirstName().equals(firstName)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+    }
+
     public void writeToText(Object obj) {
         if (obj instanceof Person) {
             DataWriter.writePerson((Person) obj);
