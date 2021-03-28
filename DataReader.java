@@ -252,8 +252,9 @@ public class DataReader extends DataConstants{
                 String fingerPrint = (String)suspectsJSON.get(SUSPECT_FINGERPRINT);
                 String details = (String)suspectsJSON.get(SUSPECT_DETAILS);
                 ArrayList<String> clothing = parseArr((JSONArray)suspectsJSON.get(SUSPECT_CLOTHING));
+                ArrayList<String> tattoos = parseArr((JSONArray)suspectsJSON.get(CRIMINAL_TATTOOS));
 
-                suspect.add(new Suspect(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing));
+                suspect.add(new Suspect(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing, tattoos));
             }
             return suspect;
         }catch(Exception e){
