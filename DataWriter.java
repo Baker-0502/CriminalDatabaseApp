@@ -458,14 +458,14 @@ public class DataWriter extends DataConstants {
 
     public static void writeCase(Case casePrint) {
         try {
-            File outFile = new File(casePrint.getCaseName().trim() + ".txt");
+            File outFile = new File("./SavedFiles/" + casePrint.getCaseName().trim() + ".txt");
             if (outFile.createNewFile()) {
                 System.out.println("Creating New File, " + outFile.getName());
             }
             else {
                 System.out.println("Updating " + outFile.getName() + "!");
             }
-            FileWriter caseWriter = new FileWriter(outFile.getName());
+            FileWriter caseWriter = new FileWriter("./SavedFiles/" + outFile.getName());
             caseWriter.write(casePrint.toString());
             caseWriter.close();
             } catch (IOException e) {
@@ -476,14 +476,14 @@ public class DataWriter extends DataConstants {
 
     public static void writePerson(Person person) {
         try {
-            File outFile = new File((person.getFirstName()+person.getLastName()).trim() + ".txt");
+            File outFile = new File("./SavedFiles/" + (person.getFirstName()+person.getLastName()).trim() + ".txt");
             if (outFile.createNewFile()) {
                 System.out.println("Creating New File, " + outFile.getName());
             }
             else {
                 System.out.println("Updating " + outFile.getName() + "!");
             }
-            FileWriter personWriter = new FileWriter(outFile.getName());
+            FileWriter personWriter = new FileWriter("./SavedFiles/" + outFile.getName());
             personWriter.write(person.toString());
             personWriter.close();
 
@@ -495,14 +495,14 @@ public class DataWriter extends DataConstants {
 
     public static void writeEvidence(Evidence evidence) {
         try {
-            File outFile = new File((evidence.getEvidenceType() + " " + evidence.getLocationFound()).trim() + ".txt");
+            File outFile = new File("./SavedFiles/" + (evidence.getEvidenceType() + " " + evidence.getLocationFound()).trim() + ".txt");
             if (outFile.createNewFile()) {
                 System.out.println("Creating New File, " + outFile.getName());
             }
             else {
                 System.out.println("Updating " + outFile.getName() + "!");
             }
-            FileWriter evidenceWriter = new FileWriter(outFile.getName());
+            FileWriter evidenceWriter = new FileWriter("./SavedFiles/" + outFile.getName());
             evidenceWriter.write(evidence.toString());
             evidenceWriter.close();
 
