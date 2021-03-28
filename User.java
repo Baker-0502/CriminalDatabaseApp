@@ -99,7 +99,7 @@ public abstract class User {
     }
 
     public String toString() {
-        return "User ID: "+userID+"\nUserName: "+userName+"\nPassword: "+password+"\nEmail: "+email+"\nPhone Number: "+phoneNumber+
+        return "User ID: "+userID+"\nFirst Name: "+firstName+"\nLast Name:"+lastName+"\nUserName: "+userName+"\nPassword: "+password+"\nEmail: "+email+"\nPhone Number: "+phoneNumber+
         "\nDepartment: "+department;
     }
 
