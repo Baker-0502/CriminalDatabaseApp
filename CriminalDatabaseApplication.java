@@ -138,13 +138,12 @@ public class CriminalDatabaseApplication {
         return userList.findUser(id);
     }
 
-<<<<<<< HEAD
     public Case findCase(UUID id){
         return caseList.findCase(id);
-=======
+    }
+
     public Evidence findEvidence(UUID id){
         return evidenceList.findEvidence(id);
->>>>>>> bee8414763fdf011d8018c2e94b2459a950cb239
     }
 
     public void printUserList(){
