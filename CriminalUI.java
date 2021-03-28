@@ -417,6 +417,10 @@ public class CriminalUI {
         }
     }
 
+    public void displaySearchPerson(){
+        System.out.println("")
+    }
+
     public Criminal addCriminal() {
         //TODO Fix Extraneous Input Causing Crashes.
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Blood Type", "Fingerprint", "Hair Color", "Articles of Clothing (#)", "Foot Size", "Eye Color", "Currently Alive? (y/n)", "Tattoos (#)"};
