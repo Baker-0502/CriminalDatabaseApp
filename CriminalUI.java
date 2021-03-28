@@ -376,7 +376,7 @@ public class CriminalUI {
                 System.out.println(database.findPerson(lookingID));
                 System.out.println("Would you like to print this person?(Y/N)");
                 String input = readIn.nextLine();
-                if(input.equals("Y")){
+                if(input.toLowerCase().equals("Y")){
                     database.writeToText(database.findPerson(lookingID));
                 }
             }
@@ -384,7 +384,7 @@ public class CriminalUI {
                 System.out.println(database.findUser(lookingID));
                 System.out.println("Would you like to print this user?(Y/N)");
                 String input = readIn.nextLine();
-                if(input.equals("Y")){
+                if(input.toLowerCase().equals("Y")){
                     database.writeToText(database.findPerson(lookingID));
                 }
 
@@ -393,7 +393,7 @@ public class CriminalUI {
                 System.out.println(database.findCase(lookingID));
                 System.out.println("Would you like to print this case?(Y/N)");
                 String input = readIn.nextLine();
-                if(input.equals("Y")){
+                if(input.toLowerCase().equals("y")){
                     database.writeToText(database.findCase(lookingID));
                 }
             }
@@ -401,7 +401,7 @@ public class CriminalUI {
                 System.out.println(database.findEvidence(lookingID));
                 System.out.println("Would you like to print this evidence?(Y/N)");
                 String input = readIn.nextLine();
-                if(input.equals("Y")){
+                if(input.toLowerCase().equals("y")){
                     database.writeToText(database.findEvidence(lookingID));
                 }
             }
@@ -518,7 +518,7 @@ public class CriminalUI {
         }
         System.out.println("Would you like to print this out?(Y/N)");
         input = readIn.nextLine();
-        if(input.equals("Y")){
+        if(input.toLowerCase().equals("y")){
             for(int i=0;i<people.size();i++){
                 database.writeToText(people.get(i));
             }
