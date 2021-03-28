@@ -112,7 +112,6 @@ public class CriminalDatabaseApplication {
         //System.out.println(desiredUser);//Colin is a dumb fool who needs to learn how to read
         if(userName.equals(desiredUser.getUserName())){
             if(password.equals(desiredUser.getPassword())){
-                //TODO fix dis bug kid
                 System.out.println("Logging in as "+desiredUser.getFirstName()+" "+desiredUser.getLastName());
                 return desiredUser;
             }
@@ -176,7 +175,6 @@ public class CriminalDatabaseApplication {
             System.out.println("This Item Cannot be Saved!");
         }
     }
-
 
     public void saveAll() {
         DataWriter.saveCriminals();

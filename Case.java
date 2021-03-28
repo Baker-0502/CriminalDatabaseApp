@@ -29,6 +29,7 @@ public class Case {
         this.evidenceList = evidenceList;
     }
 
+
     public boolean activeCase(boolean closedCase)
     {
         if(!closedCase) {
