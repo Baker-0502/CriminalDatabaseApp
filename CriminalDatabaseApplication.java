@@ -162,6 +162,21 @@ public class CriminalDatabaseApplication {
         evidenceList.print();
     }
 
+    public void writeToText(Object obj) {
+        if (obj instanceof Person) {
+            DataWriter.writePerson((Person) obj);
+        }
+        else if (obj instanceof Case) {
+            DataWriter.writeCase((Case) obj);
+        }
+        else if (obj instanceof Evidence) {
+            DataWriter.writeEvidence((Evidence) obj);
+        }
+        else {
+            System.out.println("This Item Cannot be Saved!");
+        }
+    }
+
 
     public void saveAll() {
         DataWriter.saveCriminals();

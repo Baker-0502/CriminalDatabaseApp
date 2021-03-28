@@ -1,6 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.UUID;
 import java.io.File;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -452,8 +453,56 @@ public class DataWriter extends DataConstants {
         try {
             File outFile = new File(casePrint.getCaseName().trim() + ".txt");
             if (outFile.createNewFile()) {
-                System.out.println("Creating New File, " + outFile);
+                System.out.println("Creating New File, " + outFile.getName());
             }
+            else {
+                System.out.println("Updating " + outFile.getName() + "!");
+            }
+            FileWriter caseWriter = new FileWriter(outFile.getName());
+            caseWriter.write(casePrint.toString());
+            caseWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("Something went wrong while writing the file!");
         }
     }
+
+    public static void writePerson(Person person) {
+        try {
+            File outFile = new File((person.getFirstName()+person.getLastName()).trim() + ".txt");
+            if (outFile.createNewFile()) {
+                System.out.println("Creating New File, " + outFile.getName());
+            }
+            else {
+                System.out.println("Updating " + outFile.getName() + "!");
+            }
+            FileWriter personWriter = new FileWriter(outFile.getName());
+            personWriter.write(person.toString());
+            personWriter.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("Something went wrong while writing the file!");
+        }
+    }
+
+    public static void writeEvidence(Evidence evidence) {
+        try {
+            File outFile = new File((evidence.getEvidenceType() + " " + evidence.getLocationFound()).trim() + ".txt");
+            if (outFile.createNewFile()) {
+                System.out.println("Creating New File, " + outFile.getName());
+            }
+            else {
+                System.out.println("Updating " + outFile.getName() + "!");
+            }
+            FileWriter evidenceWriter = new FileWriter(outFile.getName());
+            evidenceWriter.write(evidence.toString());
+            evidenceWriter.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("Something went wrong while writing the file!");
+        }
+    }
+    
 }
