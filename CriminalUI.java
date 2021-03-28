@@ -26,7 +26,7 @@ public class CriminalUI {
                     displayLogin();
                 }
             }else{
-                if (choice == 1) {
+                if(choice == 1) {
                     displayAddPeople();
                 }
                 else if(choice == 2) {
@@ -47,7 +47,7 @@ public class CriminalUI {
                     if(temp.toLowerCase().equals("y") || temp.toLowerCase().equals("yes")) {
                         database.saveAll();
                     }
-                    quit=false;
+                    quit = true;
                     break;
                 }
                 else {
