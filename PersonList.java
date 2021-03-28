@@ -18,6 +18,7 @@ public class PersonList {
         this.poiList = DataReader.loadPOI();
     }
 
+
     public static PersonList getInstance() {
         if(personList == null) {
             personList = new PersonList();
