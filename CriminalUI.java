@@ -392,6 +392,8 @@ public class CriminalUI {
 
     public void displaySearchByKeyword(){
         int amt_input=0;
+        ArrayList<Person> persons = new ArrayList<Person>();
+        System.out.println(persons);
         System.out.println("Enter the number of keywords you want to search by");
         amt_input = readIn.nextInt();
         readIn.nextLine();
@@ -401,10 +403,18 @@ public class CriminalUI {
             String input = readIn.nextLine();
             input.toLowerCase();
             if(input.equals("first name")){
-                database.findPerson(input);
+                System.out.println("Enter First Name");
+                String inputName = readIn.nextLine();
+                for(int j=0;j<persons.size();j++){
+                    Person name = persons.get(j);
+                    if(name.getFirstName().equals(inputName)){
+                        System.out.println(persons.get(j));
+                    }
+
+                    }
+                }
             }
         }
-    }
 
     public Criminal addCriminal() {
         //TODO Fix Extraneous Input Causing Crashes.

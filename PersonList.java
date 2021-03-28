@@ -109,6 +109,40 @@ public class PersonList {
         return null;
     }
 
+    public Person findPersonFirst(String firstName){
+        for (int i = 0; i < criminalList.size(); i++) {
+            String Firstname = criminalList.get(i).getFirstName();
+            if(Firstname.toLowerCase().contains(firstName)) {
+                return criminalList.get(i);
+            }
+        }
+        for (int i = 0; i < witnessList.size(); i++) {
+            String Firstname = witnessList.get(i).getFirstName();
+            if(Firstname.toLowerCase().contains(firstName)) {
+                return witnessList.get(i);
+            }
+        }
+        for (int i = 0; i < suspectList.size(); i++) {
+            String Firstname = suspectList.get(i).getFirstName();
+            if(Firstname.toLowerCase().contains(firstName)) {
+                return suspectList.get(i);
+            }
+        }
+        for (int i = 0; i < victimList.size(); i++) {
+            String Firstname = victimList.get(i).getFirstName();
+            if(Firstname.toLowerCase().contains(firstName)) {
+                return victimList.get(i);
+            }
+        }
+        for (int i = 0; i < poiList.size(); i++) {
+            String Firstname = poiList.get(i).getFirstName();
+            if(Firstname.toLowerCase().contains(firstName)) {
+                return poiList.get(i);
+            }
+        }
+        return null;
+    }
+
     public Witness findWitness(UUID personID){
         
         for(int i = 0; i < witnessList.size(); i++){
