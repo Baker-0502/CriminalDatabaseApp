@@ -55,7 +55,7 @@ public class DataWriter extends DataConstants {
         criminalObject.put(CRIMINAL_CLOTHING, clothingJSON);
         criminalObject.put(CRIMINAL_FOOT_SIZE, criminal.getFootSize());
         criminalObject.put(CRIMINAL_EYE_COLOR, criminal.getEyeColor());
-        criminalObject.put(CRIMINAL_IS_ALIVE, criminal.isAlive());
+        criminalObject.put(CRIMINAL_IS_ALIVE, Boolean.toString(criminal.isAlive()));
         criminalObject.put(CRIMINAL_TATTOOS, tattoosJSON);
 
         return criminalObject;
