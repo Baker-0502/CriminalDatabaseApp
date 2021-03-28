@@ -7,7 +7,7 @@ public class CriminalUI {
     private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
-    private String[] mainMenuOptions = {/*"Create Account","Login",*/"Add People","Add Evidence","Add Case","Display Cases","Exit"};
+    private String[] mainMenuOptions = {/*"Create Account","Login",*/"Add People","Add Evidence","Add Case","Display Cases","Search", "Exit"};
     private User loggedIn;
     private boolean quit;
 
@@ -38,7 +38,10 @@ public class CriminalUI {
                 else if(choice==4){
                     displayCase();
                 }
-                else if(choice == 5) {
+                else if(choice==5){
+                    displaySearchOptions();
+                }
+                else if(choice == 6) {
                     quit=false;
                     break;
                 }
@@ -211,7 +214,10 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Criminal " + (k + 1) +":");
-                    addCriminal();
+                    Criminal temp = addCriminal();
+                    if(temp!=null){
+                        criminals.add(temp);
+                    }
                 }
             }
             else if(i.equals("Suspects")){
@@ -225,7 +231,10 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Suspect " + (k + 1) +":");
-                    addSuspect();
+                    Suspect temp = addSuspect();
+                    if(temp!=null){
+                        suspects.add(temp);
+                    }
                 }
             }
             else if(i.equals("Witnesses")){
@@ -239,7 +248,10 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Witness " + (k + 1) +":");
-                    addWitness();
+                    Witness temp = addWitness();
+                    if(temp!=null){
+                        witnesses.add(temp);
+                    }
                 }
             }
             else if(i.equals("Evidence")){
@@ -253,7 +265,10 @@ public class CriminalUI {
                 }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Evidence " + (k + 1) +":");
-                    addEvidence();
+                    Evidence temp = addEvidence();
+                    if(temp!=null){
+                        evidenceList.add(temp);
+                    }
                 }
             }
             else {
@@ -323,7 +338,38 @@ public class CriminalUI {
         }
     }
 
-    public void addCriminal() {
+    public void displaySearchOptions(){
+        int choice;
+        boolean quit2 = false;
+        while(!quit){
+            System.out.println("Welcome to the Search Option screen!\nWhat would you like to search by?\n1. Search by ID\n2. Search by Keyword\n3. Go Back");
+            choice = readIn.nextInt();
+            readIn.nextLine();
+            if(choice == 1){
+                displaySearchByID();
+            }
+            else if(choice == 2){
+                displaySearchByKeyword();
+            }
+            else if(choice == 3){
+                quit2 = true;
+                break;
+            }
+            else{
+                System.out.println("Please input a valid option!");
+            }
+        }
+    }
+
+    public void displaySearchByID(){
+        
+    }
+
+    public void displaySearchByKeyword(){
+
+    }
+
+    public Criminal addCriminal() {
         //TODO Fix Extraneous Input Causing Crashes.
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Blood Type", "Fingerprint", "Hair Color", "Articles of Clothing (#)", "Foot Size", "Eye Color", "Currently Alive? (y/n)", "Tattoos (#)"};
         ArrayList<String> inputs = new ArrayList<String>();
@@ -388,15 +434,17 @@ public class CriminalUI {
 
             Criminal temp = new Criminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
             database.addCriminal(temp);
-            //return temp;
+            return temp;
+            
         } 
         catch (Exception e) {
             e.printStackTrace();
             System.out.println("-----------------------------\nSomething Went Wrong!\nCheck your input and try again!\n-----------------------------");
         }
+        return null;
     }
 
-    public void addPOI() {
+    public PersonOfInterest addPOI() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Reason of Interest", "Avaliable Details"};
         ArrayList<String> inputs = new ArrayList<String>();
         for (String i : words) {
@@ -420,11 +468,11 @@ public class CriminalUI {
 
         PersonOfInterest temp = new PersonOfInterest(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,reasonofInterest,avaliableDetails);
         database.addPOI(temp);
-        //return temp;
+        return temp;
 
     }
 
-    public void addSuspect() {
+    public Suspect addSuspect() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Foot Size", "Blood Type", "Finger Print", "details", "Articles of Clothing (#)"};
         ArrayList<String> inputs = new ArrayList<String>();
         ArrayList<String> clothing = new ArrayList<String>();
@@ -463,10 +511,10 @@ public class CriminalUI {
     
         Suspect temp = new Suspect(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,hairColor,eyeColor,footSize,bloodType,fingerPrint,details,clothing);
         database.addSuspect(temp);
-        //return temp;
+        return temp;
     }
 
-    public void addVictim() {
+    public Victim addVictim() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
         ArrayList<String> inputs = new ArrayList<String>();
         for (String i : words) {
@@ -488,10 +536,10 @@ public class CriminalUI {
 
         Victim temp = new Victim(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
         database.addVictim(temp);
-        //return temp;
+        return temp;
     }
 
-    public void addWitness() {
+    public Witness addWitness() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
         ArrayList<String> inputs = new ArrayList<String>();
         for (String i : words) {
@@ -513,10 +561,10 @@ public class CriminalUI {
 
         Witness temp = new Witness(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,relationship,statement);
         database.addWitness(temp);
-        //return temp;
+        return temp;
     }
 
-    public void addEvidence(){
+    public Evidence addEvidence(){
         String[] words = {"Evidence Type", "Location Found"};
         ArrayList<String> inputs = new ArrayList<String>();
         for (String i : words) {
@@ -526,8 +574,11 @@ public class CriminalUI {
         String evidenceType = inputs.get(0);
         String locationFound = inputs.get(1);
 
-        database.createEvidence(UUID.randomUUID(), evidenceType, locationFound);
+        Evidence temp = new Evidence(UUID.randomUUID(), evidenceType, locationFound);
+        database.addEvidence(temp);
+        return temp;
     }
+    
 
     public static void main(String[] args) {
         CriminalUI driver = new CriminalUI();

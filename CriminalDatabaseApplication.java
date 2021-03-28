@@ -5,6 +5,7 @@ public class CriminalDatabaseApplication {
     private static CaseList caseList = CaseList.getInstance();
     private static UserList userList = UserList.getInstance();
     private static PersonList personList = PersonList.getInstance();
+    private static EvidenceList evidenceList = EvidenceList.getInstance();
     private static User user;
     private static CriminalDatabaseApplication criminalDatabaseApplication;
     public CriminalDatabaseApplication(CaseList caseList, UserList userList, PersonList personList, User user)
@@ -96,7 +97,11 @@ public class CriminalDatabaseApplication {
 
     public void createEvidence(UUID evidenceID, String evidenceType, String locationFound){
         Evidence evidence = new Evidence(evidenceID, evidenceType, locationFound);
-        caseList.addEvidence(evidence);
+        evidenceList.addEvidence(evidence);
+    }
+
+    public void addEvidence(Evidence evidence){
+        evidenceList.addEvidence(evidence);
     }
 
 
