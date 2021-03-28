@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class PersonList {
-    private ArrayList<Criminal> criminalList; 
-    private ArrayList<Witness> witnessList;
-    private ArrayList<Suspect> suspectList;
-    private ArrayList<Victim> victimList;
-    private ArrayList<PersonOfInterest> poiList;
+    private ArrayList<Criminal> criminalList = new ArrayList<Criminal>(); 
+    private ArrayList<Witness> witnessList = new ArrayList<Witness>();
+    private ArrayList<Suspect> suspectList = new ArrayList<Suspect>();
+    private ArrayList<Victim> victimList = new ArrayList<Victim>();
+    private ArrayList<PersonOfInterest> poiList = new ArrayList<PersonOfInterest>();
     private static PersonList personList = null;
 
 
