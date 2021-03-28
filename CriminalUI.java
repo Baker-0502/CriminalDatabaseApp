@@ -391,29 +391,18 @@ public class CriminalUI {
         
 
     public void displaySearchByKeyword(){
-        int choice;
-        boolean quit2 = false;
-        while(!quit){
-            System.out.println("What would you like to search for?\n1. Person\n2. Evidence\n3. Case\n4. Go back");
-            choice = readIn.nextInt();
-            readIn.nextLine();
-            if(choice == 1){
-                //displaySearchPerson();
-            }
-            else if(choice == 2){
-                //displaySearchEvidence();
-            }
-            else if(choice == 3){
-                //displaySearchCase();
-            }
-            else if(choice == 4){
-                quit2 = true;
-                break;
-            }
-            else{
-                System.out.println("Please input a valid option!");
-            }
+        int amt_input=0;
+        System.out.println("Enter the number of keywords you want to search by");
+        amt_input = readIn.nextInt();
+        readIn.nextLine();
 
+        for(int i=0;i<amt_input;i++){
+            System.out.println("Keyword "+(i+1)+":");
+            String input = readIn.nextLine();
+            input.toLowerCase();
+            if(input.equals("first name")){
+                database.findPerson(input);
+            }
         }
     }
 
