@@ -84,8 +84,8 @@ public class CriminalDatabaseApplication {
     }
 
     public void createSuspect(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, 
-    String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing){
-        Suspect suspect = new Suspect(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing);
+    String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing, ArrayList<String> tattoos){
+        Suspect suspect = new Suspect(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, hairColor, eyeColor, footSize, bloodType, fingerPrint, details, clothing, tattoos);
         caseList.addSuspect(suspect);
     }
 
@@ -327,6 +327,275 @@ public class CriminalDatabaseApplication {
             Person name = personList.getPersonsOfInterests().get(i);
             if(name.getAge()==age){
                 System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+    public void searchHeight(double height){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Person name = personList.getSuspects().get(i);
+            if(name.getHeight()==height){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Person name = personList.getCriminals().get(i);
+            if(name.getHeight()==height){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+        for(int i=0;i<personList.getVictims().size();i++){
+            Person name = personList.getVictims().get(i);
+            if(name.getHeight()==height){
+                System.out.println(personList.getVictims().get(i));
+            }
+        }
+        for(int i=0;i<personList.getWitnesses().size();i++){
+            Person name = personList.getWitnesses().get(i);
+            if(name.getHeight()==height){
+                System.out.println(personList.getWitnesses().get(i));
+            }
+        }
+        for(int i=0;i<personList.getPersonsOfInterests().size();i++){
+            Person name = personList.getPersonsOfInterests().get(i);
+            if(name.getHeight()==height){
+                System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+
+    public void searchWeight(double weight){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Person name = personList.getSuspects().get(i);
+            if(name.getWeight()==weight){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Person name = personList.getCriminals().get(i);
+            if(name.getWeight()==weight){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+        for(int i=0;i<personList.getVictims().size();i++){
+            Person name = personList.getVictims().get(i);
+            if(name.getWeight()==weight){
+                System.out.println(personList.getVictims().get(i));
+            }
+        }
+        for(int i=0;i<personList.getWitnesses().size();i++){
+            Person name = personList.getWitnesses().get(i);
+            if(name.getWeight()==weight){
+                System.out.println(personList.getWitnesses().get(i));
+            }
+        }
+        for(int i=0;i<personList.getPersonsOfInterests().size();i++){
+            Person name = personList.getPersonsOfInterests().get(i);
+            if(name.getWeight()==weight){
+                System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+
+    public void searchPhone(String phoneNumber){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Person name = personList.getSuspects().get(i);
+            if(name.getPhoneNumber().equals(phoneNumber)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Person name = personList.getCriminals().get(i);
+            if(name.getPhoneNumber().equals(phoneNumber)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+        for(int i=0;i<personList.getVictims().size();i++){
+            Person name = personList.getVictims().get(i);
+            if(name.getPhoneNumber().equals(phoneNumber)){
+                System.out.println(personList.getVictims().get(i));
+            }
+        }
+        for(int i=0;i<personList.getWitnesses().size();i++){
+            Person name = personList.getWitnesses().get(i);
+            if(name.getPhoneNumber().equals(phoneNumber)){
+                System.out.println(personList.getWitnesses().get(i));
+            }
+        }
+        for(int i=0;i<personList.getPersonsOfInterests().size();i++){
+            Person name = personList.getPersonsOfInterests().get(i);
+            if(name.getPhoneNumber().equals(phoneNumber)){
+                System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+    public void searchAddress(String address){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Person name = personList.getSuspects().get(i);
+            if(name.getAddress().equals(address)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Person name = personList.getCriminals().get(i);
+            if(name.getAddress().equals(address)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+        for(int i=0;i<personList.getVictims().size();i++){
+            Person name = personList.getVictims().get(i);
+            if(name.getAddress().equals(address)){
+                System.out.println(personList.getVictims().get(i));
+            }
+        }
+        for(int i=0;i<personList.getWitnesses().size();i++){
+            Person name = personList.getWitnesses().get(i);
+            if(name.getAddress().equals(address)){
+                System.out.println(personList.getWitnesses().get(i));
+            }
+        }
+        for(int i=0;i<personList.getPersonsOfInterests().size();i++){
+            Person name = personList.getPersonsOfInterests().get(i);
+            if(name.getAddress().equals(address)){
+                System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+    public void searchOccupation(String occupation){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Person name = personList.getSuspects().get(i);
+            if(name.getOccupation().equals(occupation)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Person name = personList.getCriminals().get(i);
+            if(name.getOccupation().equals(occupation)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+        for(int i=0;i<personList.getVictims().size();i++){
+            Person name = personList.getVictims().get(i);
+            if(name.getOccupation().equals(occupation)){
+                System.out.println(personList.getVictims().get(i));
+            }
+        }
+        for(int i=0;i<personList.getWitnesses().size();i++){
+            Person name = personList.getWitnesses().get(i);
+            if(name.getOccupation().equals(occupation)){
+                System.out.println(personList.getWitnesses().get(i));
+            }
+        }
+        for(int i=0;i<personList.getPersonsOfInterests().size();i++){
+            Person name = personList.getPersonsOfInterests().get(i);
+            if(name.getOccupation().equals(occupation)){
+                System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+    public void searchBlood(String blood){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Suspect name = personList.getSuspects().get(i);
+            if(name.getBloodType().equals(blood)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Criminal name = personList.getCriminals().get(i);
+            if(name.getBloodType().equals(blood)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+    }
+    public void searchFinger(String finger){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Suspect name = personList.getSuspects().get(i);
+            if(name.getFingerPrint().equals(finger)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Criminal name = personList.getCriminals().get(i);
+            if(name.getFingerPrint().equals(finger)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+    }
+    public void searchHair(String hair){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Suspect name = personList.getSuspects().get(i);
+            if(name.getHairColor().equals(hair)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Criminal name = personList.getCriminals().get(i);
+            if(name.getHairColor().equals(hair)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+        for(int i=0;i<personList.getPersonsOfInterests().size();i++){
+            PersonOfInterest name = personList.getPersonsOfInterests().get(i);
+            if(name.getHairColor().equals(hair)){
+                System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+    public void searchFoot(String foot){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Suspect name = personList.getSuspects().get(i);
+            if(name.getFootSize().equals(foot)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Criminal name = personList.getCriminals().get(i);
+            if(name.getFootSize().equals(foot)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+    }
+    public void searchEye(String eye){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Suspect name = personList.getSuspects().get(i);
+            if(name.getEyeColor().equals(eye)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Criminal name = personList.getCriminals().get(i);
+            if(name.getEyeColor().equals(eye)){
+                System.out.println(personList.getCriminals().get(i));
+            }
+        }
+        for(int i=0;i<personList.getPersonsOfInterests().size();i++){
+            PersonOfInterest name = personList.getPersonsOfInterests().get(i);
+            if(name.getEyeColor().equals(eye)){
+                System.out.println(personList.getPersonsOfInterests().get(i));
+            }
+        }
+    }
+    public void searchTattoo(String tattoo){
+        for(int i=0;i<personList.getSuspects().size();i++){
+            Suspect name = personList.getSuspects().get(i);
+            if(name.getTattoos().toString().toLowerCase().contains(tattoo)){
+                System.out.println(personList.getSuspects().get(i));
+            }
+
+        }
+        for(int i=0;i<personList.getCriminals().size();i++){
+            Criminal name = personList.getCriminals().get(i);
+            if(name.getTattoos().toString().toLowerCase().contains(tattoo)){
+                System.out.println(personList.getCriminals().get(i));
             }
         }
     }

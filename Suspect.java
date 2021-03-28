@@ -11,7 +11,7 @@ public class Suspect extends Person{
     private ArrayList<String> clothing;
     private ArrayList<String> tattoos;
 
-    public Suspect(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing)
+    public Suspect(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing, ArrayList<String> tattoos)
     {
         super(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation);
         this.hairColor = hairColor;
@@ -21,6 +21,7 @@ public class Suspect extends Person{
         this.fingerPrint = fingerPrint;
         this.details = details;
         this.clothing = clothing;
+        this.tattoos = tattoos;
     }
 
     public String getHairColor() {
@@ -51,12 +52,12 @@ public class Suspect extends Person{
         return clothing;
     }
 
-    public ArrayList<String> getTattoos() {
+    public ArrayList<String> getTattoos(){
         return tattoos;
     }
 
     public String toString(){
         return super.toString()+"\nHair Color: "+hairColor+"\nEye Color: "+eyeColor+"\nFoot Size: "+footSize+
-        "\nBlood Type: "+bloodType+"\nFinger Print: "+fingerPrint+"\nDetails: "+details+"\nClothing: "+clothing+"\n";
+        "\nBlood Type: "+bloodType+"\nFinger Print: "+fingerPrint+"\nDetails: "+details+"\nClothing: "+clothing+"\nTattoos: "+tattoos;
     }
 }
