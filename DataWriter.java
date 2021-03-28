@@ -2,11 +2,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.xml.crypto.Data;
+//import javax.xml.crypto.Data;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import java.util.UUID;
+//import java.util.UUID;
 
 public class DataWriter extends DataConstants {
     
@@ -339,7 +339,7 @@ public class DataWriter extends DataConstants {
         policeManObject.put(USER_DEPARTMENT, policeMan.getDepartment());
         policeManObject.put(POLICEMEN_BADGE_ID, policeMan.getBadgeID());
         policeManObject.put(POLICEMEN_CASE_COUNT, policeMan.getCaseCount());
-        policeManObject.put(POLICEMEN_EDIT_ACCESS, policeMan.getEditAccess());
+        policeManObject.put(POLICEMEN_EDIT_ACCESS, Boolean.toString(policeMan.getEditAccess()));
 
         return policeManObject;
 

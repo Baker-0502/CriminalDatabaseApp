@@ -150,4 +150,16 @@ public class CriminalDatabaseApplication {
         caseList.print();
     }
 
+    public void saveAll() {
+        DataWriter.saveCriminals();
+        DataWriter.saveVictims();
+        DataWriter.savePOI();
+        DataWriter.saveSuspects();
+        DataWriter.saveWitnesss();
+        DataWriter.saveAdministrators();
+        DataWriter.saveDetectives();
+        DataWriter.savepoliceMans();
+        DataWriter.saveCases();
+        DataWriter.saveEvidences();
+    }
 }
