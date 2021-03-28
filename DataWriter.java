@@ -1,9 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
-//import javax.xml.crypto.Data;
-
+import java.io.File;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 //import java.util.UUID;
@@ -266,7 +264,7 @@ public class DataWriter extends DataConstants {
         administratorObject.put(USER_EMAIL, administrator.getEmail());
         administratorObject.put(USER_PHONE_NUMBER, administrator.getPhoneNumber());
         administratorObject.put(USER_DEPARTMENT, administrator.getDepartment());
-        administratorObject.put(ADMINISTRATOR_UPDATE_CASE, administrator.getUpdateCase());
+        administratorObject.put(ADMINISTRATOR_UPDATE_CASE, Boolean.toString(administrator.getUpdateCase()));
 
         return administratorObject;
 
@@ -354,7 +352,7 @@ public class DataWriter extends DataConstants {
             jsonCase.add(getCaseJSON(caseList.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(POLICEMEN_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(CASES_FILE_NAME)) {
             file.write(jsonCase.toJSONString());
             file.flush();
         } 
@@ -365,15 +363,12 @@ public class DataWriter extends DataConstants {
 
     public static JSONObject getCaseJSON(Case casePass) {
         JSONObject caseObject = new JSONObject();
-        //Convert Arrays into JSON Arrays.
         JSONArray userWorkingJSON = new JSONArray();
-        //TODO fix back into user array
-        //Currently using string array until methods are compiled
         ArrayList<User> userWorking = casePass.getUserWorking();
         if(userWorking != null) {
             for(int i = 0; i < userWorking.size(); i++) {
                 if (userWorking.get(i) != null) {
-                    userWorkingJSON.add(userWorking.get(i).getUserID());
+                    userWorkingJSON.add(userWorking.get(i).getUserID().toString());
                 }
             }
         }
@@ -382,7 +377,7 @@ public class DataWriter extends DataConstants {
         if(suspects != null) {
             for(int i = 0; i < suspects.size(); i++) {
                 if (suspects.get(i) != null) {
-                    suspectsJSON.add(suspects.get(i).getUUID());
+                    suspectsJSON.add(suspects.get(i).getUUID().toString());
                 }
             }
         }
@@ -392,7 +387,7 @@ public class DataWriter extends DataConstants {
         if(casePass != null) {
             for(int i = 0; i < witnesses.size(); i++) {
                 if (witnesses.get(i) != null) {
-                    witnessJSON.add(witnesses.get(i).getUUID());
+                    witnessJSON.add(witnesses.get(i).getUUID().toString());
                 }
             }
         }
@@ -402,22 +397,22 @@ public class DataWriter extends DataConstants {
         if(evidenceList != null) {
             for(int i = 0; i < evidenceList.size(); i++) {
                 if (evidenceList.get(i) != null) {
-                    evidenceJSON.add(evidenceList.get(i).getUUID());
+                    evidenceJSON.add(evidenceList.get(i).getUUID().toString());
                 }
             }
         }
         
 		caseObject.put(CASE_ID, casePass.getCaseID().toString());
-        caseObject.put(CASE_CLOSED_CASE, casePass.getClosedCase());
+        caseObject.put(CASE_CLOSED_CASE, Boolean.toString(casePass.getClosedCase()));
         caseObject.put(CASE_NAME, casePass.getCaseName());
-        caseObject.put(CASE_UPDATE_CASE, casePass.getUpdateCase());
-        caseObject.put(CASE_FEDERAL_CASE, casePass.getFederalCase());
-        caseObject.put(CASE_MISDEMEANOR, casePass.getMisdimeanor());
+        caseObject.put(CASE_UPDATE_CASE, Boolean.toString(casePass.getUpdateCase()));
+        caseObject.put(CASE_FEDERAL_CASE, Boolean.toString(casePass.getFederalCase()));
+        caseObject.put(CASE_MISDEMEANOR, Boolean.toString(casePass.getMisdimeanor()));
         caseObject.put(CASE_CATEGORY, casePass.getCategory().toString());
-        caseObject.put(CASE_USER_WORKING, userWorkingJSON.toString());
-        caseObject.put(CASE_SUSPECTS, suspectsJSON.toString());
-        caseObject.put(CASE_WITNESSES, witnessJSON.toString());
-        //caseObject.put(CASE_EVIDENCE_LIST, );
+        caseObject.put(CASE_USER_WORKING, userWorkingJSON);
+        caseObject.put(CASE_SUSPECTS, suspectsJSON);
+        caseObject.put(CASE_WITNESSES, witnessJSON);
+        caseObject.put(CASE_EVIDENCE_LIST, evidenceJSON);
 
         return caseObject;
 
@@ -453,4 +448,12 @@ public class DataWriter extends DataConstants {
 
     }
 
+    public static void writeCase(Case casePrint) {
+        try {
+            File outFile = new File(casePrint.getCaseName().trim() + ".txt");
+            if (outFile.createNewFile()) {
+                System.out.println("Creating New File, " + outFile);
+            }
+        }
+    }
 }
