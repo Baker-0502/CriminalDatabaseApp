@@ -393,7 +393,7 @@ public class CriminalUI {
     public void displaySearchByKeyword(){
         int choice;
         boolean quit2 = false;
-        while(!quit){
+        while(!quit2){
             System.out.println("What would you like to search for?\n1. Person\n2. Evidence\n3. Case\n4. Go back");
             choice = readIn.nextInt();
             readIn.nextLine();
@@ -415,10 +415,6 @@ public class CriminalUI {
             }
 
         }
-    }
-
-    public void displaySearchPerson(){
-        System.out.println("")
     }
 
     public Criminal addCriminal() {
