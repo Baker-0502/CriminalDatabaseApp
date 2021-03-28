@@ -413,6 +413,7 @@ public class CriminalUI {
         int input1;
         double input2;
         ArrayList<String> personID = new ArrayList<String>();
+        System.out.println("You may search by:\nFirst Name, Last Name, Gender, Race, Age, Height, Weight, Phone Number, Address, Occupations, Blood Type, Fingerprint, Hair Color, Footsize, Eye Color, Tattoos");
         System.out.println("Enter the number of keywords you want to search by");
         amt_input = readIn.nextInt();
         readIn.nextLine();
@@ -422,91 +423,103 @@ public class CriminalUI {
             System.out.println("Keyword "+(i+1)+":");
             input = readIn.nextLine();
             input.toLowerCase();
-            if(input.equals("first name")){
+            if(input.toLowerCase().equals("first name")){
                 System.out.println("Enter First Name");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchFirst(input));
             }
-            else if(input.equals("last name")){
+            else if(input.toLowerCase().equals("last name")){
                 System.out.println("Enter Last Name");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchLast(input));
             }
-            else if(input.equals("gender")){
+            else if(input.toLowerCase().equals("gender")){
                 System.out.println("Enter Gender");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchGender(input));
             }
-            else if(input.equals("race")){
+            else if(input.toLowerCase().equals("race")){
                 System.out.println("Enter Race");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchRace(input));
             }
-            else if(input.equals("age")){
+            else if(input.toLowerCase().equals("age")){
                 System.out.println("Enter Age");
                 input1 = readIn.nextInt();
                 readIn.nextLine();
                 peopleFound.addAll(database.searchAge(input1));
             }
-            else if(input.equals("height")){
+            else if(input.toLowerCase().equals("height")){
                 System.out.println("Enter Height");
                 input2 = readIn.nextDouble();
                 readIn.nextLine();
                 peopleFound.addAll(database.searchHeight(input2));
             }
-            else if(input.equals("weight")){
+            else if(input.toLowerCase().equals("weight")){
                 System.out.println("Enter Weight");
                 input2 = readIn.nextDouble();
                 readIn.nextLine();
                 peopleFound.addAll(database.searchWeight(input2));
             }
-            else if(input.equals("phone number")){
+            else if(input.toLowerCase().equals("phone number")){
                 System.out.println("Enter Phone Number");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchPhone(input));
             }
-            else if(input.equals("address")){
+            else if(input.toLowerCase().equals("address")){
                 System.out.println("Enter Address");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchAddress(input));
             }
-            else if(input.equals("occupation")){
+            else if(input.toLowerCase().equals("occupation")){
                 System.out.println("Enter Occupation");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchOccupation(input));
             }
-            else if(input.equals("blood type")){
+            else if(input.toLowerCase().equals("blood type")){
                 System.out.println("Enter Blood Type");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchBlood(input));
             }
-            else if(input.equals("fingerprint")){
+            else if(input.toLowerCase().equals("fingerprint")){
                 System.out.println("Enter Fingerprint");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchFinger(input));
             }
-            else if(input.equals("hair color")){
+            else if(input.toLowerCase().equals("hair color")){
                 System.out.println("Enter Hair Color");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchHair(input));
             }
-            else if(input.equals("footsize")){
+            else if(input.toLowerCase().equals("footsize")){
                 System.out.println("Enter Foot Size");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchFoot(input));
             }
-            else if(input.equals("eye color")){
+            else if(input.toLowerCase().equals("eye color")){
                 System.out.println("Enter Eye Color");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchEye(input));
             }
-            else if(input.equals("tattoos")){
+            else if(input.toLowerCase().equals("tattoos")){
                 System.out.println("Enter Tattoo");
                 input = readIn.nextLine();
                 peopleFound.addAll(database.searchTattoo(input));
             }
         }
+        ArrayList<Person> people = database.findCorrectPersons(peopleFound, amt_input);
         System.out.println(database.findCorrectPersons(peopleFound, amt_input));
+        for(int i=0;i<database.findCorrectPersons(peopleFound, amt_input).size();i++){
+            
+        }
+        System.out.println("Would you like to print this out?(Y/N)");
+        input = readIn.nextLine();
+        if(input.equals("Y")){
+            for(int i=0;i<people.size();i++){
+                database.writeToText(people.get(i));
+            }
+        }
+
     }
 
     public Criminal addCriminal() {
@@ -612,7 +625,7 @@ public class CriminalUI {
     }
 
     public Suspect addSuspect() {
-        String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Foot Size", "Blood Type", "Finger Print", "details", "Articles of Clothing (#)","Tattoo (#)"};
+        String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Foot Size", "Blood Type", "Finger Print", "details", "Articles of Clothing (#)","Tattoos (#)"};
         ArrayList<String> inputs = new ArrayList<String>();
         ArrayList<String> clothing = new ArrayList<String>();
         ArrayList<String> tattoos = new ArrayList<String>();
@@ -620,8 +633,13 @@ public class CriminalUI {
         for (String i : words) {
             if(i.equals("Articles of Clothing (#)")) {
                 System.out.println(i + ":");
-                j = readIn.nextInt();
-                readIn.nextLine();
+                try {
+                    j = readIn.nextInt();
+                    readIn.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Please Input a Valid Number and Try Again!");
+                }
                 for (int k = 0; k < j; k++) {
                     System.out.println("Article " + (k + 1) +":");
                     clothing.add(readIn.nextLine());
