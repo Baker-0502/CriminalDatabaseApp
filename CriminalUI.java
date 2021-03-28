@@ -373,13 +373,13 @@ public class CriminalUI {
             choice = readIn.nextInt();
             readIn.nextLine();
             if(choice == 1){
-                displaySearchPerson();
+                //displaySearchPerson();
             }
             else if(choice == 2){
-                displaySearchEvidence();
+                //displaySearchEvidence();
             }
             else if(choice == 3){
-                displaySearchCase();
+                //displaySearchCase();
             }
             else if(choice == 4){
                 quit2 = true;
