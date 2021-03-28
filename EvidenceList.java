@@ -30,12 +30,12 @@ public class EvidenceList {
         evidenceList.add(evidence);
     }
 
-    public Evidence findEvidence(UUID evidenceID) {
-        for(Evidence evidence: evidenceList) {
-            if(evidenceID.equals(evidence.getEvidenceID())) {
-                return evidence;
+    public Evidence findEvidence(UUID id) {
+        for(int i=0; i<evidenceList.size(); i++){
+            if(evidenceList.get(i).getEvidenceID().equals(id)){
+                return evidenceList.get(i);
             }
         }
-        return evidence;
+        return null;
     }
 }
