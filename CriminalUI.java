@@ -374,15 +374,36 @@ public class CriminalUI {
 
             if(database.findPerson(lookingID)!=null){
                 System.out.println(database.findPerson(lookingID));
+                System.out.println("Would you like to print this person?(Y/N)");
+                String input = readIn.nextLine();
+                if(input.equals("Y")){
+                    database.writeToText(database.findPerson(lookingID));
+                }
             }
             else if(database.findUser(lookingID)!=null){
                 System.out.println(database.findUser(lookingID));
+                System.out.println("Would you like to print this user?(Y/N)");
+                String input = readIn.nextLine();
+                if(input.equals("Y")){
+                    database.writeToText(database.findPerson(lookingID));
+                }
+
             }
             else if(database.findCase(lookingID)!=null){
                 System.out.println(database.findCase(lookingID));
+                System.out.println("Would you like to print this case?(Y/N)");
+                String input = readIn.nextLine();
+                if(input.equals("Y")){
+                    database.writeToText(database.findCase(lookingID));
+                }
             }
             else if(database.findEvidence(lookingID)!=null){
                 System.out.println(database.findEvidence(lookingID));
+                System.out.println("Would you like to print this evidence?(Y/N)");
+                String input = readIn.nextLine();
+                if(input.equals("Y")){
+                    database.writeToText(database.findEvidence(lookingID));
+                }
             }
             else{
                 System.out.println("Invalid UUID");
@@ -482,7 +503,6 @@ public class CriminalUI {
             Criminal temp = new Criminal(UUID.randomUUID(),firstName,lastName,gender,race,age,height,weight,phoneNumber,address,occupation,bloodType,fingerprint,hairColor,clothing,footSize,eyeColor,alive,tattoos);
             database.addCriminal(temp);
             return temp;
-            
         } 
         catch (Exception e) {
             e.printStackTrace();
