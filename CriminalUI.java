@@ -11,6 +11,11 @@ public class CriminalUI {
     private User loggedIn;
     private boolean quit;
 
+    /**
+     * The main method to run the program, displays different options depending on the users input
+     * boolean quit stops the program when the user decides to exit
+     * loggedIn checks the type of User logged in, and displays corresponding menus
+     */
     public void run(){
         System.out.println(WELCOME_MESSAGE);
         quit = false;
@@ -57,6 +62,10 @@ public class CriminalUI {
         }
     }
 
+    /**
+     * if the user is not logged in, asks for them to create an account or log in
+     * if the user is logged in, it prints the different menu options
+     */
     public void displayMenu(){
         if(loggedIn==null){
             System.out.println("1. Create Account\n2. Login");
@@ -71,6 +80,10 @@ public class CriminalUI {
         
     }
 
+    /**
+     * if a user is not logged in, and wants to create an account, this has three different accounts it can add
+     * boolean quit2 will quit this method and return back to the main menu when satisfied
+     */
     public void displayAddAccount() {
         int choice;
         boolean quit2 = false;
@@ -97,6 +110,10 @@ public class CriminalUI {
         }
     }
 
+    /**
+     * A user can add a police account, with the given credentials
+     * The program writes the entered credentials and creates the police officer
+     */
     private void addPolice() {
         String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", "Badge ID", "Edit Access"};
         ArrayList<String> wordsArr = new ArrayList<>(Arrays.asList(words));
@@ -115,8 +132,14 @@ public class CriminalUI {
         String badgeID = inputs.get(7);
         boolean editAccess = Boolean.parseBoolean(inputs.get(8));
         database.createPolice(UUID.randomUUID(),firstName, lastName, username, password, email, phoneNumber, department, badgeID, 0, editAccess);
+
+        System.out.println();
     }
 
+    /**
+    * A user can add a Detective, with the given credentials
+    * The program writes the entered credentials and creates the Detective
+    */
     public void addDetective() {
         String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", "Associate"};
         ArrayList<String> wordsArr = new ArrayList<>(Arrays.asList(words));
@@ -139,6 +162,10 @@ public class CriminalUI {
         System.out.println();
     }
 
+     /**
+     * A user can add an admin account, with the given credentials
+     * The program writes the entered credentials and creates the admin
+     */
     public void addAdmin() {
         String[] words = {"First Name", "Last Name", "Username", "Password", "Email", "Phone Number", "Department", "Update Case"};
         ArrayList<String> wordsArr = new ArrayList<>(Arrays.asList(words));
@@ -161,6 +188,10 @@ public class CriminalUI {
         System.out.println();
     }
 
+    /**
+     * the program takes in the entered username and password and checks them with what is in the database
+     * if it doesnt match what is in the database, asks them to try again
+     */
     public void displayLogin(){
         System.out.println("Welcome to the Login Page!\nPlease input your credentials.\nUsername:");
         String username = readIn.nextLine();
@@ -172,6 +203,10 @@ public class CriminalUI {
         }
     }
 
+    /**
+     * lets the user add a case given the below credentials
+     * The user the inputs each credential when given the prompt and adds the case
+     */
     public void addCase(){
         System.out.println("adding case");
         String[] words = {"Closed Case?(y/n)","Case Name","Update Case?(y/n)","Federal Case?(y/n)","Misdimeanor?(y/n)","Category","Users Working","Criminals","Suspects","Witnesses","Evidence"};
@@ -304,10 +339,17 @@ public class CriminalUI {
         }
     }
 
+    /**
+     * prints out the case credentials
+     */
     public void displayCase(){
         database.printCaseList();
     }
 
+    /**
+     * asks the user what kind of person they want to add
+     * boolean quit2 will quit back to the main menu if selected
+     */
     public void displayAddPeople() {
         int choice;
         boolean quit2 = false;
@@ -340,6 +382,10 @@ public class CriminalUI {
         }
     }
 
+    /**
+     * asks the user if they want to search by ID or a keyword
+     * boolean quit2 quits to the menu if selected
+     */
     public void displaySearchOptions(){
         int choice;
         boolean quit2 = false;
@@ -363,8 +409,12 @@ public class CriminalUI {
         }
     }
 
+    /**
+     * asks the user to enter the UUID they want to search for
+     * the database checks all the people, users, cases, and pieces of evidence for that ID, and prints if found, otherwise prints invalid UUID
+     * If found, asks the user if they want to print it to a file
+     */
     public void displaySearchByID(){
-        
             System.out.println("Enter UUID");
             String id = readIn.nextLine();
             UUID lookingID = UUID.fromString(id);
@@ -406,7 +456,14 @@ public class CriminalUI {
                 System.out.println("Invalid UUID");
             }
         }
-        
+    
+        /**
+         * asks the user how many keywords they want to search by, and gives them each type of credential they can search by
+         * check the amount of keywords, and then checks the type of search the user inputs for validity
+         * The user then enters the credential, and the program goes through and calls a search method for that credential
+         * The program then adds all people matching the credential, puts them in a separate arrayList, and prints out that arrayList
+         * Then asks the user if they want to print out the arrayList into a file
+         */
     public void displaySearchByKeyword(){
         int amt_input=0;
         String input;
@@ -522,6 +579,10 @@ public class CriminalUI {
 
     }
 
+    /**
+     * lets the user add a criminal given the below credentials
+     * The user then inputs each credential when given the prompt and creates a criminal
+     */
     public Criminal addCriminal() {
         //TODO Fix Extraneous Input Causing Crashes.
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Blood Type", "Fingerprint", "Hair Color", "Articles of Clothing (#)", "Foot Size", "Eye Color", "Currently Alive? (y/n)", "Tattoos (#)"};
@@ -596,6 +657,10 @@ public class CriminalUI {
         return null;
     }
 
+    /**
+     * lets the user add a person of interest given the below credentials
+     * The user the inputs each credential when given the prompt and creates a person of interest
+     */
     public PersonOfInterest addPOI() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Reason of Interest", "Avaliable Details"};
         ArrayList<String> inputs = new ArrayList<String>();
@@ -624,6 +689,10 @@ public class CriminalUI {
 
     }
 
+    /**
+     * lets the user add a suspect given the below credentials
+     * The user the inputs each credential when given the prompt and creates a suspect
+     */
     public Suspect addSuspect() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Hair Color", "Eye Color", "Foot Size", "Blood Type", "Finger Print", "details", "Articles of Clothing (#)","Tattoos (#)"};
         ArrayList<String> inputs = new ArrayList<String>();
@@ -686,6 +755,10 @@ public class CriminalUI {
         return temp;
     }
 
+    /**
+     * lets the user add a victim given the below credentials
+     * The user the inputs each credential when given the prompt and creates a victim
+     */
     public Victim addVictim() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
         ArrayList<String> inputs = new ArrayList<String>();
@@ -711,6 +784,10 @@ public class CriminalUI {
         return temp;
     }
 
+    /**
+     * lets the user add a witness given the below credentials
+     * The user the inputs each credential when given the prompt and creates a witness
+     */
     public Witness addWitness() {
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Relationship", "Statement"};
         ArrayList<String> inputs = new ArrayList<String>();
@@ -736,6 +813,10 @@ public class CriminalUI {
         return temp;
     }
 
+    /**
+     * lets the user add evidence given the below credentials
+     * The user the inputs each credential when given the prompt and adds evidence
+     */
     public Evidence addEvidence(){
         String[] words = {"Evidence Type", "Location Found"};
         ArrayList<String> inputs = new ArrayList<String>();
@@ -752,6 +833,9 @@ public class CriminalUI {
     }
     
 
+    /**
+     * runs the program
+     */
     public static void main(String[] args) {
         CriminalUI driver = new CriminalUI();
         driver.run();
