@@ -138,6 +138,10 @@ public class CriminalDatabaseApplication {
         return userList.findUser(id);
     }
 
+    public Case findCase(UUID id){
+        return caseList.findCase(id);
+    }
+
     public void printUserList(){
         userList.print();
     }
@@ -149,6 +153,11 @@ public class CriminalDatabaseApplication {
     public void printCaseList(){
         caseList.print();
     }
+
+    public void printEvidenceList(){
+        evidenceList.print();
+    }
+
 
     public void saveAll() {
         DataWriter.saveCriminals();

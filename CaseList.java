@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class CaseList {
     private ArrayList<Case> caseList;
@@ -78,6 +79,15 @@ public class CaseList {
             evidences.add(evidence);
         }
     }
+
+    public Case findCase(UUID id){
+        for(int i=0;i<caseList.size();i++){
+            if(caseList.get(i).getCaseID().equals(id)){
+                return caseList.get(i);
+            }
+        }
+        return null;
+    } 
 
     public void print(){
         for(int i=0;i<caseList.size();i++){

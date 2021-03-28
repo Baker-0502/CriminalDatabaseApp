@@ -38,4 +38,10 @@ public class EvidenceList {
         }
         return evidence;
     }
+
+    public void print(){
+        for(int i=0;i<evidenceList.size();i++){
+            System.out.println(evidenceList.get(i).toString());
+        }
+    }
 }
