@@ -161,8 +161,6 @@ public class CriminalUI {
         System.out.println();
     }
 
-    //private void add
-
     public void displayLogin(){
         System.out.println("Welcome to the Login Page!\nPlease input your credentials.\nUsername:");
         String username = readIn.nextLine();
@@ -174,7 +172,6 @@ public class CriminalUI {
         }
     }
 
-    //TODO Fix adding command to arraylist of type user
     public void addCase(){
         System.out.println("adding case");
         String[] words = {"Closed Case?(y/n)","Case Name","Update Case?(y/n)","Federal Case?(y/n)","Misdimeanor?(y/n)","Category","Users Working","Criminals","Suspects","Witnesses","Evidence"};
@@ -410,7 +407,6 @@ public class CriminalUI {
             }
         }
         
-
     public void displaySearchByKeyword(){
         int amt_input=0;
         String input;

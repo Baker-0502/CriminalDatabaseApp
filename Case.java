@@ -30,8 +30,7 @@ public class Case {
     }
 
 
-    public boolean activeCase(boolean closedCase)
-    {
+    public boolean activeCase(boolean closedCase) {
         if(!closedCase) {
             closedCase = true;
         }
@@ -42,8 +41,7 @@ public class Case {
 
     }
 
-    public boolean updateCase(boolean updateCase)
-    {
+    public boolean updateCase(boolean updateCase) {
 
         if(updateCase){
             updateCase = true;
@@ -55,8 +53,7 @@ public class Case {
         return updateCase;
     }
 
-    public boolean updateFederalStatus(boolean federalCase)
-    {
+    public boolean updateFederalStatus(boolean federalCase) {
         if(federalCase){
             federalCase = true;
         }

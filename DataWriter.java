@@ -458,7 +458,7 @@ public class DataWriter extends DataConstants {
 
     public static void writeCase(Case casePrint) {
         try {
-            File outFile = new File(casePrint.getCaseName().trim() + ".txt");
+            File outFile = new File(".\\SavedFiles\\" + casePrint.getCaseName().trim() + ".txt");
             if (outFile.createNewFile()) {
                 System.out.println("Creating New File, " + outFile.getName());
             }
@@ -476,7 +476,7 @@ public class DataWriter extends DataConstants {
 
     public static void writePerson(Person person) {
         try {
-            File outFile = new File((person.getFirstName()+person.getLastName()).trim() + ".txt");
+            File outFile = new File(".\\SavedFiles\\" + (person.getFirstName()+person.getLastName()).trim() + ".txt");
             if (outFile.createNewFile()) {
                 System.out.println("Creating New File, " + outFile.getName());
             }
@@ -495,7 +495,7 @@ public class DataWriter extends DataConstants {
 
     public static void writeEvidence(Evidence evidence) {
         try {
-            File outFile = new File((evidence.getEvidenceType() + " " + evidence.getLocationFound()).trim() + ".txt");
+            File outFile = new File(".\\SavedFiles\\" + (evidence.getEvidenceType() + " " + evidence.getLocationFound()).trim() + ".txt");
             if (outFile.createNewFile()) {
                 System.out.println("Creating New File, " + outFile.getName());
             }
