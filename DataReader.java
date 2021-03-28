@@ -14,7 +14,6 @@ public class DataReader extends DataConstants{
             FileReader reader = new FileReader(ADMINISTRATOR_FILE_NAME);
             //JSONParser parser = new JSONParser();
             JSONArray adminJSON = (JSONArray)new JSONParser().parse(reader);
-            System.out.println(adminJSON.toString());
 
             //TODO Issue In Loop
             

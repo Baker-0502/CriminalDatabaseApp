@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Map;
+import java.util.HashMap;
 
 public class CriminalDatabaseApplication {
     private static CaseList caseList = CaseList.getInstance();
@@ -598,6 +600,28 @@ public class CriminalDatabaseApplication {
                 System.out.println(personList.getCriminals().get(i));
             }
         }
+    }
+
+    public ArrayList<Person> findCorrectPersons(ArrayList<Person> people, int numNeeded) {
+        ArrayList<Person> retMe = new ArrayList<Person>();
+        ArrayList<String> uuids = new ArrayList<String>();
+
+        Map<String, Integer> frequencyMap = new HashMap<>();
+        for (Person s: people) {
+            Integer count = frequencyMap.get(s.getUUID().toString());
+            if (count == null) {
+                count = 0;
+            }
+ 
+            frequencyMap.put(s.getUUID().toString(), count + 1);
+        }
+        for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
+            if(entry.getValue() == numNeeded) {
+                retMe.add(findPerson(UUID.fromString(entry.getKey())));
+            }
+        }
+        return retMe;
+
     }
 
     public void writeToText(Object obj) {

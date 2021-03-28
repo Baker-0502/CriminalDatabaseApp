@@ -421,6 +421,7 @@ public class CriminalUI {
         System.out.println("Enter the number of keywords you want to search by");
         amt_input = readIn.nextInt();
         readIn.nextLine();
+        ArrayList<Person> peopleFound = new ArrayList<Person>();
 
         for(int i=0;i<amt_input;i++){
             System.out.println("Keyword "+(i+1)+":");
@@ -429,87 +430,88 @@ public class CriminalUI {
             if(input.equals("first name")){
                 System.out.println("Enter First Name");
                 input = readIn.nextLine();
-                database.searchFirst(input);
+                peopleFound.addAll(database.searchFirst(input));
             }
             else if(input.equals("last name")){
                 System.out.println("Enter Last Name");
                 input = readIn.nextLine();
-                database.searchLast(input);
+                peopleFound.addAll(database.searchLast(input));
             }
             else if(input.equals("gender")){
                 System.out.println("Enter Gender");
                 input = readIn.nextLine();
-                database.searchGender(input);
+                peopleFound.addAll(database.searchGender(input));
             }
             else if(input.equals("race")){
                 System.out.println("Enter Race");
                 input = readIn.nextLine();
-                database.searchRace(input);
+                peopleFound.addAll(database.searchRace(input));
             }
             else if(input.equals("age")){
                 System.out.println("Enter Age");
                 input1 = readIn.nextInt();
                 readIn.nextLine();
-                database.searchAge(input1);
+                peopleFound.addAll(database.searchAge(input1));
             }
             else if(input.equals("height")){
                 System.out.println("Enter Height");
                 input2 = readIn.nextDouble();
                 readIn.nextLine();
-                database.searchHeight(input2);
+                peopleFound.addAll(database.searchHeight(input2));
             }
             else if(input.equals("weight")){
                 System.out.println("Enter Weight");
                 input2 = readIn.nextDouble();
                 readIn.nextLine();
-                database.searchWeight(input2);
+                peopleFound.addAll(database.searchWeight(input2));
             }
             else if(input.equals("phone number")){
                 System.out.println("Enter Phone Number");
                 input = readIn.nextLine();
-                database.searchPhone(input);
+                peopleFound.addAll(database.searchPhone(input));
             }
             else if(input.equals("address")){
                 System.out.println("Enter Address");
                 input = readIn.nextLine();
-                database.searchAddress(input);
+                peopleFound.addAll(database.searchAddress(input));
             }
             else if(input.equals("occupation")){
                 System.out.println("Enter Occupation");
                 input = readIn.nextLine();
-                database.searchOccupation(input);
+                peopleFound.addAll(database.searchOccupation(input));
             }
             else if(input.equals("blood type")){
                 System.out.println("Enter Blood Type");
                 input = readIn.nextLine();
-                database.searchBlood(input);
+                peopleFound.addAll(database.searchBlood(input));
             }
             else if(input.equals("fingerprint")){
                 System.out.println("Enter Fingerprint");
                 input = readIn.nextLine();
-                database.searchFinger(input);
+                peopleFound.addAll(database.searchFinger(input));
             }
             else if(input.equals("hair color")){
                 System.out.println("Enter Hair Color");
                 input = readIn.nextLine();
-                database.searchHair(input);
+                peopleFound.addAll(database.searchHair(input));
             }
             else if(input.equals("footsize")){
                 System.out.println("Enter Foot Size");
                 input = readIn.nextLine();
-                database.searchFoot(input);
+                peopleFound.addAll(database.searchFoot(input));
             }
             else if(input.equals("eye color")){
                 System.out.println("Enter Eye Color");
                 input = readIn.nextLine();
-                database.searchEye(input);
+                peopleFound.addAll(database.searchEye(input));
             }
             else if(input.equals("tattoos")){
                 System.out.println("Enter Tattoo");
                 input = readIn.nextLine();
-                database.searchTattoo(input);
+                peopleFound.addAll(database.searchTattoo(input));
             }
         }
+        
     }
 
     public Criminal addCriminal() {

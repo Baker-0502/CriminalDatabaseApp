@@ -512,8 +512,4 @@ public class DataWriter extends DataConstants {
         }
     }
     
-    public static void main(String[]args) {
-        CriminalDatabaseApplication db = CriminalDatabaseApplication.getInstance();
-        db.searchAll("First Name", "Roy");
-    }
 }
