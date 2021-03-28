@@ -8,7 +8,7 @@
         "misdemeanor": "true",
         "category": "ROBBERY",
         "userWorking": ["5e2fbf77-8406-4ef7-a567-36daeb808430","48d384bf-f11f-4062-99df-11583454571e"],
-        "suspects": ["b8132e6c-6edc-442a-bae2-284e53cb495f"],
+        "suspects": [],
         "witnesses": ["e81f06f2-4834-42e0-9c5f-4dee082c1569","6c12b3e6-8525-4562-abf5-0b335a5e7853"],
         "evidenceList": ["d400cf43-a072-4e88-a725-2ee3c3fbda40","58e17e76-edde-4f6d-b6a2-d69cbc3cd8c1","8e762149-9714-43c8-80ae-fb968ab6e644"]
     },{

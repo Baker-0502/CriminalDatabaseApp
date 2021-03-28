@@ -9,19 +9,17 @@ import org.json.simple.JSONObject;
 import java.util.UUID;
 
 public class DataWriter extends DataConstants {
-    private static CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     
     public static void saveCriminals() {
         PersonList people = PersonList.getInstance();
-        ArrayList<Criminal> criminals = DataReader.loadCriminal();
-        //ArrayList<Criminal> criminals = people.getCriminals(); 
+        ArrayList<Criminal> criminals = people.getCriminals(); 
         JSONArray jsonCriminals = new JSONArray();
 
         for(int i = 0; i < criminals.size(); i++) {
             jsonCriminals.add(getCriminalJSON(criminals.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(CRIMINALS_FILE_NAME)) {
             file.write(jsonCriminals.toJSONString());
             file.flush();
         } 
@@ -68,15 +66,14 @@ public class DataWriter extends DataConstants {
 
     public static void saveVictims() {
         PersonList people = PersonList.getInstance();
-        ArrayList<Victim> victims = DataReader.loadVictim();
-        //ArrayList<Victim> victims = people.getVictims(); 
+        ArrayList<Victim> victims = people.getVictims(); 
         JSONArray jsonVictims = new JSONArray();
 
         for(int i = 0; i < victims.size(); i++) {
             jsonVictims.add(getVictimJSON(victims.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(VICTIMS_FILE_NAME)) {
             file.write(jsonVictims.toJSONString());
             file.flush();
         } 
@@ -109,15 +106,14 @@ public class DataWriter extends DataConstants {
 
     public static void savePOI() {
         PersonList people = PersonList.getInstance();
-        ArrayList<PersonOfInterest> personOfInterests = DataReader.loadPOI(); 
-        //ArrayList<PersonOfInterest> personOfInterests = people.getPersonsOfInterests(); 
+        ArrayList<PersonOfInterest> personOfInterests = people.getPersonsOfInterests(); 
         JSONArray jsonPOI = new JSONArray();
 
         for(int i = 0; i < personOfInterests.size(); i++) {
             jsonPOI.add(getPOI(personOfInterests.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(PERSONS_OF_INTEREST_FILE_NAME)) {
             file.write(jsonPOI.toJSONString());
             file.flush();
         } 
@@ -152,16 +148,14 @@ public class DataWriter extends DataConstants {
 
     public static void saveSuspects() {
         PersonList people = PersonList.getInstance();
-        ArrayList<Suspect> suspects = DataReader.loadSuspect();
-        //System.out.println(suspects);
-        //ArrayList<Suspect> suspects = people.getSuspects(); 
+        ArrayList<Suspect> suspects = people.getSuspects(); 
         JSONArray jsonSuspects = new JSONArray();
 
         for(int i = 0; i < suspects.size(); i++) {
             jsonSuspects.add(getSuspectJSON(suspects.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(SUSPECTS_FILE_NAME)) {
             file.write(jsonSuspects.toJSONString());
             file.flush();
         } 
@@ -202,17 +196,17 @@ public class DataWriter extends DataConstants {
         return suspectObject;
 
     }
+
     public static void saveWitnesss() {
         PersonList people = PersonList.getInstance();
-        ArrayList<Witness> witnesses = DataReader.loadWitness();
-        //ArrayList<Witness> witnesses = people.getWitnesses(); 
+        ArrayList<Witness> witnesses = people.getWitnesses(); 
         JSONArray jsonWitness = new JSONArray();
 
         for(int i = 0; i < witnesses.size(); i++) {
             jsonWitness.add(getWitnessJSON(witnesses.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(WITNESSES_FILE_NAME)) {
             file.write(jsonWitness.toJSONString());
             file.flush();
         } 
@@ -245,15 +239,14 @@ public class DataWriter extends DataConstants {
 
     public static void saveAdministrators() {
         UserList users = UserList.getInstance();
-        ArrayList<Administrator> administrators = DataReader.loadAdmins();
-        //ArrayList<Administrator> administrators = users.getAdministrators(); 
+        ArrayList<Administrator> administrators = users.getAdministrators(); 
         JSONArray jsonAdministrator = new JSONArray();
 
         for(int i = 0; i < administrators.size(); i++) {
             jsonAdministrator.add(getAdministratorJSON(administrators.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(ADMINISTRATOR_FILE_NAME)) {
             file.write(jsonAdministrator.toJSONString());
             file.flush();
         } 
@@ -281,15 +274,14 @@ public class DataWriter extends DataConstants {
 
     public static void saveDetectives() {
         UserList users = UserList.getInstance();
-        ArrayList<Detective> detectives = DataReader.loadDetective();
-        //ArrayList<Detective> detectives = users.getDetectives(); 
+        ArrayList<Detective> detectives = users.getDetectives(); 
         JSONArray jsonDetective = new JSONArray();
 
         for(int i = 0; i < detectives.size(); i++) {
             jsonDetective.add(getDetectiveJSON(detectives.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(DETECTIVES_FILE_NAME)) {
             file.write(jsonDetective.toJSONString());
             file.flush();
         } 
@@ -318,15 +310,14 @@ public class DataWriter extends DataConstants {
 
     public static void savepoliceMans() {
         UserList users = UserList.getInstance();
-        ArrayList<policeOfficer> policeMen = DataReader.loadPoliceOfficer(); 
-        //ArrayList<policeOfficer> policeMen = users.getPoliceOfficers(); 
+        ArrayList<policeOfficer> policeMen = users.getPoliceOfficers(); 
         JSONArray jsonPoliceMan = new JSONArray();
 
         for(int i = 0; i < policeMen.size(); i++) {
             jsonPoliceMan.add(getPoliceManJSON(policeMen.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(POLICEMEN_FILE_NAME)) {
             file.write(jsonPoliceMan.toJSONString());
             file.flush();
         } 
@@ -356,15 +347,14 @@ public class DataWriter extends DataConstants {
 
     public static void saveCases() {
         CaseList cases = CaseList.getInstance();
-        ArrayList<Case> caseList = DataReader.loadCase();
-        //ArrayList<Case> caseList = cases.getCases(); 
+        ArrayList<Case> caseList = cases.getCases(); 
         JSONArray jsonCase = new JSONArray();
 
         for(int i = 0; i < caseList.size(); i++) {
             jsonCase.add(getCaseJSON(caseList.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(POLICEMEN_FILE_NAME)) {
             file.write(jsonCase.toJSONString());
             file.flush();
         } 
@@ -382,35 +372,52 @@ public class DataWriter extends DataConstants {
         ArrayList<User> userWorking = casePass.getUserWorking();
         if(userWorking != null) {
             for(int i = 0; i < userWorking.size(); i++) {
-                userWorkingJSON.add(userWorking.get(i).getUserID().toString());
+                if (userWorking.get(i) != null) {
+                    userWorkingJSON.add(userWorking.get(i).getUserID());
+                }
             }
         }
         JSONArray suspectsJSON = new JSONArray();
         ArrayList<Suspect> suspects = casePass.getSuspects();
         if(suspects != null) {
             for(int i = 0; i < suspects.size(); i++) {
-                suspectsJSON.add(suspects.get(i).getUUID().toString());
+                if (suspects.get(i) != null) {
+                    suspectsJSON.add(suspects.get(i).getUUID());
+                }
             }
         }
+
         JSONArray witnessJSON = new JSONArray();
         ArrayList<Witness> witnesses = casePass.getWitnesses();
         if(casePass != null) {
             for(int i = 0; i < witnesses.size(); i++) {
-                witnessJSON.add(witnesses.get(i).getUUID().toString());
+                if (witnesses.get(i) != null) {
+                    witnessJSON.add(witnesses.get(i).getUUID());
+                }
+            }
+        }
+
+        JSONArray evidenceJSON = new JSONArray();
+        ArrayList<Evidence> evidenceList = casePass.getEvidenceList();
+        if(evidenceList != null) {
+            for(int i = 0; i < evidenceList.size(); i++) {
+                if (evidenceList.get(i) != null) {
+                    evidenceJSON.add(evidenceList.get(i).getUUID());
+                }
             }
         }
         
-		caseObject.put(CASE_ID, casePass.getCaseID());
+		caseObject.put(CASE_ID, casePass.getCaseID().toString());
         caseObject.put(CASE_CLOSED_CASE, casePass.getClosedCase());
         caseObject.put(CASE_NAME, casePass.getCaseName());
         caseObject.put(CASE_UPDATE_CASE, casePass.getUpdateCase());
         caseObject.put(CASE_FEDERAL_CASE, casePass.getFederalCase());
         caseObject.put(CASE_MISDEMEANOR, casePass.getMisdimeanor());
         caseObject.put(CASE_CATEGORY, casePass.getCategory().toString());
-        caseObject.put(CASE_USER_WORKING, userWorkingJSON);
-        caseObject.put(CASE_SUSPECTS, suspectsJSON);
-        caseObject.put(CASE_WITNESSES, witnessJSON);
-        caseObject.put(CASE_EVIDENCE_LIST, casePass.getEvidenceList().toString());
+        caseObject.put(CASE_USER_WORKING, userWorkingJSON.toString());
+        caseObject.put(CASE_SUSPECTS, suspectsJSON.toString());
+        caseObject.put(CASE_WITNESSES, witnessJSON.toString());
+        //caseObject.put(CASE_EVIDENCE_LIST, );
 
         return caseObject;
 
@@ -418,15 +425,14 @@ public class DataWriter extends DataConstants {
 
     public static void saveEvidences() {
         EvidenceList evidenceList = EvidenceList.getInstance();
-        ArrayList<Evidence> evidence = DataReader.loadEvidence();
-        //ArrayList<Evidence> evidence = evidenceList.getEvidence();
+        ArrayList<Evidence> evidence = evidenceList.getEvidence();
         JSONArray jsonEvidence = new JSONArray();
 
         for(int i = 0; i < evidence.size(); i++) {
             jsonEvidence.add(getEvidenceJSON(evidence.get(i)));
         }
 
-        try (FileWriter file = new FileWriter(TEST_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(EVIDENCE_FILE_NAME)) {
             file.write(jsonEvidence.toJSONString());
             file.flush();
         } 
@@ -446,51 +452,5 @@ public class DataWriter extends DataConstants {
         return evidenceObject;
 
     }
-
-
-    //DEBUG ZONE
-    
-    
-    //TODO Change all filepaths back to originals
-    public static void main(String[] args) {
-        //Works
-        //saveAdministrators();
-
-
-        saveCases();
-
-        //Works
-        //saveCriminals();
-
-        //Works
-        //saveDetectives();
-
-        //Works
-        //saveEvidences();
-
-        //Works
-        //savePOI();
-
-        //Works
-        //saveSuspects();
-
-        //Works
-        //saveVictims();
-
-        //Works
-        //saveWitnesss();
-
-        //Works
-        //savepoliceMans();
-
-        //Test FindPerson()
-        /*
-        PersonList newList = PersonList.getInstance();
-        UUID testID = UUID.fromString("b8132e6c-6edc-442a-bae2-284e53cb495f");
-        
-        System.out.println(newList.findPerson(testID));
-        */
-    }
-    
 
 }
