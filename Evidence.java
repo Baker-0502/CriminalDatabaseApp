@@ -29,12 +29,4 @@ public class Evidence {
     public String toString() {
         return "Evidence Type: "+evidenceType+"\nLocation Found: "+locationFound;
     }
-
-    public void createFile() {
-
-    }
-
-    public void readFile(String filepath) {
-        filepath = "File";
-    }
 }

@@ -112,11 +112,9 @@ public class CriminalDatabaseApplication {
         if(userList.findUserName(userName)!=null){
         User desiredUser = userList.findUserName(userName);
         //System.out.println(desiredUser);//Colin is a dumb fool who needs to learn how to read
-        if(userName.equals(desiredUser.getUserName())){
-            if(password.equals(desiredUser.getPassword())){
-                System.out.println("Logging in as "+desiredUser.getFirstName()+" "+desiredUser.getLastName());
+        if(userName.equals(desiredUser.getUserName()) && password.equals(desiredUser.getPassword())){
+            System.out.println("Logging in as "+desiredUser.getFirstName()+" "+desiredUser.getLastName());
                 return desiredUser;
-            }
         }
     }
     System.out.println("Username/Password was incorrect");

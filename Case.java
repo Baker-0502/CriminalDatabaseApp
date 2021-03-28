@@ -11,7 +11,7 @@ public class Case {
     private Category category;
     private ArrayList<User> userWorking;
     private ArrayList<Suspect> suspects;
-    private ArrayList<Witness> witness;
+    private ArrayList<Witness> witness; 
     private ArrayList<Evidence> evidenceList;
 
     public Case(UUID caseID, boolean closedCase, String caseName, boolean updateCase, boolean federalCase, boolean misdimeanor,
