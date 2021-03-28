@@ -1,3 +1,6 @@
+/**
+ * @author Code Gods
+ */
 import java.util.UUID;
 
 public class Victim extends Person{
