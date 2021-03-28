@@ -368,7 +368,7 @@ public class CriminalUI {
 
     public void displaySearchByID(){
 
-        }
+    }
 
     public void displaySearchByKeyword(){
         int choice;
