@@ -9,7 +9,9 @@ public class PersonList {
     private ArrayList<PersonOfInterest> poiList = new ArrayList<PersonOfInterest>();
     private static PersonList personList = null;
 
-
+    /**
+     * default constructor
+     */
     private PersonList() {
         this.criminalList = DataReader.loadCriminal();
         this.witnessList = DataReader.loadWitness();
@@ -18,6 +20,10 @@ public class PersonList {
         this.poiList = DataReader.loadPOI();
     }
 
+
+    /**
+     * making an instance of the personList
+     */
     public static PersonList getInstance() {
         if(personList == null) {
             personList = new PersonList();
@@ -25,26 +31,56 @@ public class PersonList {
         return personList;
     }
 
+    /**
+     * 
+     * @param criminal takes in the made Criminal
+     * adds the criminal to the criminal list
+     */
     public void addCriminal(Criminal criminal){
         criminalList.add(criminal);
     }
 
+    /**
+     * @param witness takes in the made witness
+     * adds the witness to the witness list
+     */
     public void addWitness(Witness witness){
         witnessList.add(witness);
     }
 
+    /**
+     * 
+     * @param suspect takes in the made suspect
+     * adds the suspect to the suspect list
+     */
     public void addSuspect(Suspect suspect){
         suspectList.add(suspect);
     }
 
+    /**
+     * 
+     * @param victim takes in the made victim
+     * adds the victim to the victim list
+     */
     public void addVictim(Victim victim){
         victimList.add(victim);
     }
 
+    /**
+     * 
+     * @param poi takes in the made POI
+     * adds the poi to the poi list
+     */
     public void addPOI(PersonOfInterest poi){
         poiList.add(poi);
     }
 
+    /**
+     * 
+     * @param id takes in the unique person id
+     * @return searches through everyone in the person list, so criminals, witnesses, suspects, victims, and pois, and returns 
+     * the person with the matching UUID
+     */
     public Person findPerson(UUID id){
         //id = Person.getUUID();
         for (int i = 0; i < criminalList.size(); i++) {
@@ -75,6 +111,10 @@ public class PersonList {
         return null;
     }
 
+    /**
+     * @param name takes in the persons name
+     * @return returns any person in the personList with a matching name
+     */
     public Person findPerson(String name){
         for (int i = 0; i < criminalList.size(); i++) {
             String fullName = criminalList.get(i).getFirstName() + criminalList.get(i).getLastName();
@@ -109,6 +149,10 @@ public class PersonList {
         return null;
     }
 
+    /**
+     * @param firstName takes in the persons first name
+     * @return returns a person in the personList with a matching first name
+     */
     public Person findPersonFirst(String firstName){
         for (int i = 0; i < criminalList.size(); i++) {
             String Firstname = criminalList.get(i).getFirstName();
@@ -143,6 +187,11 @@ public class PersonList {
         return null;
     }
 
+    /**
+     * 
+     * @param personID takes in the UUID
+     * @return returns the witness with a matching UUID
+     */
     public Witness findWitness(UUID personID){
         
         for(int i = 0; i < witnessList.size(); i++){
@@ -154,6 +203,10 @@ public class PersonList {
         return null;
     }
 
+    /**
+     * @param personID takes in the UUID
+     * @return returns the suspect with the matching UUID
+     */
     public Suspect findSuspect(UUID personID){
         
         for(int i = 0; i < suspectList.size(); i++){
@@ -165,26 +218,44 @@ public class PersonList {
         return null;
     }
 
+    /**
+     * return the arrayList criminalList
+     */
     public ArrayList<Criminal> getCriminals() {
         return criminalList;
     }
 
+    /**
+     * returns the arrayList suspectList
+     */
     public ArrayList<Suspect> getSuspects() {
         return suspectList;
     }
 
+    /**
+     * returns the arrayList witnessList
+     */
     public ArrayList<Witness> getWitnesses() {
         return witnessList;
     }
 
+    /**
+     * returns the arrayList victimList
+     */
     public ArrayList<Victim> getVictims() {
         return victimList;
     }
 
+    /**
+     * returns the arrayList poiList
+     */
     public ArrayList<PersonOfInterest> getPersonsOfInterests() {
         return poiList;
     }
 
+    /**
+     * prints the criminal, witness, victim, suspect, and poi lists
+     */
     public void print(){
         for(int i=0;i<criminalList.size();i++){
             System.out.println(criminalList.get(i).toString());
