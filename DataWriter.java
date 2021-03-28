@@ -511,5 +511,4 @@ public class DataWriter extends DataConstants {
                 System.out.println("Something went wrong while writing the file!");
         }
     }
-    
 }
