@@ -25,7 +25,8 @@ public class CriminalUI {
                 else if(choice==2){
                     displayLogin();
                 }
-                else if(choice == 1) {
+            }else{
+                if (choice == 1) {
                     displayAddPeople();
                 }
                 else if(choice == 2) {
