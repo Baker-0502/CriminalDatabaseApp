@@ -26,7 +26,7 @@ public class CriminalUI {
                     displayLogin();
                 }
             }else{
-                if(choice == 1) {
+                if (choice == 1) {
                     displayAddPeople();
                 }
                 else if(choice == 2) {
@@ -47,7 +47,7 @@ public class CriminalUI {
                     if(temp.toLowerCase().equals("y") || temp.toLowerCase().equals("yes")) {
                         database.saveAll();
                     }
-                    quit = true;
+                    quit=false;
                     break;
                 }
                 else {
@@ -367,8 +367,28 @@ public class CriminalUI {
     }
 
     public void displaySearchByID(){
+        
+            System.out.println("Enter UUID");
+            String id = readIn.nextLine();
+            UUID lookingID = UUID.fromString(id);
 
+            if(database.findPerson(lookingID)!=null){
+                System.out.println(database.findPerson(lookingID));
+            }
+            else if(database.findUser(lookingID)!=null){
+                System.out.println(database.findUser(lookingID));
+            }
+            else if(database.findCase(lookingID)!=null){
+                System.out.println(database.findCase(lookingID));
+            }
+            else if(database.findEvidence(lookingID)!=null){
+                System.out.println(database.findEvidence(lookingID));
+            }
+            else{
+                System.out.println("Invalid UUID");
+            }
         }
+        
 
     public void displaySearchByKeyword(){
         int choice;
