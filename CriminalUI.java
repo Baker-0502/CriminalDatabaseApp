@@ -7,7 +7,7 @@ public class CriminalUI {
     private CriminalDatabaseApplication database = CriminalDatabaseApplication.getInstance();
     private Scanner readIn = new Scanner(System.in);
     private static final String WELCOME_MESSAGE = "Welcome to Criminal Database";
-    private String[] mainMenuOptions = {/*"Create Account","Login",*/"Add People","Add Evidence","Add Case","Display Cases","Exit"};
+    private String[] mainMenuOptions = {/*"Create Account","Login",*/"Add People","Add Evidence","Add Case","Display Cases","Search", "Exit"};
     private User loggedIn;
     private boolean quit;
 
@@ -38,7 +38,10 @@ public class CriminalUI {
                 else if(choice==4){
                     displayCase();
                 }
-                else if(choice == 5) {
+                else if(choice==5){
+                    displaySearchOptions();
+                }
+                else if(choice == 6) {
                     quit=false;
                     break;
                 }
@@ -335,6 +338,37 @@ public class CriminalUI {
         }
     }
 
+    public void displaySearchOptions(){
+        int choice;
+        boolean quit2 = false;
+        while(!quit){
+            System.out.println("Welcome to the Search Option screen!\nWhat would you like to search by?\n1. Search by ID\n2. Search by Keyword\n3. Go Back");
+            choice = readIn.nextInt();
+            readIn.nextLine();
+            if(choice == 1){
+                displaySearchByID();
+            }
+            else if(choice == 2){
+                displaySearchByKeyword();
+            }
+            else if(choice == 3){
+                quit2 = true;
+                break;
+            }
+            else{
+                System.out.println("Please input a valid option!");
+            }
+        }
+    }
+
+    public void displaySearchByID(){
+        
+    }
+
+    public void displaySearchByKeyword(){
+
+    }
+
     public Criminal addCriminal() {
         //TODO Fix Extraneous Input Causing Crashes.
         String[] words = {"First Name", "Last Name", "Gender", "Race", "Age", "Height", "Weight", "Phone Number", "Address", "Occupation", "Blood Type", "Fingerprint", "Hair Color", "Articles of Clothing (#)", "Foot Size", "Eye Color", "Currently Alive? (y/n)", "Tattoos (#)"};
@@ -544,6 +578,7 @@ public class CriminalUI {
         database.addEvidence(temp);
         return temp;
     }
+    
 
     public static void main(String[] args) {
         CriminalUI driver = new CriminalUI();
