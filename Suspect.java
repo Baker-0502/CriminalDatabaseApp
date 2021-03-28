@@ -9,6 +9,7 @@ public class Suspect extends Person{
     private String fingerPrint;
     private String details;
     private ArrayList<String> clothing;
+    private ArrayList<String> tattoos;
 
     public Suspect(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String footSize, String bloodType, String fingerPrint, String details, ArrayList<String> clothing)
     {
@@ -48,6 +49,10 @@ public class Suspect extends Person{
 
     public ArrayList<String> getClothing() {
         return clothing;
+    }
+
+    public ArrayList<String> getTattoos() {
+        return tattoos;
     }
 
     public String toString(){

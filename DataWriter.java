@@ -170,6 +170,14 @@ public class DataWriter extends DataConstants {
                 clothingJSON.add(clothing.get(i));
             }
         }
+
+        JSONArray tattoosJSON = new JSONArray();
+        ArrayList<String> tattoos = suspect.getTattoos();
+        if(tattoos != null) {
+            for(int i = 0; i < tattoos.size(); i++) {
+                tattoosJSON.add(tattoos.get(i));
+            }
+        }
         
         suspectObject.put(PERSON_ID, suspect.getUUID().toString());
         suspectObject.put(PERSON_FIRST_NAME, suspect.getFirstName());
@@ -189,6 +197,7 @@ public class DataWriter extends DataConstants {
         suspectObject.put(SUSPECT_FOOT_SIZE, suspect.getFootSize());
         suspectObject.put(SUSPECT_EYE_COLOR, suspect.getEyeColor());
         suspectObject.put(SUSPECT_DETAILS, suspect.getDetails());
+        suspectObject.put(CRIMINAL_TATTOOS, tattoosJSON);
 
         return suspectObject;
 
@@ -503,4 +512,8 @@ public class DataWriter extends DataConstants {
         }
     }
     
+    public static void main(String[]args) {
+        CriminalDatabaseApplication db = CriminalDatabaseApplication.getInstance();
+        db.searchAll("First Name", "Roy");
+    }
 }

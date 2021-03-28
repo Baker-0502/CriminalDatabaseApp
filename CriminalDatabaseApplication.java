@@ -245,7 +245,7 @@ public class CriminalDatabaseApplication {
         }
         for(int i=0;i<personList.getVictims().size();i++){
             Person name = personList.getVictims().get(i);
-            if(name.getGender().equals(gender){
+            if(name.getGender().equals(gender)){
                 System.out.println(personList.getVictims().get(i));
             }
         }
@@ -279,7 +279,7 @@ public class CriminalDatabaseApplication {
         }
         for(int i=0;i<personList.getVictims().size();i++){
             Person name = personList.getVictims().get(i);
-            if(name.getRace().equals(race){
+            if(name.getRace().equals(race)){
                 System.out.println(personList.getVictims().get(i));
             }
         }
@@ -319,13 +319,13 @@ public class CriminalDatabaseApplication {
         }
         for(int i=0;i<personList.getWitnesses().size();i++){
             Person name = personList.getWitnesses().get(i);
-            if(name.getAge()==age)){
+            if(name.getAge()==age){
                 System.out.println(personList.getWitnesses().get(i));
             }
         }
         for(int i=0;i<personList.getPersonsOfInterests().size();i++){
             Person name = personList.getPersonsOfInterests().get(i);
-            if(name.getAge()==age)){
+            if(name.getAge()==age){
                 System.out.println(personList.getPersonsOfInterests().get(i));
             }
         }
