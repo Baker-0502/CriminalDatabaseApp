@@ -511,9 +511,4 @@ public class DataWriter extends DataConstants {
                 System.out.println("Something went wrong while writing the file!");
         }
     }
-    
-    public static void main(String[]args) {
-        CriminalDatabaseApplication db = CriminalDatabaseApplication.getInstance();
-        db.searchAll("First Name", "Roy");
-    }
 }

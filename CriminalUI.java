@@ -416,8 +416,7 @@ public class CriminalUI {
         String input;
         int input1;
         double input2;
-        ArrayList<Person> persons = new ArrayList<Person>();
-        System.out.println(persons);
+        ArrayList<String> personID = new ArrayList<String>();
         System.out.println("Enter the number of keywords you want to search by");
         amt_input = readIn.nextInt();
         readIn.nextLine();
