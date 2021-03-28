@@ -156,7 +156,8 @@ public class DataReader extends DataConstants{
                 ArrayList<String> clothing = parseArr((JSONArray)criminalsJSON.get(CRIMINAL_CLOTHING));
                 String footSize = (String)criminalsJSON.get(CRIMINAL_FOOT_SIZE);
                 String eyeColor = (String)criminalsJSON.get(CRIMINAL_EYE_COLOR);
-                boolean isAlive = Boolean.parseBoolean((String)criminalsJSON.get(CRIMINAL_IS_ALIVE));
+                //TODO DEBUG THIS LINE
+                boolean isAlive = Boolean.parseBoolean(criminalsJSON.get(CRIMINAL_IS_ALIVE).toString());
                 ArrayList<String> tattoos = parseArr((JSONArray)criminalsJSON.get(CRIMINAL_TATTOOS));
 
                 criminal.add(new Criminal(personID, firstName, lastName, gender, race, age, height, weight, phoneNumber, address, occupation, bloodType, fingerprint, hairColor, clothing, footSize, eyeColor, isAlive, tattoos));
