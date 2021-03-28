@@ -25,8 +25,7 @@ public class CriminalUI {
                 else if(choice==2){
                     displayLogin();
                 }
-            }else{
-                if(choice == 1) {
+                else if(choice == 1) {
                     displayAddPeople();
                 }
                 else if(choice == 2) {
@@ -42,6 +41,11 @@ public class CriminalUI {
                     displaySearchOptions();
                 }
                 else if(choice == 6) {
+                    System.out.println("Would you like to save your edits? (Y/N)");
+                    String temp = readIn.nextLine();
+                    if(temp.toLowerCase().equals("y") || temp.toLowerCase().equals("yes")) {
+                        database.saveAll();
+                    }
                     quit=false;
                     break;
                 }
