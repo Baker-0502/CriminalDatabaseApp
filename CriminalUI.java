@@ -510,7 +510,7 @@ public class CriminalUI {
                 peopleFound.addAll(database.searchTattoo(input));
             }
         }
-        
+        System.out.println(database.findCorrectPersons(peopleFound, amt_input));
     }
 
     public Criminal addCriminal() {
