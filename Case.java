@@ -166,13 +166,7 @@ public class Case {
     public ArrayList<Evidence> getEvidenceList() {
         return evidenceList;
     }
-    /**
-     * reads the file 
-     * @param filepath is set to file
-     */
-    public void readFile(String filepath) {
-        filepath = "File";
-    }
+    
     /**
      * tostring that outputs information
      * @return returns all the information regarding the case

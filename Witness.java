@@ -5,6 +5,7 @@ import java.util.UUID;
 public class Witness extends Person {
     private String relationship;
     private String statement;
+
     /**
      * details about the witness
      * @param personID id placed for specific witness
