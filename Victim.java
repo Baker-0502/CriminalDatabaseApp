@@ -9,7 +9,20 @@ public class Victim extends Person{
 
 
 /**
- * efault constructor for a victim
+ * 
+ * @param personID victim unique id
+ * @param firstName victim first name
+ * @param lastName victim last name
+ * @param gender victim gender
+ * @param race victim race
+ * @param age victim age
+ * @param height victim height
+ * @param weight victim weight
+ * @param phoneNumber victim phone number
+ * @param address victim address
+ * @param occupation victim occupation
+ * @param relationship victim relationship
+ * @param statement victim statement
  */
 public Victim(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement)
 {

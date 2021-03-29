@@ -5,6 +5,18 @@ import java.util.UUID;
 public class Detective extends User {
     private String associate;
 
+    /**
+     * 
+     * @param associate detective associates    
+     * @param department detective departments
+     * @param userID detective unique user ids
+     * @param firstName detective first names
+     * @param lastName detective last names
+     * @param username detective user names
+     * @param password detective passwords
+     * @param email detective email
+     * @param phoneNumber detective phone number
+     */
     public Detective(String associate, String department, UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber) {
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);
         this.associate = associate;

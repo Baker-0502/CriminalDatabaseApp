@@ -10,7 +10,18 @@ public class policeOfficer extends User {
    
 
     /**
-     * default constructor
+     * 
+     * @param userID Officer unique ID
+     * @param firstName Officer first name
+     * @param lastName Officer last name
+     * @param username Officer username
+     * @param password Officer password
+     * @param email Officer email
+     * @param phoneNumber Officer phone number
+     * @param department Officer department
+     * @param badgeID Officer badgeid
+     * @param caseCount Officer casecount
+     * @param editAccess Officer edit access
      */
     public policeOfficer(UUID userID, String firstName, String lastName, String username, String password, String email, String phoneNumber, String department, String badgeID, int caseCount, boolean editAccess) {
         super(userID, firstName, lastName, username, password, email, phoneNumber, department);

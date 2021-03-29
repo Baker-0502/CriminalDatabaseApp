@@ -11,7 +11,22 @@ public class PersonOfInterest extends Person{
 
 
 /**
- * default constructor for person of interest
+ * 
+ * @param personID POI unique id
+ * @param firstName POI first name
+ * @param lastName POI last name
+ * @param gender POI gender
+ * @param race POI race
+ * @param age POI age
+ * @param height POI height
+ * @param weight POI weight
+ * @param phoneNumber POI phone number
+ * @param address POI address 
+ * @param occupation POI occupation
+ * @param hairColor POI haircolor
+ * @param eyeColor POI eye color
+ * @param reasonofInterest POI interest
+ * @param avaliableDetails POI available details
  */
 public PersonOfInterest(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String hairColor, String eyeColor, String reasonofInterest, String avaliableDetails)
 {

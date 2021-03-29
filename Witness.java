@@ -8,7 +8,20 @@ public class Witness extends Person {
 
 
 /**
- * default constructor for a witness
+ * 
+ * @param personID witness unique ID
+ * @param firstName witness first name
+ * @param lastName witness last name
+ * @param gender witness gender
+ * @param race witness race
+ * @param age witness age
+ * @param height witness height
+ * @param weight witness weight 
+ * @param phoneNumber witness phone number
+ * @param address witness address
+ * @param occupation witness occupation
+ * @param relationship witness relationship
+ * @param statement witness statement
  */
 public Witness(UUID personID, String firstName, String lastName, String gender, String race, int age, double height, double weight, String phoneNumber, String address, String occupation, String relationship, String statement)
 {
